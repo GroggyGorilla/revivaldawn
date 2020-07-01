@@ -1248,4 +1248,92 @@ div[class*='post--'] .postbody table.table-responsive>div[class*='post--'] .post
     font-size: 1.3rem;
 }
 
-/*-----------------------------------------------------------------*/
+
+/*MODAL IMAGES-----------------------------------------------------------------*/
+/* Style the Image Used to Trigger the Modal */
+.img-modal {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.img-modal:hover {opacity: 0.6;}
+
+/* The Modal (background) */
+#img-modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+#img-modal-expanded {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#img-modal-caption {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+    font-size: 2.5em;
+}
+
+/* Add Animation - Zoom in the Modal */
+#img-modal-expanded, #img-modal-caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+#img-modal-close {
+    position: absolute;
+    bottom: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#img-modal-close:hover,
+#img-modal-close:focus {
+    color: #999999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    #img-modal-expanded {
+        width: 100%;
+    }
+}
+
+/*-----------------------------------------------------------------------------*/
