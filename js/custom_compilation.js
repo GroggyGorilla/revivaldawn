@@ -1,11 +1,36 @@
 $(function () {
 
-    /**STICKY WIDGETS***************************************************************/
-    /*if (!jQuery.browser.mobile) {
-        $("#right").stick_in_parent();
-        $("#left").stick_in_parent();
-
-    }*/
+    /**MODAL IMAGES***************************************************************/         
+    $('body').append(
+        '<!-- Modal Image Overlay -->' +
+        '<div id="img-modal-overlay" class="modal">' +
+            '<span id="img-modal-close">&times;</span>' +
+            '<img id="img-modal-expanded" />' +
+            '<div id="img-modal-caption"></div>' +
+        '</div>');
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    if ($('.img-modal').length > 0) {
+        $(document).on('click', '.img-modal', function(){
+            $("#img-modal-overlay").css('display', 'block');
+            $("#img-modal-expanded").prop('src', $(this).prop('src'));
+            $("#img-modal-expanded").attr('alt', $(this).attr('alt'));
+            $("#img-modal-caption").text($(this).attr('alt'));
+        });      
+        // When the user clicks on <span> (x), close the modal
+        $('#img-modal-close').click(function() {
+            $("#img-modal-overlay").css('display', 'none');;
+        });
+        $('#img-modal-overlay').click(function() {
+            if (this.id == 'img-modal-overlay') {
+                $("#img-modal-overlay").css('display', 'none');;
+            }
+        });
+        $(document).keyup(function(e) {
+            if (e.key === "Escape") {
+                $("#img-modal-overlay").css('display', 'none');;
+           }
+        });
+    }
 
     /*****************************************************************/
 
@@ -86,78 +111,15 @@ $(function () {
         };
         $(this).html(oldhtml);
     });
+    perkBB = null;
+    perkImage = null;
+    tooltipText = null;
 
     /*****************************************************************/
 
 
     /**NEWS COO***************************************************************/
     $("#newsareal1").load("/f2-history-and-lore div.topictitle:lt(10)");
-    /*****************************************************************/
-
-
-    /**TRACKER***************************************************************/
-    /*'Personal Title - Give yourself your own personal title !';
-    'DEVELOPED BY ANGE TUTEUR';
-    'NO DISTRIBUTION WITHOUT CONSENT OF THE AUTHOR';
-    'ORIGIN : http://fmdesign.forumotion.com/t413-personal-rank-titles#3302';
-
-    var formatBBCode = true;
-
-    // editing of profile field
-    if (/\/profile|\/u\d+/.test(window.location.href)) {
-        for (var a = document.getElementsByTagName('TEXTAREA'), i = 0, j = a.length; i < j; i++) {
-            if (/id="tracFld"/.test(a[i].value) && /profile_field/.test(a[i].id)) {
-                a[i].onfocus = function () {
-                    this.value = this.value.replace(/\n|\r/g, '').replace(/\[table id="tracFld"\]\[tr\]\[td\](.*?)\[\/td\]\[\/tr\]\[\/table\]/, '$1');
-                };
-
-                a[i].onblur = function () {
-                    this.value = '[table id="tracFld"][tr][td]' + this.value + '[/td][/tr][/table]';
-                };
-            }
-        }
-    }
-
-    // parsing in messages
-    else if (/\/t\d+/.test(window.location.href)) {
-        var version = $('.bodylinewidth')[0] ? 0 : document.getElementById('phpbb') ? 1 : $('div.pun')[0] ? 2 : document.getElementById('ipbwrapper') ? 3 : document.getElementById('modernbb') ? 4 : document.getElementById('fa_edge') ? 5 : 'badapple',
-            closest = ['.poster-profile', '.postprofile', '.user', '.postdetails', '.postprofile', '.postprofile'][version],
-            find = ['br:first', 'dt + dd', '.user-basic-info', 'dt + dd', '.postprofile-rank', '.rank-title'][version],
-
-            a = $('.fa_personal_title'),
-            i = 0,
-            j = a.length,
-            node, str, title;
-
-        if (version == 'badapple') {
-            if (window.console && console.warn) console.warn('Your forum version is not supported for the "Personal Title" plugin.');
-            return;
-        }
-
-        for (; i < j; i++) {
-            title = $('td', a[i]).eq(0);
-            title = formatBBCode ? title.html() : title.text();
-            if (title) {
-                node = $(a[i]).closest(closest).find(find);
-                str = '<span id="tracFld">' + title + '</span>';
-
-                version == 0 ? node.before(str) : node.append(str);
-
-                a[i].style.display = 'none';
-            }
-        }
-    }*/
-    /*$(".postdetails a img").on("mouseover", function () {
-        $(this).closest(".postdetails").find("#tracFld").show();
-    }).on("mouseout", function () {
-        $(this).closest(".postdetails").find("#tracFld").hide();
-    });
-
-    $("#tracFld").on("mouseover", function () {
-        $(this).show();
-    }).on("mouseout", function () {
-        $(this).hide();
-    });*/
     /*****************************************************************/
 
 
@@ -222,29 +184,6 @@ $(function () {
             }
         }
     });
-    /*****************************************************************/
-
-
-    /**CODE BOX SELECT ALL BUTTON***************************************************************/
-    /*function selectCode(e) {
-        var doc = document
-            , text = $(e).closest("dl").find(".cont_code,code").get(0)
-            , range, selection
-            ;
-        if (doc.body.createTextRange) {
-            range = document.body.createTextRange();
-            range.moveToElementText(text);
-            range.select();
-        } else if (window.getSelection) {
-            selection = window.getSelection();
-            range = document.createRange();
-            range.selectNodeContents(text);
-            selection.removeAllRanges();
-            selection.addRange(range);
-        }
-    };
-  $(function () {$("dl.codebox:not(.spoiler,.hidecode)  > dd.code, dl.codebox:not(.spoiler,.hidecode)  > dd > code")
-    .closest("dl").find('dt').append('<span onClick="selectCode(this)" class="selectCode">Select Content</span>'); });*/
     /*****************************************************************/
 
 
