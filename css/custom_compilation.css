@@ -435,7 +435,8 @@ form.mod-login div.fb_or, form.mod-login div.social_btn {
 }
 
 .adminPostQLContainer {
-    max-width: 25%;
+    max-width: 20%;
+    max-height: 80%;
     float: left;
     position: sticky;
     top: 5%;
@@ -443,9 +444,10 @@ form.mod-login div.fb_or, form.mod-login div.social_btn {
 }
 
 .adminPostQLText {
-    width: 85%;
+    width: 95%;
     text-align: left;
     font-family: century gothic, verdana, times new roman;
+    overflow: auto;
 }
 
 .adminPostQLText a {
@@ -778,6 +780,16 @@ a[href="/u94"]:hover, .chatbox-username[data-user="94"]:hover {
     text-shadow: 0 0 4px orange !important;
 }
 
+a[href="/u95"], .chatbox-username[data-user="95"] {
+    text-shadow: 0 0 0.25em #20664c, 0 0 0.25em #20664c, 0 0 0.25em #20664c !important;
+    padding-right: 18px;
+    background: url(https://i.imgur.com/cLe8X7Z.png) no-repeat right;
+}
+
+a[href="/u95"]:hover, .chatbox-username[data-user="95"]:hover {
+    text-shadow: 0 0 4px orange !important;
+}
+
 a[href="/u53"], .chatbox-username[data-user="53"] {
     text-shadow: 0 0 0.2em #017a21, 0 0 0.2em #017a21, 0 0 0.2em #017a21;
     padding-right: 18px;
@@ -852,22 +864,11 @@ a[href="/u28"]:hover, .chatbox-username[data-user="28"]:hover {
     text-shadow: 0 0 0.2em #F93F3F, 0 0 0.2em #F93F3F, 0 0 0.2em #F93F3F !important;
 }
 
-a[href="/u95"], .chatbox-username[data-user="95"] {
-    text-shadow: 0 0 0.25em #20664c, 0 0 0.25em #20664c, 0 0 0.25em #20664c !important;
-    padding-right: 18px;
-    background: url(https://i.imgur.com/cLe8X7Z.png) no-repeat right;
-}
-
-a[href="/u95"]:hover, .chatbox-username[data-user="95"]:hover {
-    text-shadow: 0 0 0.2em #20664c, 0 0 0.2em #20664c, 0 0 0.2em #20664c !important;
-}
-
+/*Hide custom user icons for avatar images*/
 .postprofile-avatar a, .postprofile-contact a {
     background: none;
     padding-right: 0;
 }
-
-/*Hide custom user icons for avatar images*/
 
 /*TRACKER-------------------------------------------------------------------------------------------*/
 
@@ -943,6 +944,7 @@ span.spoiler-orange dl dt {
 
 div[class*='post--'] .postbody table.table {
     width: 100%;
+    max-width: 100%;
     margin-bottom: 1rem;
 }
 
