@@ -276,6 +276,11 @@ window.localStorage && (localStorage.getItem("br-target") && function () {
 
 
 
-/*****************************************************************/
-
+/**DISCORD WIDGET BOT***************************************************************/
+$.getScript('https://cdn.jsdelivr.net/npm/@widgetbot/crate@3', function() {
+    new Crate({
+        server: '260564262446039064', // Revival Dawn
+        channel: '260564262446039064' // #revdawn
+    })
+});
 /*****************************************************************/
