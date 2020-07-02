@@ -436,18 +436,18 @@ form.mod-login div.fb_or, form.mod-login div.social_btn {
 
 .adminPostQLContainer {
     max-width: 20%;
-    max-height: 80%;
+    max-height: 80vh;
     float: left;
     position: sticky;
-    top: 5%;
-    margin-top: 2em;
+    top: 100px;
+    margin-top: 1.5em;
+    overflow: auto;
 }
 
 .adminPostQLText {
     width: 95%;
     text-align: left;
     font-family: century gothic, verdana, times new roman;
-    overflow: auto;
 }
 
 .adminPostQLText a {
@@ -951,6 +951,7 @@ div[class*='post--'] .postbody table.table {
 div[class*='post--'] .postbody table.table th, div[class*='post--'] .postbody table.table td {
     padding: 0.75rem;
     vertical-align: top;
+    text-align: left;
     border-top: 1px solid #dee2e6 !important;
 }
 
@@ -1276,7 +1277,7 @@ div[class*='post--'] .postbody table.table-responsive>div[class*='post--'] .post
 
 /* Modal Content (Image) */
 #img-modal-expanded {
-    margin: auto;
+    margin: auto auto;
     display: block;
     max-width: 90%;
 }
@@ -1315,9 +1316,9 @@ div[class*='post--'] .postbody table.table-responsive>div[class*='post--'] .post
 #img-modal-close {
     position: absolute;
     bottom: 15px;
-    right: 35px;
+    left: 35px;
     color: #f1f1f1;
-    font-size: 40px;
+    font-size: 10em;
     font-weight: bold;
     transition: 0.3s;
 }
@@ -1336,4 +1337,13 @@ div[class*='post--'] .postbody table.table-responsive>div[class*='post--'] .post
     }
 }
 
-/*-----------------------------------------------------------------------------*/
+/*STICKY POST PROFILE-----------------------------------------------------------------------------*/
+
+.postprofile {
+  
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 10%;
+}
+
+/*-------------------------------------------------------------------------------------------------*/
