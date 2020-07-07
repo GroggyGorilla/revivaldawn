@@ -4,17 +4,40 @@ $(function () {
     /**POPULATE PAGE QUICK LINKS**************************************/
     if ($('#rd_pagelinks').length) {
         if ($('[id^="rdql_"]').length) {
+            var qlparents = [];
             $('[id^="rdql_"').each(function () {
                 var qlhref = $(this).attr('id');
                 var qltext = $(this).attr('data-qltext').replace(/'/g, "&#39;");
                 var qlitem = '<li class="pure-menu-item"><a href="#' + qlhref 
                                 + '" class="pure-menu-link">' + qltext + '</a></li>';
-                $('#rd_pagelinks').append(qlitem);
+                var qlparent = $(this).attr('data-qlparent');
 
+                if (qlparent == undefined || qlparent == "") {
+                    $('#rd_pagelinks').append(qlitem);
+                }
+                else {
+                    var qlparentVal = qlparent.replace(/'/g, "&#39;");
+                    var qlparentID = qlparent.replace(/'/g, "");
+                    qlparentID = qlparentID.replace(/ /g, "_");
+                    qlparentID = "qlp_" + qlparentID.toLowerCase();
+
+                    if ($.inArray(qlparentID, qlparents) == -1) {
+                        qlparents.push(qlparentID);
+
+                        var qlitemParent = '<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover pure-menu-submenu">' +
+                                            '<a class="pure-menu-link">' + qlparentVal + '</a>' +
+                                            '<ul id="' + qlparentID + '" class="pure-menu-children">' + qlitem + '</ul>' +
+                                            '</li>';
+                        $('#rd_pagelinks').append(qlitemParent);                        
+                    }
+                    else {
+                        $('#' + qlparentID).append(qlitem);
+                    }                    
+                }
             });
         }
         else {
-            $('#rd_pagelinks').html('<li class="pure-menu-item pure-menu-disabled">No quick links found for this page.</li>');
+            $('#rd_pagelinks').html('<li class="pure-menu-item pure-menu-disabled">No quick links found on this page.</li>');
         }
     }
 
@@ -29,14 +52,9 @@ $(function () {
 
     /*****************************************************************/
 
+
     /**MODAL IMAGES***************************************************************/
-    $('body').append(
-        '<!-- Modal Image Overlay -->' +
-        '<div id="img-modal-overlay" class="modal">' +
-        '<span id="img-modal-close">&times;</span>' +
-        '<img id="img-modal-expanded" />' +
-        '<div id="img-modal-caption"></div>' +
-        '</div>');
+
     // Get the image and insert it inside the modal - use its "alt" text as a caption
     if ($('.img-modal').length > 0) {
         $(document).on('click', '.img-modal', function () {
