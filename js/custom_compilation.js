@@ -1,42 +1,69 @@
 $(function () {
 
-    /**MODAL IMAGES***************************************************************/         
+
+    /**POPULATE PAGE QUICK LINKS**************************************/
+    if ($('#rd_pagelinks').length) {
+        if ($('[id^="rdql_"]').length) {
+            $('[id^="rdql_"').each(function () {
+                var qlhref = $(this).attr('id');
+                var qltext = $(this).attr('data-qltext').replace(/'/g, "&#39;");
+                var qlitem = '<li class="pure-menu-item"><a href="#' + qlhref 
+                                + '" class="pure-menu-link">' + qltext + '</a></li>';
+                $('#rd_pagelinks').append(qlitem);
+
+            });
+        }
+        else {
+            $('#rd_pagelinks').html('<li class="pure-menu-item pure-menu-disabled">No quick links found for this page.</li>');
+        }
+    }
+
+
+
+    /*****************************************************************/
+
+    /**DISCORD JOIN BUTTON***************************************************************/
+    $('body').append('<a id="lnk-discord-join" href="https://discord.gg/G8KgdmZ" data-tooltip="Join Our Discord Server" target="_blank"><img id="img-discord-join" src="https://i.vgy.me/oD4WFh.png" alt="Join Revival Dawn on Discord" /></a>');
+
+    /*****************************************************************/
+
+    /**MODAL IMAGES***************************************************************/
     $('body').append(
         '<!-- Modal Image Overlay -->' +
         '<div id="img-modal-overlay" class="modal">' +
-            '<span id="img-modal-close">&times;</span>' +
-            '<img id="img-modal-expanded" />' +
-            '<div id="img-modal-caption"></div>' +
+        '<span id="img-modal-close">&times;</span>' +
+        '<img id="img-modal-expanded" />' +
+        '<div id="img-modal-caption"></div>' +
         '</div>');
     // Get the image and insert it inside the modal - use its "alt" text as a caption
     if ($('.img-modal').length > 0) {
-        $(document).on('click', '.img-modal', function(){
+        $(document).on('click', '.img-modal', function () {
             $("#img-modal-overlay").css('display', 'block');
             $("#img-modal-expanded").prop('src', $(this).prop('src'));
             $("#img-modal-expanded").attr('alt', $(this).attr('alt'));
             $("#img-modal-caption").text($(this).attr('alt'));
-        });      
+        });
         // When the user clicks on <span> (x), close the modal
-        $('#img-modal-close').click(function() {
+        $('#img-modal-close').click(function () {
             $("#img-modal-overlay").css('display', 'none');;
         });
-        $('#img-modal-overlay').click(function() {
+        $('#img-modal-overlay').click(function () {
             if (this.id == 'img-modal-overlay') {
                 $("#img-modal-overlay").css('display', 'none');;
             }
         });
-        $(document).keyup(function(e) {
+        $(document).keyup(function (e) {
             if (e.key === "Escape") {
                 $("#img-modal-overlay").css('display', 'none');;
-           }
+            }
         });
     }
 
     /*****************************************************************/
 
 
-/**PERK ICONS***************************************************************/
-    var perkBB = [        
+    /**PERK ICONS***************************************************************/
+    var perkBB = [
         'jerryrigger',
         'windcaller',
         'barrelcrazed',
@@ -47,7 +74,7 @@ $(function () {
         'berryprinter',
         'hardboiled',
         'childofdestiny',
-        'dreamsneverdie',        
+        'dreamsneverdie',
         'freakofnature',
         'jurassicbark',
         'untouchable',
@@ -57,7 +84,7 @@ $(function () {
         'devilsadvocate',
         'strollingdeath'
     ];
-    var perkImage = [        
+    var perkImage = [
         'https://i.servimg.com/u/f60/18/75/26/17/jerryr10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/windca10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/barrel10.png',
@@ -68,7 +95,7 @@ $(function () {
         'https://i.servimg.com/u/f60/18/75/26/17/berryp10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/hardbo10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/childo10.png',
-        'https://i.servimg.com/u/f60/18/75/26/17/dreams11.png',        
+        'https://i.servimg.com/u/f60/18/75/26/17/dreams11.png',
         'https://i.servimg.com/u/f60/18/75/26/17/freako10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/jurass10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/untouc10.png',
@@ -79,7 +106,7 @@ $(function () {
         'https://i.servimg.com/u/f60/18/75/26/17/stroll10.png'
     ];
 
-    var tooltipText = [        
+    var tooltipText = [
         'Jerry Rigger: +25% Hull for 5 turns',
         'Wind Caller: +25% Sails for 5 turns',
         'Barrel Crazed: +25% Cannons for 5 turns',
@@ -211,7 +238,7 @@ $(function () {
     /*****************************************************************/
 
     /*****************************************************************/
-  
+
     /*****************************************************************/
 
     /*****************************************************************/
@@ -271,16 +298,4 @@ window.localStorage && (localStorage.getItem("br-target") && function () {
     }();
     localStorage.removeItem("br-target")
 }());
-/*****************************************************************/
-
-
-
-
-/**DISCORD WIDGET BOT***************************************************************/
-$.getScript('https://cdn.jsdelivr.net/npm/@widgetbot/crate@3', function() {
-    new Crate({
-        server: '260564262446039064', // Revival Dawn
-        channel: '260564262446039064' // #revdawn
-    })
-});
 /*****************************************************************/
