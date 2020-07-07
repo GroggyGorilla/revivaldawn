@@ -1487,6 +1487,16 @@ https://purecss.io
     width: inherit;
 }
 
+.pure-menu-submenu .pure-menu-children {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
 .pure-menu-active>.pure-menu-children, .pure-menu-allow-hover:hover>.pure-menu-children {
     display: block;
     position: absolute;
@@ -1500,6 +1510,14 @@ https://purecss.io
 
 .pure-menu-horizontal .pure-menu-has-children>.pure-menu-link:after {
     content: "\25BE"
+}
+
+.pure-menu-horizontal .pure-menu-submenu>.pure-menu-link:after {
+    content: "\25B8";
+}
+
+.headerbar {
+    overflow: visible;
 }
 
 .pure-menu-scrollable {
