@@ -18,12 +18,14 @@ $(function () {
         }
     }
 
-
-
-    /*****************************************************************/
-
-    /**DISCORD JOIN BUTTON***************************************************************/
-    $('body').append('<a id="lnk-discord-join" href="https://discord.gg/G8KgdmZ" data-tooltip="Join Our Discord Server" target="_blank"><img id="img-discord-join" src="https://i.vgy.me/oD4WFh.png" alt="Join Revival Dawn on Discord" /></a>');
+    var $rdql_root = $('html, body');
+    $(document).on('click', 'a[href^="#rdql_"]', function (event) {
+        event.preventDefault();
+    
+        $rdql_root.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top - 100
+        }, 500);
+    });
 
     /*****************************************************************/
 
