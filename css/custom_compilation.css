@@ -370,6 +370,14 @@ form.mod-login div.fb_or, form.mod-login div.social_btn {
     display: none;
 }
 
+a.mod-recent-title {
+    font-size: 1.2rem;
+}
+
+span.mod-recent-info {
+    margin-bottom: 1rem;
+}
+
 /*POST TEMPLATES----------------------------------------------------------------------------------------*/
 
 .adminPostContainer {
@@ -1280,6 +1288,7 @@ div[class*='post--'] .postbody table.table-responsive>div[class*='post--'] .post
     margin: auto auto;
     display: block;
     max-width: 90%;
+    max-height: 90%;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -1346,4 +1355,221 @@ div[class*='post--'] .postbody table.table-responsive>div[class*='post--'] .post
   top: 10%;
 }
 
+/*DISCORD JOIN BUTTON-------------------------------------------------------------------------------*/
+
+a#lnk-discord-join {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    height: 10em;
+    width: 10em;
+    z-index: 999;
+}
+
+a#lnk-discord-join:hover {
+    text-shadow: none !important;
+}
+
+#img-discord-join {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0.7;
+}
+
+a#lnk-discord-join:hover #img-discord-join {
+    -webkit-animation-name: shrink;
+    -webkit-animation-duration: 0.4s;
+    animation-name: shrink;
+    animation-duration: 0.4s;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 1.0;
+}
+
+@-webkit-keyframes shrink {
+    from {-webkit-transform:scale(1)}
+    to {-webkit-transform:scale(0.9)}
+}
+
+@keyframes shrink {
+    from {transform:scale(1)}
+    to {transform:scale(0.9)}
+}
+
+/*PURE CSS DROPDOWNS---------------------------------------------------------------------------------*/
+/*!
+Pure v2.0.3
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/pure-css/pure/blob/master/LICENSE.md
+https://purecss.io
+*/
+
+.navlinks {
+    display: inline-block;
+}
+
+.pure-menu {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+}
+
+.pure-menu-fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+
+.pure-menu-item, .pure-menu-list {
+    position: relative
+}
+
+.pure-menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pure-menu-item {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.pure-menu-heading, .pure-menu-link {
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.pure-menu-horizontal {
+    white-space: nowrap;
+    float: left;
+    margin: 25px 0 0;
+}
+
+.is-sticky .pure-menu-horizontal {
+    margin: 0;
+}
+
+.pure-menu-horizontal .pure-menu-list {
+    display: inline-block;
+}
+
+.pure-menu-horizontal .pure-menu-heading, .pure-menu-horizontal .pure-menu-item, .pure-menu-horizontal .pure-menu-separator {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.pure-menu-item .pure-menu-item {
+    display: block;
+}
+
+.pure-menu-children {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.pure-menu-horizontal .pure-menu-children {
+    left: 0;
+    top: auto;
+    width: inherit;
+}
+
+.pure-menu-active>.pure-menu-children, .pure-menu-allow-hover:hover>.pure-menu-children {
+    display: block;
+    position: absolute;
+}
+
+.pure-menu-has-children>.pure-menu-link:after {
+    padding-left: .5em;
+    content: "\25B8";
+    font-size: small;
+}
+
+.pure-menu-horizontal .pure-menu-has-children>.pure-menu-link:after {
+    content: "\25BE"
+}
+
+.pure-menu-scrollable {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.pure-menu-scrollable .pure-menu-list {
+    display: block;
+}
+
+.pure-menu-horizontal.pure-menu-scrollable .pure-menu-list {
+    display: inline-block;
+}
+
+.pure-menu-horizontal.pure-menu-scrollable {
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding: .5em 0;
+}
+
+.pure-menu-horizontal .pure-menu-children .pure-menu-separator, .pure-menu-separator {
+    background-color: #ccc;
+    height: 1px;
+    margin: .3em 0;
+}
+
+.pure-menu-horizontal .pure-menu-separator {
+    width: 1px;
+    height: 1.3em;
+    margin: 0 .3em;
+}
+
+.pure-menu-horizontal .pure-menu-children .pure-menu-separator {
+    display: block;
+    width: auto;
+}
+
+.pure-menu-heading {
+    text-transform: uppercase;
+    color: #565d64;
+}
+
+.pure-menu-link {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.pure-menu-children {
+    background-color: #2c353b;
+    border-radius: 3px;
+    box-shadow: 0 0 0.1em #000000;
+}
+
+.pure-menu-disabled, .pure-menu-heading, .pure-menu-link {
+    padding: .5em 1em;
+}
+
+.pure-menu-disabled {
+    opacity: .5;
+}
+
+.pure-menu-disabled .pure-menu-link:hover {
+    background-color: transparent;
+}
+
+.pure-menu-active>.pure-menu-link, .pure-menu-link:focus, .pure-menu-link:hover {
+    background-color: #ffffff;
+    border-radius: 3px;
+}
+  
 /*-------------------------------------------------------------------------------------------------*/
