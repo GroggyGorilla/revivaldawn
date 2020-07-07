@@ -1563,12 +1563,23 @@ https://purecss.io
     opacity: .5;
 }
 
+.pure-menu-disabled:hover {    
+    cursor: not-allowed;
+}
+
 .pure-menu-disabled .pure-menu-link:hover {
     background-color: transparent;
 }
 
-.pure-menu-active>.pure-menu-link, .pure-menu-link:focus, .pure-menu-link:hover {
+.pure-menu-active>.pure-menu-link, .pure-menu-link:focus {
+    background-color: #dddddd;
+    color: #000000;
+    border-radius: 3px;
+}
+
+.pure-menu-link:hover {
     background-color: #ffffff;
+    color: #000000;
     border-radius: 3px;
 }
   
