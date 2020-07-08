@@ -1,6 +1,4 @@
 $(function () {
-
-
     /**POPULATE PAGE QUICK LINKS**************************************/
     if ($('#rd_pagelinks').length) {
         if ($('[id^="rdql_"]').length) {
@@ -8,8 +6,8 @@ $(function () {
             $('[id^="rdql_"').each(function () {
                 var qlhref = $(this).attr('id');
                 var qltext = $(this).attr('data-qltext').replace(/'/g, "&#39;");
-                var qlitem = '<li class="pure-menu-item"><a href="#' + qlhref 
-                                + '" class="pure-menu-link">' + qltext + '</a></li>';
+                var qlitem = '<li class="pure-menu-item"><a href="#' + qlhref
+                    + '" class="pure-menu-link">' + qltext + '</a></li>';
                 var qlparent = $(this).attr('data-qlparent');
 
                 if (qlparent == undefined || qlparent == "") {
@@ -25,14 +23,14 @@ $(function () {
                         qlparents.push(qlparentID);
 
                         var qlitemParent = '<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover pure-menu-submenu">' +
-                                            '<a class="pure-menu-link">' + qlparentVal + '</a>' +
-                                            '<ul id="' + qlparentID + '" class="pure-menu-children">' + qlitem + '</ul>' +
-                                            '</li>';
-                        $('#rd_pagelinks').append(qlitemParent);                        
+                            '<a class="pure-menu-link">' + qlparentVal + '</a>' +
+                            '<ul id="' + qlparentID + '" class="pure-menu-children">' + qlitem + '</ul>' +
+                            '</li>';
+                        $('#rd_pagelinks').append(qlitemParent);
                     }
                     else {
                         $('#' + qlparentID).append(qlitem);
-                    }                    
+                    }
                 }
             });
         }
@@ -44,7 +42,7 @@ $(function () {
     var $rdql_root = $('html, body');
     $(document).on('click', 'a[href^="#rdql_"]', function (event) {
         event.preventDefault();
-    
+
         $rdql_root.animate({
             scrollTop: $($.attr(this, 'href')).offset().top - 100
         }, 500);
@@ -164,16 +162,31 @@ $(function () {
 
     /*****************************************************************/
 
+    /**CODE BOX SELECT ALL******************************************************/
 
-    /**NEWS COO***************************************************************/
-    $("#newsareal1").load("/f2-history-and-lore div.topictitle:lt(10)");
+    $("dl.codebox:not(.spoiler,.hidecode)  > dd.code, dl.codebox:not(.spoiler,.hidecode)  > dd > code").closest("dl").find('dt')
+        .append('<a class="selectCode" data-tooltip="Select Code"><img src="https://i.vgy.me/ebzm5i.png" /></a>');
+
+    $(document).on('click', '.selectCode', function () {
+        var doc = document, text = $(this).closest("dl").find(".cont_code,code").get(0), range, selection;
+        if (doc.body.createTextRange) {
+            range = document.body.createTextRange();
+            range.moveToElementText(text);
+            range.select();
+        } else if (window.getSelection) {
+            selection = window.getSelection();
+            range = document.createRange();
+            range.selectNodeContents(text);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+    });
+
     /*****************************************************************/
 
 
-    /**COLOR PICKER***************************************************************/
-    if ($('#text_editor_textarea').length) {
-        $.getScript("https://aska.123.st/17313.js");
-    }
+    /**NEWS COO***************************************************************/
+    $("#newsareal1").load("/f2-history-and-lore div.topictitle:lt(10)");
     /*****************************************************************/
 
 
