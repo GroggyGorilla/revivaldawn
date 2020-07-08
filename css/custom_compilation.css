@@ -399,7 +399,7 @@ span.mod-recent-info {
     padding: 1em;
     font-family: century gothic, verdana, times new roman;
     font-size: 1em;
-    line-height: 120%;
+    line-height: 140%;
     text-align: justify;
     width: 85%;
     padding-bottom: 1em;
@@ -547,13 +547,28 @@ span.mod-recent-info {
 
 .selectCode {
     float: right;
-    text-transform: uppercase;
     cursor: pointer;
-    color: #346cdb;
+}
+
+.selectCode:hover {
+    text-shadow: none;
+}
+
+.selectCode:hover img {
+    opacity: 0.7;
+}
+
+blockquote .selectCode img {
+    filter: invert(1);
 }
 
 div.cont_code {
     clear: right;
+}
+
+dl.codebox:before {
+    top: initial;
+    bottom: 6px;
 }
 
 /*SCROLLBAR----------------------------------------------------------------------------------------------------------------------------------------------*/
