@@ -4,34 +4,41 @@ $(function () {
         if ($('[id^="rdql_"]').length) {
             var qlparents = [];
             $('[id^="rdql_"').each(function () {
-                var qlhref = $(this).attr('id');
-                var qltext = $(this).attr('data-qltext').replace(/'/g, "&#39;");
-                var qlitem = '<li class="pure-menu-item"><a href="#' + qlhref
-                    + '" class="pure-menu-link">' + qltext + '</a></li>';
-                var qlparent = $(this).attr('data-qlparent');
-
-                if (qlparent == undefined || qlparent == "") {
+                if ($(this).attr('data-qlseparator') != undefined && $(this).attr('data-qlseparator') != "") {
+                    var qlitem = '<hr />';
                     $('#rd_pagelinks').append(qlitem);
                 }
                 else {
-                    var qlparentVal = qlparent.replace(/'/g, "&#39;");
-                    var qlparentID = qlparent.replace(/'/g, "");
-                    qlparentID = qlparentID.replace(/ /g, "_");
-                    qlparentID = "qlp_" + qlparentID.toLowerCase();
-
-                    if ($.inArray(qlparentID, qlparents) == -1) {
-                        qlparents.push(qlparentID);
-
-                        var qlitemParent = '<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover pure-menu-submenu">' +
-                            '<a class="pure-menu-link">' + qlparentVal + '</a>' +
-                            '<ul id="' + qlparentID + '" class="pure-menu-children">' + qlitem + '</ul>' +
-                            '</li>';
-                        $('#rd_pagelinks').append(qlitemParent);
+                    var qlhref = $(this).attr('id');
+                    var qltext = $(this).attr('data-qltext').replace(/'/g, "&#39;");
+                    var qlitem = '<li class="pure-menu-item"><a href="#' + qlhref
+                        + '" class="pure-menu-link">' + qltext + '</a></li>';
+                    var qlparent = $(this).attr('data-qlparent');
+    
+                    if (qlparent == undefined || qlparent == "") {
+                        $('#rd_pagelinks').append(qlitem);
                     }
                     else {
-                        $('#' + qlparentID).append(qlitem);
+                        var qlparentVal = qlparent.replace(/'/g, "&#39;");
+                        var qlparentID = qlparent.replace(/'/g, "");
+                        qlparentID = qlparentID.replace(/ /g, "_");
+                        qlparentID = "qlp_" + qlparentID.toLowerCase();
+    
+                        if ($.inArray(qlparentID, qlparents) == -1) {
+                            qlparents.push(qlparentID);
+                            
+                            var qlitemParent = '<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover pure-menu-submenu">' +
+                                '<a href="#rd' + qlparentID + '" class="pure-menu-link">' + qlparentVal + '</a>' +
+                                '<ul id="' + qlparentID + '" class="pure-menu-children">' + qlitem + '</ul>' +
+                                '</li>';
+                            $('#rd_pagelinks').append(qlitemParent);
+                        }
+                        else {
+                            $('#' + qlparentID).append(qlitem);
+                        }
                     }
                 }
+
             });
         }
         else {
@@ -40,7 +47,7 @@ $(function () {
     }
 
     var $rdql_root = $('html, body');
-    $(document).on('click', 'a[href^="#rdql_"]', function (event) {
+    $(document).on('click', 'a[href^="#rdql_"], a[href^="#rdqlp_"]', function (event) {
         event.preventDefault();
 
         $rdql_root.animate({
