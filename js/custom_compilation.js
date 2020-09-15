@@ -22,6 +22,7 @@ $(function () {
                         var qlparentVal = qlparent.replace(/'/g, "&#39;");
                         var qlparentID = qlparent.replace(/'/g, "");
                         qlparentID = qlparentID.replace(/ /g, "_");
+                        qlparentID = qlparentID.replace(/[.*+?^$#{}()|[\]\\]/g, "_");
                         qlparentID = "qlp_" + qlparentID.toLowerCase();
     
                         if ($.inArray(qlparentID, qlparents) == -1) {
@@ -49,10 +50,11 @@ $(function () {
     var $rdql_root = $('html, body');
     $(document).on('click', 'a[href^="#rdql_"], a[href^="#rdqlp_"]', function (event) {
         event.preventDefault();
-
-        $rdql_root.animate({
-            scrollTop: $($.attr(this, 'href')).offset().top - 100
-        }, 500);
+        if (!($(this).attr('href') == null || $(this).attr('href') == undefined)) {
+            $rdql_root.animate({
+                scrollTop: $($.attr(this, 'href')).offset().top - 100
+            }, 500);
+        }
     });
 
     /*****************************************************************/
@@ -87,12 +89,15 @@ $(function () {
     /*****************************************************************/
 
 
-    /**PERK ICONS***************************************************************/
-    var perkBB = [
+    /**ICON TOKEN REPLACEMENTS***************************************************************/
+    var iconBB = [
         'jerryrigger',
         'windcaller',
         'barrelcrazed',
         'hammerhanded',
+      	'masterchef',
+      	'dulcetvirtuoso',
+      	'nauticalalmanac',
         'firstaidkit',
         'shipbringer',
         'punchoutguru',
@@ -107,13 +112,33 @@ $(function () {
         'bookworm',
         'baneoftheweak',
         'devilsadvocate',
-        'strollingdeath'
+        'strollingdeath',
+      	'thechosenone',
+        'riseandshine',
+      	'kenbunspec',
+      	'busospec',
+      	'haospec',
+      	'1needlelog',
+      	'3needlelog',
+      	'mythicalzoan',
+      	'logia',
+      	'ancientzoan',
+        'steelbracing',
+        'colaengine',
+        'chaincannons',
+        'seaprismstonekeel',
+        'submarine',
+        'blimp',
+        'treasuretreeadamwood'
     ];
-    var perkImage = [
+    var iconImage = [
         'https://i.servimg.com/u/f60/18/75/26/17/jerryr10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/windca10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/barrel10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/hammer10.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/master10.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/dulcet10.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/nautic10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/firsta10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/shipbr10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/puncho10.png',
@@ -128,14 +153,34 @@ $(function () {
         'https://i.servimg.com/u/f60/18/75/26/17/bookwo10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/baneof10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/devils10.png',
-        'https://i.servimg.com/u/f60/18/75/26/17/stroll10.png'
+        'https://i.servimg.com/u/f60/18/75/26/17/stroll10.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/thecho11.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/risean10.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/kenbun10.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/busosh10.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/haosho10.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/1needl10.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/3needl10.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/mythzo10.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/logiaf10.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/ancien10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/steelb10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/colaen10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/chainc10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/seapri10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/submar10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/blimp10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/treasu10.png'
     ];
 
     var tooltipText = [
-        'Jerry Rigger: +25% Hull for 5 turns',
-        'Wind Caller: +25% Sails for 5 turns',
-        'Barrel Crazed: +25% Cannons for 5 turns',
+        'Jerry Rigger: +25% Hull for 5 rounds',
+        'Wind Caller: +25% Sails for 5 rounds',
+        'Barrel Crazed: +25% Cannons for 5 rounds',
         'Hammerhanded: One equipment repair per thread',
+      	'Master Chef: Up to 3 allies can start combat with 110% HP',
+      	'Dulcet Virtuoso: +10% to ATK or RX for 3 allies for 3 rounds',
+      	'Nautical Almanac: +2 to ship combat escape roll value',
         'Walking, Talking First Aid Kit: Revive and UT Heals',
         'Ship Bringer: One ship repair per thread',
         'Punchout Guru: +10% EXP bonus to all allies in a quest',
@@ -150,21 +195,38 @@ $(function () {
         'Bookworm: Poneglyph literate',
         'Bane of the Weak: Haoshoku user',
         'Devil&#8217;s Advocate: +100 stats',
-        'Strolling Death: +200 stats'
+        'Strolling Death: +200 stats',
+      	'The Chosen One: Inherited the Will of D',
+      	'Rise and Shine: Awakening/Mastery Unlocked',
+      	'Haki Specialization: Kenbunshoku',
+      	'Haki Specialization: Busoshoku',
+      	'Haki Specialization: Haoshoku',
+      	'One-Needle Log Pose: Travel across Paradise',
+      	'Three-Needle Log Pose: Travel across the New World',
+      	'Mythical Zoan Fruit',
+      	'Logia Fruit',
+      	'Ancient Zoan Fruit',
+        'Steel Bracing: +25% Hull for 5 posts',
+        'Cola Engine: +25% Sails for 5 posts',
+        'Chain Cannons: +25% Cannons for 5 posts',
+        'Sea Prism Stone Keel: Sail through Calm Belt',
+        'Submarine (Toggle): +25% Sails, -25% Cannons',
+        'Blimp (Toggle): +25% Sails, -25% Hull',
+        'Treasure Tree Adam Wood: +200 Hull'
     ];
     $('.postbody, .field_uneditable, .postprofile').each(function () {
         var oldhtml = "";
         oldhtml = $(this).html();
-        for (var i = 0; i < perkBB.length; i++) {
-            var perkBBCode = '[[' + perkBB[i] + ']]';
-            var perkBBCode = perkBBCode.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            var perkBBRegExp = new RegExp(perkBBCode, 'g');
-            oldhtml = oldhtml.replace(perkBBRegExp, '<a class="perk-icon-link" data-tooltip="' + tooltipText[i] + '"><img src="' + perkImage[i] + '"  class="perk-icon" /></a> ');
+        for (var i = 0; i < iconBB.length; i++) {
+            var iconBBCode = '[[' + iconBB[i] + ']]';
+            var iconBBCode = iconBBCode.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            var iconBBRegExp = new RegExp(iconBBCode, 'g');
+            oldhtml = oldhtml.replace(iconBBRegExp, '<a class="icon-link" data-tooltip="' + tooltipText[i] + '"><img src="' + iconImage[i] + '"  class="icon-image" /></a> ');
         };
         $(this).html(oldhtml);
     });
-    perkBB = null;
-    perkImage = null;
+    iconBB = null;
+    iconImage = null;
     tooltipText = null;
 
     /*****************************************************************/
