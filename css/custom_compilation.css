@@ -339,13 +339,14 @@ div[id^='forabg'] {
     background-color: transparent;
 }
 
-.perk-icon {
-    max-width: 32px;
+.icon-image {
+    max-width: 32px !important;
 }
 
-.perk-icon-link:hover {
+.icon-link:hover {
     text-shadow: none !important;
     z-index: 999;
+    cursor: help;
 }
 
 .hljs-tag {
@@ -411,8 +412,7 @@ span.mod-recent-info {
     font-weight: bold;
     text-align: center;
     /* color: rgb(2, 100, 126); */
-    text-shadow: 0 0 0.05em/*rgb(1, 134, 137)*/
-    ;
+    text-shadow: 0 0 0.05em;/*rgb(1, 134, 137);*/
     text-transform: uppercase !important;
     line-height: 1.1em;
     font-family: 'Expletus Sans';
@@ -473,6 +473,7 @@ span.mod-recent-info {
     text-align: justify;
     width: 85%;
     padding-bottom: 1em;
+    line-height: 140%;
 }
 
 .creation-template hr {
@@ -524,6 +525,14 @@ span.mod-recent-info {
 
 .news-coo-article-img-container img {
     max-width: 100%;
+}
+
+.news-coo-text a {
+    color: #ff88ff;
+}
+
+.news-coo-text a:hover {
+    color: #000000;
 }
 
 [class^="icon-berry-"], .ico-b-g, .ico-b-b {
@@ -954,6 +963,10 @@ span.spoiler-bluegreen dl dt {
 
 span.spoiler-orange dl dt {
     color: #f5b37d !important;
+}
+
+span.spoiler-pink dl dt {
+    color: #ed87c4 !important;
 }
 
 /*-----------------------------------------------------------------*/
@@ -1616,4 +1629,46 @@ https://purecss.io
     border-radius: 3px;
 }
   
+/*--WIDTHS-----------------------------------------------------------------------------------------------*/
+.width-10 {
+    width: 10%
+}
+
+.width-20 {
+    width: 20%
+}
+
+.width-30 {
+    width: 30%
+}
+
+.width-40 {
+    width: 40%
+}
+
+.width-50 {
+    width: 50%
+}
+
+.width-60 {
+    width: 60%
+}
+
+.width-70 {
+    width: 70%
+}
+
+.width-80 {
+    width: 80%
+}
+
+.width-90 {
+    width: 90%
+}
+
+.width-100 {
+    width: 100%
+}
+
+
 /*-------------------------------------------------------------------------------------------------*/
