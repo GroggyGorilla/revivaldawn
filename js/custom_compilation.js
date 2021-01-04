@@ -225,7 +225,12 @@ $(function () {
         'rxt6_br_df',
         'wpt6_br',
         'wpt6_br_sp',
-        'wpt6_br_df'
+        'wpt6_br_df',
+        'screwyourngesus',
+        'tacticalretreat',
+        'undertheradar',
+        'identitytheft',
+        'socialdistancing'
     ];
     var iconImage = [
         'https://i.servimg.com/u/f60/18/75/26/17/jerryr10.png',
@@ -362,7 +367,12 @@ $(function () {
         'https://i.servimg.com/u/f60/18/75/26/17/rxt6_b12.png',
         'https://i.servimg.com/u/f60/18/75/26/17/wpt6_b10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/wpt6_b11.png',
-        'https://i.servimg.com/u/f60/18/75/26/17/wpt6_b12.png'
+        'https://i.servimg.com/u/f60/18/75/26/17/wpt6_b12.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/screw_10.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/tactic10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/under_10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/identi10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/social10.png'
     ];
 
     var tooltipText = [
@@ -500,7 +510,12 @@ $(function () {
         'Tier 6 Equipment: +50 RX (Devil Fruit Fed) (Broken)',
         'Tier 6 Equipment: +50 WP (Broken)',
         'Tier 6 Equipment: +50 WP (Sea Prism Stone Tipped) (Broken)',
-        'Tier 6 Equipment: +50 WP (Devil Fruit Fed) (Broken)'
+        'Tier 6 Equipment: +50 WP (Devil Fruit Fed) (Broken)',
+        'Screw You, RNGesus: Do a combat re-roll',
+        'Tactical Retreat: Escape without a roll',
+        'Under The Radar: Freeze bounty',
+        'Identity Theft: Counter information metagame',
+        'Social Distancing: Reduce quest player requirement'
     ];
     $('.postbody, .field_uneditable, .postprofile').each(function () {
         var oldhtml = "";
