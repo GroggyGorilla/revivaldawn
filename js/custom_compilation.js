@@ -7,42 +7,38 @@ $(function () {
                 if ($(this).attr('data-qlseparator') != undefined && $(this).attr('data-qlseparator') != "") {
                     var qlitem = '<hr />';
                     $('#rd_pagelinks').append(qlitem);
-                }
-                else {
+                } else {
                     var qlhref = $(this).attr('id');
                     var qltext = $(this).attr('data-qltext').replace(/'/g, "&#39;");
-                    var qlitem = '<li class="pure-menu-item"><a href="#' + qlhref
-                        + '" class="pure-menu-link">' + qltext + '</a></li>';
+                    var qlitem = '<li class="pure-menu-item"><a href="#' + qlhref +
+                        '" class="pure-menu-link">' + qltext + '</a></li>';
                     var qlparent = $(this).attr('data-qlparent');
-    
+
                     if (qlparent == undefined || qlparent == "") {
                         $('#rd_pagelinks').append(qlitem);
-                    }
-                    else {
+                    } else {
                         var qlparentVal = qlparent.replace(/'/g, "&#39;");
                         var qlparentID = qlparent.replace(/'/g, "");
                         qlparentID = qlparentID.replace(/ /g, "_");
                         qlparentID = qlparentID.replace(/[.*+?^$#{}()|[\]\\]/g, "_");
                         qlparentID = "qlp_" + qlparentID.toLowerCase();
-    
+
                         if ($.inArray(qlparentID, qlparents) == -1) {
                             qlparents.push(qlparentID);
-                            
+
                             var qlitemParent = '<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover pure-menu-submenu">' +
                                 '<a href="#rd' + qlparentID + '" class="pure-menu-link">' + qlparentVal + '</a>' +
                                 '<ul id="' + qlparentID + '" class="pure-menu-children">' + qlitem + '</ul>' +
                                 '</li>';
                             $('#rd_pagelinks').append(qlitemParent);
-                        }
-                        else {
+                        } else {
                             $('#' + qlparentID).append(qlitem);
                         }
                     }
                 }
 
             });
-        }
-        else {
+        } else {
             $('#rd_pagelinks').html('<li class="pure-menu-item pure-menu-disabled">No quick links found on this page.</li>');
         }
     }
@@ -50,7 +46,7 @@ $(function () {
     var $rdql_root = $('html, body');
     $(document).on('click', 'a[href^="#rdql_"], a[href^="#rdqlp_"]', function (event) {
         event.preventDefault();
-        if (!($(this).attr('href') == null || $(this).attr('href') == undefined)) {
+        if (!($(this).attr('href') == "null" || $(this).attr('href') == undefined)) {
             $rdql_root.animate({
                 scrollTop: $($.attr(this, 'href')).offset().top - 100
             }, 500);
@@ -72,16 +68,16 @@ $(function () {
         });
         // When the user clicks on <span> (x), close the modal
         $('#img-modal-close').click(function () {
-            $("#img-modal-overlay").css('display', 'none');;
+            $("#img-modal-overlay").css('display', 'none');
         });
         $('#img-modal-overlay').click(function () {
             if (this.id == 'img-modal-overlay') {
-                $("#img-modal-overlay").css('display', 'none');;
+                $("#img-modal-overlay").css('display', 'none');
             }
         });
         $(document).keyup(function (e) {
             if (e.key === "Escape") {
-                $("#img-modal-overlay").css('display', 'none');;
+                $("#img-modal-overlay").css('display', 'none');
             }
         });
     }
@@ -95,9 +91,9 @@ $(function () {
         'windcaller',
         'barrelcrazed',
         'hammerhanded',
-      	'masterchef',
-      	'dulcetvirtuoso',
-      	'nauticalalmanac',
+        'masterchef',
+        'dulcetvirtuoso',
+        'nauticalalmanac',
         'firstaidkit',
         'shipbringer',
         'punchoutguru',
@@ -113,16 +109,16 @@ $(function () {
         'baneoftheweak',
         'devilsadvocate',
         'strollingdeath',
-      	'thechosenone',
+        'thechosenone',
         'riseandshine',
-      	'kenbunspec',
-      	'busospec',
-      	'haospec',
-      	'1needlelog',
-      	'3needlelog',
-      	'mythicalzoan',
-      	'logia',
-      	'ancientzoan',
+        'kenbunspec',
+        'busospec',
+        'haospec',
+        '1needlelog',
+        '3needlelog',
+        'mythicalzoan',
+        'logia',
+        'ancientzoan',
         'steelbracing',
         'colaengine',
         'chaincannons',
@@ -230,16 +226,17 @@ $(function () {
         'tacticalretreat',
         'undertheradar',
         'identitytheft',
-        'socialdistancing'
+        'socialdistancing',
+        'landcrawler'
     ];
     var iconImage = [
         'https://i.servimg.com/u/f60/18/75/26/17/jerryr10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/windca10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/barrel10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/hammer10.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/master10.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/dulcet10.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/nautic10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/master10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/dulcet10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/nautic10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/firsta10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/shipbr10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/puncho10.png',
@@ -255,16 +252,16 @@ $(function () {
         'https://i.servimg.com/u/f60/18/75/26/17/baneof10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/devils10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/stroll10.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/thecho11.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/risean10.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/kenbun10.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/busosh10.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/haosho10.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/1needl10.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/3needl10.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/mythzo10.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/logiaf10.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/ancien10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/thecho11.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/risean10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/kenbun10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/busosh10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/haosho10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/1needl10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/3needl10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/mythzo10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/logiaf10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/ancien10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/steelb10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/colaen10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/chainc10.png',
@@ -369,10 +366,11 @@ $(function () {
         'https://i.servimg.com/u/f60/18/75/26/17/wpt6_b11.png',
         'https://i.servimg.com/u/f60/18/75/26/17/wpt6_b12.png',
         'https://i.servimg.com/u/f60/18/75/26/17/screw_10.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/tactic10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/tactic10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/under_10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/identi10.png',
-        'https://i.servimg.com/u/f60/18/75/26/17/social10.png'
+        'https://i.servimg.com/u/f60/18/75/26/17/social10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/ship_110.png'
     ];
 
     var tooltipText = [
@@ -380,9 +378,9 @@ $(function () {
         'Wind Caller: +25% Sails for 5 rounds',
         'Barrel Crazed: +25% Cannons for 5 rounds',
         'Hammerhanded: One equipment repair per thread',
-      	'Master Chef: Up to 3 allies can start combat with 110% HP',
-      	'Dulcet Virtuoso: +10% to ATK or RX for 3 allies for 3 rounds',
-      	'Nautical Almanac: +2 to ship combat escape roll value',
+        'Master Chef: Up to 3 allies can start combat with 110% HP',
+        'Dulcet Virtuoso: +10% to ATK or RX for 3 allies for 3 rounds',
+        'Nautical Almanac: +2 to ship combat escape roll value',
         'Walking, Talking First Aid Kit: Revive and UT Heals',
         'Ship Bringer: One ship repair per thread',
         'Punchout Guru: +10% EXP bonus to all allies in a quest',
@@ -398,16 +396,16 @@ $(function () {
         'Bane of the Weak: Haoshoku user',
         'Devil&#8217;s Advocate: +100 stats',
         'Strolling Death: +200 stats',
-      	'The Chosen One: Inherited the Will of D',
-      	'Rise and Shine: Awakening/Mastery Unlocked',
-      	'Haki Specialization: Kenbunshoku',
-      	'Haki Specialization: Busoshoku',
-      	'Haki Specialization: Haoshoku',
-      	'One-Needle Log Pose: Travel across Paradise',
-      	'Three-Needle Log Pose: Travel across the New World',
-      	'Mythical Zoan Fruit',
-      	'Logia Fruit',
-      	'Ancient Zoan Fruit',
+        'The Chosen One: Inherited the Will of D',
+        'Rise and Shine: Awakening/Mastery Unlocked',
+        'Haki Specialization: Kenbunshoku',
+        'Haki Specialization: Busoshoku',
+        'Haki Specialization: Haoshoku',
+        'One-Needle Log Pose: Travel across Paradise',
+        'Three-Needle Log Pose: Travel across the New World',
+        'Mythical Zoan Fruit',
+        'Logia Fruit',
+        'Ancient Zoan Fruit',
         'Steel Bracing: +25% Hull for 5 posts',
         'Cola Engine: +25% Sails for 5 posts',
         'Chain Cannons: +25% Cannons for 5 posts',
@@ -515,7 +513,8 @@ $(function () {
         'Tactical Retreat: Escape without a roll',
         'Under The Radar: Freeze bounty',
         'Identity Theft: Counter information metagame',
-        'Social Distancing: Reduce quest player requirement'
+        'Social Distancing: Reduce quest player requirement',
+        'Land Crawler (Toggle): +25% Hull, -25% Sails'
     ];
     $('.postbody, .field_uneditable, .postprofile').each(function () {
         var oldhtml = "";
@@ -540,7 +539,9 @@ $(function () {
         .append('<a class="selectCode" data-tooltip="Select Code"><img src="https://i.vgy.me/ebzm5i.png" /></a>');
 
     $(document).on('click', '.selectCode', function () {
-        var doc = document, text = $(this).closest("dl").find(".cont_code,code").get(0), range, selection;
+        var doc = document,
+            text = $(this).closest("dl").find(".cont_code,code").get(0),
+            range, selection;
         if (doc.body.createTextRange) {
             range = document.body.createTextRange();
             range.moveToElementText(text);
@@ -561,17 +562,43 @@ $(function () {
     $("#newsareal1").load("/f2-history-and-lore div.topictitle:lt(10)");
     /*****************************************************************/
 
+    /**TIMELINE LINKS***************************************************************/
+    $(".fake-anchor").click(function () {
+        var link = $(this).attr("data-href");
+        if (link != "" && link != undefined) {
+            window.open(link);
+        }
+    });
+    $(".fake-anchor a").click(function (event) {
+        event.stopPropagation();
+    });
+    /*****************************************************************/
+
+    /**INLINE SPOILERS***************************************************************/
+    $(".inlinespoiler").click(function (event) {
+        event.stopPropagation();
+        if ($(this).hasClass("inlinespoiler-hidden")) {
+            $(this).removeClass("inlinespoiler-hidden");
+        }
+        else {
+            $(this).addClass("inlinespoiler-hidden");
+        }
+    });
+    /*****************************************************************/
+
+
+
 
     /**PROFILE PREVIEW***************************************************************/
     var links = $('a[href^="/u"]').filter(function () {
-        if (this.firstChild && this.firstChild.tagName) {
-            if (this.firstChild.tagName != 'IMG') {
+            if (this.firstChild && this.firstChild.tagName) {
+                if (this.firstChild.tagName != 'IMG') {
+                    return this;
+                }
+            } else {
                 return this;
             }
-        } else {
-            return this;
-        }
-    }),
+        }),
 
         usersinfo = {};
 
@@ -629,9 +656,12 @@ $(function () {
         addFont('Garamond');
 
         $('.sceditor-font-option.new-font').click(function (e) {
-            $('#text_editor_textarea').sceditor('instance').insertText('[font=' + $(this).attr('data-font') + ']', '[/font]'); $('.sceditor-font-picker').remove(); e.preventDefault()
+            $('#text_editor_textarea').sceditor('instance').insertText('[font=' + $(this).attr('data-font') + ']', '[/font]');
+            $('.sceditor-font-picker').remove();
+            e.preventDefault()
         })
     });
+
     function addFont(font) {
         $('.sceditor-font-picker div')
             .append('<a unselectable="on" class="sceditor-font-option new-font" href="#" data-font="' + font + '"><font unselectable="on" face="' + font + '">' + font + '</font></a>')
@@ -667,21 +697,26 @@ window.localStorage && $(function () {
                     localStorage.setItem(a, d.val());
                     f = 0
                 },
-                b = JSON.parse(localStorage.getItem("br-data")) || [], c;
+                b = JSON.parse(localStorage.getItem("br-data")) || [],
+                c;
             switch (a) {
-                case "editpost": return;
-                case "reply": a += $(document.post.t).val();
+                case "editpost":
+                    return;
+                case "reply":
+                    a += $(document.post.t).val();
                     break;
-                case "newtopic": a += $(document.post.f).val()
+                case "newtopic":
+                    a += $(document.post.f).val()
             }
-            a = parseInt((my_getcookie("fa_" + location.hostname.replace(/\./g, "_") + "_data") || "0").replace(/.*s:6:"userid";(i:([0-9]+)|s:[0-9]+:"([0-9]+)");.*/, "$2$3")) + a;
-            -1 != (c = $.inArray(a, b)) && b.splice(c, 1);
+            a = parseInt((my_getcookie("fa_" + location.hostname.replace(/\./g, "_") + "_data") || "0").replace(/.*s:6:"userid";(i:([0-9]+)|s:[0-9]+:"([0-9]+)");.*/, "$2$3")) + a; -
+            1 != (c = $.inArray(a, b)) && b.splice(c, 1);
             if (20 < b.length) {
-                for (c = b.length - 1; 0 <= c; c--)/^\s*$/.test(localStorage.getItem(b[c]) || "") && (localStorage.removeItem(b[c]),
+                for (c = b.length - 1; 0 <= c; c--) /^\s*$/.test(localStorage.getItem(b[c]) || "") && (localStorage.removeItem(b[c]),
                     b.splice(c, 1));
                 20 < b.length && (localStorage.removeItem(b[0]),
                     b.splice(0, 1))
-            } b.push(a);
+            }
+            b.push(a);
             localStorage.setItem("br-data", JSON.stringify(b));
             $(document.post).submit(function () {
                 localStorage.setItem("br-target", a)
@@ -696,7 +731,8 @@ window.localStorage && $(function () {
 window.localStorage && (localStorage.getItem("br-target") && function () {
     $("meta[http-equiv='refresh'][content]:first").length && function () {
         var a = JSON.parse(localStorage.getItem("br-data")),
-            b = localStorage.getItem("br-target"), c;
+            b = localStorage.getItem("br-target"),
+            c;
         if (-1 != (c = $.inArray(b, a))) a.splice(c, 1),
             localStorage.setItem("br-data", JSON.stringify(a));
         localStorage.removeItem(b)
