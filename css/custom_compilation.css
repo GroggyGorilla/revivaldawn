@@ -4,6 +4,25 @@
 ******************************/
 
 /*FONTS------------------------------------------------------------------------------------------------*/
+/* latin-ext */
+@font-face {
+    font-family: 'Kaushan Script';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/kaushanscript/v9/vm8vdRfvXFLG3OLnsO15WYS5DG72wNJHMw.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Kaushan Script';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/kaushanscript/v9/vm8vdRfvXFLG3OLnsO15WYS5DG74wNI.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 @font-face {
     font-family: 'Permanent Marker';
@@ -135,13 +154,24 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* latin-ext */
+@font-face {
+    font-family: 'Merienda';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/merienda/v9/gNMHW3x8Qoy5_mf8uWMLMIqK_Q.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 /*FORUM BASE STYLE-----------------------------------------------------------------------------------------*/
 
 a {
     font-family: 'Expletus Sans', 'Roboto';
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
     color: #000000;
     text-shadow: 0 0 0.2em #ffffff, 0 0 0.2em #ffffff, 0 0 0.2em #ffffff;
     text-decoration: none;
@@ -164,13 +194,18 @@ a.forumtitle {
     font-family: 'Expletus Sans', 'Roboto';
 }
 
-a.forumtitle:hover, a.topictitle:hover {
+a.forumtitle:hover,
+a.topictitle:hover {
     color: #000000 !important;
     text-shadow: 0 0 0.2em #ffffff, 0 0 0.2em #ffffff, 0 0 0.2em #ffffff !important;
     text-decoration: none;
 }
 
-a[href^='/modcp']:hover img, a[href^='/merge']:hover img, img[class^='i_icon_']:hover, img[title*='Send e-mail']:hover, #i_icon_pm:hover {
+a[href^='/modcp']:hover img,
+a[href^='/merge']:hover img,
+img[class^='i_icon_']:hover,
+img[title*='Send e-mail']:hover,
+#i_icon_pm:hover {
     -webkit-filter: invert(1);
     filter: invert(1);
 }
@@ -196,7 +231,8 @@ a[href^='/modcp']:hover img, a[href^='/merge']:hover img, img[class^='i_icon_']:
     background-color: #2C353B;
 }
 
-#fa_menulist :link, #fa_menulist :visited {
+#fa_menulist :link,
+#fa_menulist :visited {
     color: #ffffff !important;
 }
 
@@ -214,7 +250,8 @@ a[href^='/modcp']:hover img, a[href^='/merge']:hover img, img[class^='i_icon_']:
     filter: invert(1);
 }
 
-input:-webkit-autofill, input:-webkit-autofill:focus {
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
     box-shadow: 0 0 0 50em #2C353B inset;
     -webkit-box-shadow: 0 0 0 50em #2C353B inset !important;
     /* Change the color to your own background color */
@@ -238,7 +275,8 @@ a[href="/faq"] {
     position: absolute;
 }
 
-#mpage-body-modern, #mwrap .forum-header-background {
+#mpage-body-modern,
+#mwrap .forum-header-background {
     background-color: #000000;
 }
 
@@ -259,7 +297,9 @@ blockquote {
     color: #000000;
 }
 
-blockquote a, blockquote a:visited, blockquote a:active {
+blockquote a,
+blockquote a:visited,
+blockquote a:active {
     color: #ababab !important;
 }
 
@@ -271,7 +311,10 @@ blockquote a:hover {
     color: #ffffff;
 }
 
-.button1:active, .button1:hover, .button2:hover, .button2:active {
+.button1:active,
+.button1:hover,
+.button2:hover,
+.button2:active {
     color: #000000 !important;
     text-shadow: none !important;
     background-color: #ffffff !important;
@@ -307,11 +350,49 @@ blockquote a:hover {
     color: #ffffff !important;
 }
 
-.fa_like_list, .fa_dislike_list {
+.sceditor-button {
+    border-radius: 0 !important;
+    border-right: 1px solid #4f595f;
+}
+
+.sceditor-button div {
+    margin: 0 !important;
+}
+
+.sceditor-toolbar {
+    -moz-background-clip: padding;
+    -moz-border-radius: 3px 3px 0 0 !important;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-background-clip: padding-box;
+    -webkit-border-radius: 3px 3px 0 0 !important;
+    -webkit-user-select: none;
+    background-clip: padding-box !important;
+    border-bottom: 1px solid silver;
+    border-radius: 3px 3px 0 0 !important;
+    line-height: 0;
+    overflow: hidden;
+    padding: 3px 8px 8px 3px !important;
+    user-select: none;
+}
+
+.sceditor-group {
+    border-radius: 3px !important;
+    background-color: #fff !important;
+    margin: 1px 5px 1px 0;
+}
+
+div.sceditor-group>.sceditor-button:last-child {
+    border: none;
+}
+
+.fa_like_list,
+.fa_dislike_list {
     color: #ababab;
 }
 
-ul.forums, div.module {
+ul.forums,
+div.module {
     overflow: visible;
 }
 
@@ -357,7 +438,8 @@ div[id^='forabg'] {
     background-color: #303030;
 }
 
-img[alt^="rd_emoji"], #sce_smilies_body img {
+img[alt^="rd_emoji"],
+#sce_smilies_body img {
     max-width: 32px !important;
 }
 
@@ -367,7 +449,8 @@ div.staffList>div.tooltip {
     max-width: 40%;
 }
 
-form.mod-login div.fb_or, form.mod-login div.social_btn {
+form.mod-login div.fb_or,
+form.mod-login div.social_btn {
     display: none;
 }
 
@@ -412,7 +495,8 @@ span.mod-recent-info {
     font-weight: bold;
     text-align: center;
     /* color: rgb(2, 100, 126); */
-    text-shadow: 0 0 0.05em;/*rgb(1, 134, 137);*/
+    text-shadow: 0 0 0.05em;
+    /*rgb(1, 134, 137);*/
     text-transform: uppercase !important;
     line-height: 1.1em;
     font-family: 'Expletus Sans';
@@ -422,7 +506,8 @@ span.mod-recent-info {
     margin: auto;
     text-align: justify;
     /* color: rgb(1, 70, 90); */
-    text-shadow: 0 0 0.01em/*rgb(57, 190, 226)*/
+    text-shadow: 0 0 0.01em
+        /*rgb(57, 190, 226)*/
     ;
 }
 
@@ -431,14 +516,16 @@ span.mod-recent-info {
     font-weight: bold;
     text-align: center;
     /* color: rgb(2, 100, 126); */
-    text-shadow: 0 0 0.05em/*rgb(1, 134, 137)*/
+    text-shadow: 0 0 0.05em
+        /*rgb(1, 134, 137)*/
     ;
     text-transform: uppercase !important;
     line-height: 1.1em;
     font-family: 'Expletus Sans';
 }
 
-.adminPostContainer img, .creation-template img {
+.adminPostContainer img,
+.creation-template img {
     max-width: 100%;
 }
 
@@ -535,7 +622,9 @@ span.mod-recent-info {
     color: #000000;
 }
 
-[class^="icon-berry-"], .ico-b-g, .ico-b-b {
+[class^="icon-berry-"],
+.ico-b-g,
+.ico-b-b {
     display: inline-block;
     background-repeat: no-repeat;
     width: 12px;
@@ -543,11 +632,13 @@ span.mod-recent-info {
     vertical-align: -25%;
 }
 
-.icon-berry-green, .ico-b-g {    
+.icon-berry-green,
+.ico-b-g {
     background-image: url(https://bit.ly/388yf0X);
 }
 
-.icon-berry-black, .ico-b-b {    
+.icon-berry-black,
+.ico-b-b {
     background-image: url(https://bit.ly/3eDSrtT);
 }
 
@@ -581,8 +672,8 @@ dl.codebox:before {
 }
 
 .inlinecode {
-    background: rgba(0,0,0,0.2);
-    border-color: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 0, 0, 0.1);
     border-radius: 0 3px 3px 0;
     border-style: solid;
     border-width: 0 0 0 6px;
@@ -594,7 +685,7 @@ dl.codebox:before {
 
 .inlinespoiler {
     background-color: #000000 !important;
-    border-color: rgba(255,255,255,0.1);
+    border-color: rgba(255, 255, 255, 0.1);
     border-radius: 0 3px 3px 0;
     border-style: solid;
     border-width: 0 0 0 6px;
@@ -606,7 +697,7 @@ dl.codebox:before {
     cursor: pointer;
 }
 
-.inlinespoiler-hidden {    
+.inlinespoiler-hidden {
     color: #000000 !important;
 }
 
@@ -656,7 +747,12 @@ EFFECTS-------------------------------------------------------------------------
     transition-timing-function: ease-out;
 }
 
-.hvr-float:hover, .hvr-float:focus, .hvr-float:active, .dropdown:hover .hvr-float, .dropdown:focus .hvr-float, .dropdown:active .hvr-float {
+.hvr-float:hover,
+.hvr-float:focus,
+.hvr-float:active,
+.dropdown:hover .hvr-float,
+.dropdown:focus .hvr-float,
+.dropdown:active .hvr-float {
     -webkit-transform: translateY(-3px);
     transform: translateY(-3px);
 }
@@ -686,7 +782,8 @@ EFFECTS-------------------------------------------------------------------------
     border-width: 5px;
 }
 
-.dropdown:hover .hvr-vis, a:hover+br+.hvr-vis {
+.dropdown:hover .hvr-vis,
+a:hover+br+.hvr-vis {
     visibility: visible;
     z-index: 999;
 }
@@ -787,147 +884,211 @@ MENU----------------------------------------------------------------------------
 
 /* Show the dropdown menu on hover */
 
-.dropdown:hover>.dropdown-content, .dropdown-sub:hover>.dropdown-content {
+.dropdown:hover>.dropdown-content,
+.dropdown-sub:hover>.dropdown-content {
     display: block;
 }
 
 /*USERNAME GLOWS AND ICONS--------------------------------------------------------*/
 
-/*a[href="/u1"], .chatbox-username[data-user="1"]{
-color: grey !important;
-text-shadow: 0 0 0.2em, 0 0 0.2em, 0 0 0.2em;
-}*/
 
-a[href="/u2"], .chatbox-username[data-user="2"] {
+a[href*="/u"]:hover,
+a[href*="/u"]:active {
+    text-shadow: 0 0 0.2em #ffffff, 0 0 0.2em #ffffff, 0 0 0.2em #ffffff !important;
+}
+
+a[href="/u2"],
+.chatbox-username[data-user="2"] {
     text-shadow: 0 0 0.1em black, 0 0 0.1em black, 0 0 0.1em black;
     padding-right: 18px;
     background: url(https://i.servimg.com/u/f60/18/75/26/17/webp_n18.png) no-repeat right;
     /*text-shadow: 0 0 0.2em #FF6600, 0 0 0.2em #FF6600, 0 0 0.2em #FF6600;*/
 }
 
-a[href="/u2"]:hover, .chatbox-username[data-user="2"]:hover {
+a[href="/u2"]:hover,
+.chatbox-username[data-user="2"]:hover {
     text-shadow: 0 0 4px orange !important;
 }
 
-a[href="/u4"], .chatbox-username[data-user="4"] {
+a[href="/u4"],
+.chatbox-username[data-user="4"] {
     text-shadow: 0 0 0.2em black, 0 0 0.2em black, 0 0 0.2em black;
     padding-right: 18px;
     background: url(https://i.servimg.com/u/f60/18/75/26/17/webp_n13.png) no-repeat right;
     /*text-shadow: 0 0 0.2em #FF6600, 0 0 0.2em #FF6600, 0 0 0.2em #FF6600;*/
 }
 
-a[href="/u4"]:hover, .chatbox-username[data-user="4"]:hover {
+a[href="/u4"]:hover,
+.chatbox-username[data-user="4"]:hover {
     text-shadow: 0 0 0.5em black, 0 0 0.5em black, 0 0 0.5em black !important;
 }
 
-a[href="/u21"], .chatbox-username[data-user="21"] {
+a[href="/u21"],
+.chatbox-username[data-user="21"] {
     text-shadow: 0 0 0.2em black, 0 0 0.2em black, 0 0 0.2em black;
     padding-right: 18px;
     background: url(https://i.imgur.com/erEVgNo.png) no-repeat right;
     /*text-shadow: 0 0 0.2em #FF6600, 0 0 0.2em #FF6600, 0 0 0.2em #FF6600;*/
 }
 
-a[href="/u21"]:hover, .chatbox-username[data-user="21"]:hover {
+a[href="/u21"]:hover,
+.chatbox-username[data-user="21"]:hover {
     text-shadow: 0 0 0.5em black, 0 0 0.5em black, 0 0 0.5em black !important;
 }
 
-a[href="/u94"], .chatbox-username[data-user="94"] {
+a[href="/u94"],
+.chatbox-username[data-user="94"] {
     text-shadow: 0 0 0.2em black, 0 0 0.2em black, 0 0 0.2em black;
     padding-right: 18px;
     background: url(https://i.servimg.com/u/f60/18/75/26/17/revolv10.png) no-repeat right;
     /*text-shadow: 0 0 0.2em #FF6600, 0 0 0.2em #FF6600, 0 0 0.2em #FF6600;*/
 }
 
-a[href="/u94"]:hover, .chatbox-username[data-user="94"]:hover {
+a[href="/u94"]:hover,
+.chatbox-username[data-user="94"]:hover {
     text-shadow: 0 0 4px orange !important;
 }
 
-a[href="/u95"], .chatbox-username[data-user="95"] {
-    text-shadow: 0 0 0.25em #20664c, 0 0 0.25em #20664c, 0 0 0.25em #20664c !important;
+a[href="/u95"],
+.chatbox-username[data-user="95"] {
+    text-shadow: 0 0 0.1em black, 0 0 0.1em black, 0 0 0.1em black;
     padding-right: 18px;
-    background: url(https://i.imgur.com/cLe8X7Z.png) no-repeat right;
+    background: url(https://i.imgur.com/quzacMC.png) no-repeat right;
 }
 
-a[href="/u95"]:hover, .chatbox-username[data-user="95"]:hover {
-    text-shadow: 0 0 4px orange !important;
+a[href="/u95"]:hover,
+.chatbox-username[data-user="95"]:hover {
+    text-shadow: 0 0 4px green !important;
 }
 
-a[href="/u53"], .chatbox-username[data-user="53"] {
+a[href="/u53"],
+.chatbox-username[data-user="53"] {
     text-shadow: 0 0 0.2em #017a21, 0 0 0.2em #017a21, 0 0 0.2em #017a21;
     padding-right: 18px;
     background: url(https://i.imgur.com/b2FHNwc.png) no-repeat right;
 }
 
-a[href="/u53"]:hover, .chatbox-username[data-user="53"]:hover {
+a[href="/u53"]:hover,
+.chatbox-username[data-user="53"]:hover {
     text-shadow: 0 0 4px #017a21 !important;
 }
 
-a[href="/u32"], .chatbox-username[data-user="32"] {
-    text-shadow: 0 0 0.2em #00171d, 0 0 0.2em #00171d, 0 0 0.2em #00171d;
+a[href="/u32"],
+.chatbox-username[data-user="32"] {
+    text-shadow: 0 0 0.2em #00f, 0 0 0.2em #00f, 0 0 0.2em #fff;
     padding-right: 14px;
     background: url(https://i.servimg.com/u/f60/18/75/26/17/brood_12.png) no-repeat right;
 }
 
-a[href="/u23"], .chatbox-username[data-user="23"] {
+a[href="/u23"],
+.chatbox-username[data-user="23"] {
     text-shadow: 0 0 0.2em #fa61ae, 0 0 0.2em #fa61ae, 0 0 0.2em #fa61ae;
+    padding-right: 16px;
+    background: url(https://i.imgur.com/PhclDEt.png) no-repeat right;
 }
 
-a[href="/u11"], .chatbox-username[data-user="11"] {
+a[href="/u11"],
+.chatbox-username[data-user="11"] {
     text-shadow: 0 0 0.02em #0F52BA, 0 0 0.2em #0F52BA, 0 0 0.2em #0F52BA;
 }
 
-a[href="/u12"], .chatbox-username[data-user="12"] {
+a[href="/u12"],
+.chatbox-username[data-user="12"] {
     text-shadow: 0 0 0.02em #990000, 0 0 0.2em #990000, 0 0 0.2em #990000;
     padding-right: 18px;
     background: url(https://i.imgur.com/G7hs5ub.png) no-repeat right;
 }
 
-a[href="/u121"], .chatbox-username[data-user="121"] {
+a[href="/u121"],
+.chatbox-username[data-user="121"] {
     text-shadow: 0 0 0.2em #a08bf6, 0 0 0.2em #a08bf6, 0 0 0.2em #a08bf6;
 }
 
-a[href="/u114"], .chatbox-username[data-user="114"] {
+a[href="/u114"],
+.chatbox-username[data-user="114"] {
     text-shadow: 0 0 0.2em #7a7976, 0 0 0.2em #7a7976, 0 0 0.2em #7a7976;
     padding-right: 18px;
     background: url(https://i.servimg.com/u/f60/18/75/26/17/webp_n15.png) no-repeat right;
 }
 
-a[href="/u128"], .chatbox-username[data-user="128"] {
+a[href="/u128"],
+.chatbox-username[data-user="128"] {
     text-shadow: 0 0 0.2em #c456ae, 0 0 0.2em #c456ae, 0 0 0.2em #c456ae;
     padding-right: 18px;
     background: url(https://i.servimg.com/u/f60/18/75/26/17/webp_n16.png) no-repeat right;
 }
 
-a[href="/u64"], .chatbox-username[data-user="128"] {
+a[href="/u64"],
+.chatbox-username[data-user="128"] {
     text-shadow: 0 0 0.2em #1b0087, 0 0 0.2em #1b0087, 0 0 0.2em #1b0087;
     padding-right: 18px;
     background: url(https://i.imgur.com/QuJrz9G.png) no-repeat right;
 }
 
-a[href="/u191"], .chatbox-username[data-user="191"] {
+a[href="/u191"],
+.chatbox-username[data-user="191"] {
     text-shadow: 0 0 0.2em #8DB600, 0 0 0.2em #8DB600, 0 0 0.2em #8DB600;
     padding-right: 18px;
     background: url(https://i.imgur.com/FmoE3Bf.png) no-repeat right;
 }
 
-a[href="/u249"], .chatbox-username[data-user="249"] {
+a[href="/u249"],
+.chatbox-username[data-user="249"] {
     text-shadow: 0 0 0.2em #45026b, 0 0 0.2em #45026b, 0 0 0.2em #45026b;
     padding-right: 20px;
     background: url(https://i.imgur.com/FaKrRaQ.png) no-repeat right;
 }
 
-a[href="/u28"], .chatbox-username[data-user="28"] {
+a[href="/u28"],
+.chatbox-username[data-user="28"] {
     text-shadow: 0 0 0.2em #F9DD3A, 0 0 0.2em #F9DD3A, 0 0 0.2em #F9DD3A;
     padding-right: 18px;
     background: url(https://i.imgur.com/mlCz8ui.png) no-repeat right;
 }
 
-a[href="/u28"]:hover, .chatbox-username[data-user="28"]:hover {
+a[href="/u28"]:hover,
+.chatbox-username[data-user="28"]:hover {
     text-shadow: 0 0 0.2em #F93F3F, 0 0 0.2em #F93F3F, 0 0 0.2em #F93F3F !important;
 }
 
+a[href="/u188"],
+.chatbox-username[data-user="188"] {
+    text-shadow: 0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000;
+    padding-right: 18px;
+    background: url(https://i.imgur.com/oR2QWTO.png) no-repeat right;
+}
+
+a[href="/u307"],
+.chatbox-username[data-user="307"] {
+    text-shadow: 0 0 0.1em #fff, 0 0 0.1em #fff, 0 0 0.1em #fff;
+    padding-right: 18px;
+    background: url(https://i.servimg.com/u/f60/18/75/26/17/polarb11.png) no-repeat right;
+}
+
+a[href="/u88"],
+.chatbox-username[data-user="88"] {
+    text-shadow: 0 0 0.2em #0f0, 0 0 0.2em #0ff, 0 0 0.2em #0ff;
+    padding-right: 18px;
+    background: url(https://i.servimg.com/u/f60/18/75/26/17/grassh10.png) no-repeat right;
+}
+
+a[href="/u362"],
+.chatbox-username[data-user="362"] {
+    text-shadow: 0 0 0.2em #e84d4d, 0 0 0.2em #e84d4d, 0 0 0.2em #e84d4d;
+    padding-right: 18px;
+    background: url(https://i.servimg.com/u/f60/18/75/26/17/target10.png) no-repeat right;
+}
+
+a[href="/u385"],
+.chatbox-username[data-user="385"] {
+    text-shadow: 0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000;
+    padding-right: 18px;
+    background: url(https://i.servimg.com/u/f60/18/75/26/17/crossb10.png) no-repeat right;
+}
+
 /*Hide custom user icons for avatar images*/
-.postprofile-avatar a, .postprofile-contact a {
+.postprofile-avatar a,
+.postprofile-contact a {
     background: none;
     padding-right: 0;
 }
@@ -971,339 +1132,51 @@ position: relative;
 
 /*Spoiler tag colours----------------------------------------------------------*/
 
-span.spoiler-red dl dt {
+span.spoiler-red dl dt,
+span.pirt {
     color: #ff9191 !important;
 }
 
-span.spoiler-green dl dt {
+span.spoiler-green dl dt,
+span.revo {
     color: #98e88b !important;
 }
 
-span.spoiler-blue dl dt {
+span.spoiler-blue dl dt,
+span.navy {
     color: #00A6FF !important;
 }
 
-span.spoiler-yellow dl dt {
+span.spoiler-yellow dl dt,
+span.cpol {
     color: #DBBE00 !important;
 }
 
-span.spoiler-bluegreen dl dt {
+span.spoiler-bluegreen dl dt,
+span.wgov {
     color: #299E98 !important;
 }
 
-span.spoiler-orange dl dt {
+span.spoiler-orange dl dt,
+span.bhun {
     color: #f5b37d !important;
 }
 
-span.spoiler-pink dl dt {
+span.spoiler-pink dl dt,
+span.misc {
     color: #ed87c4 !important;
+}
+
+span.plyr {
+    text-shadow: 0 0 0.1em #000, 0 0 0.1em #000, 0 0 0.1em #000 !important;
 }
 
 /*-----------------------------------------------------------------*/
 
-/*BOOTSTRAP TABLES-------------------------------------------------*/
+/*BOOTSTRAP Corrections-------------------------------------------------*/
 
-#preview .postbody table, #preview .postbody td, div[class*='post--'] .postbody table, div[class*='post--'] .postbody td {
-    border: none !important;
-    border-collapse: collapse !important;
-}
 
-div[class*='post--'] .postbody table.table {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 1rem;
-}
-
-div[class*='post--'] .postbody table.table th, div[class*='post--'] .postbody table.table td {
-    padding: 0.75rem;
-    vertical-align: top;
-    text-align: left;
-    border-top: 1px solid #dee2e6 !important;
-}
-
-div[class*='post--'] .postbody table.table thead th {
-    vertical-align: bottom;
-    text-align: left;
-    border-bottom: 2px solid #dee2e6;
-}
-
-div[class*='post--'] .postbody table.table tbody+tbody {
-    border-top: 2px solid #dee2e6;
-}
-
-div[class*='post--'] .postbody table.table-sm th, div[class*='post--'] .postbody table.table-sm td {
-    padding: 0.3rem;
-}
-
-div[class*='post--'] .postbody table.table-bordered {
-    border: 1px solid #dee2e6 !important;
-}
-
-div[class*='post--'] .postbody table.table-bordered th, div[class*='post--'] .postbody table.table-bordered td {
-    border: 1px solid #dee2e6 !important;
-}
-
-div[class*='post--'] .postbody table.table-bordered thead th, div[class*='post--'] .postbody table.table-bordered thead td {
-    border-bottom-width: 2px;
-}
-
-div[class*='post--'] .postbody table.table-borderless th, div[class*='post--'] .postbody table.table-borderless td, div[class*='post--'] .postbody table.table-borderless thead th, div[class*='post--'] .postbody table.table-borderless tbody+tbody {
-    border: 0 !important;
-}
-
-div[class*='post--'] .postbody table.table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-div[class*='post--'] .postbody table.table-hover tbody tr:hover {
-    background-color: #242424;
-}
-
-div[class*='post--'] .postbody table.table-primary, div[class*='post--'] .postbody table.table-primary>th, div[class*='post--'] .postbody table.table-primary>td {
-    background-color: #b8daff;
-}
-
-div[class*='post--'] .postbody table.table-primary th, div[class*='post--'] .postbody table.table-primary td, div[class*='post--'] .postbody table.table-primary thead th, div[class*='post--'] .postbody table.table-primary tbody+tbody {
-    border-color: #7abaff;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-primary:hover {
-    background-color: #9fcdff;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-primary:hover>td, div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-primary:hover>th {
-    background-color: #9fcdff;
-}
-
-div[class*='post--'] .postbody table.table-secondary, div[class*='post--'] .postbody table.table-secondary>th, div[class*='post--'] .postbody table.table-secondary>td {
-    background-color: #d6d8db;
-}
-
-div[class*='post--'] .postbody table.table-secondary th, div[class*='post--'] .postbody table.table-secondary td, div[class*='post--'] .postbody table.table-secondary thead th, div[class*='post--'] .postbody table.table-secondary tbody+tbody {
-    border-color: #b3b7bb;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-secondary:hover {
-    background-color: #c8cbcf;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-secondary:hover>td, div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-secondary:hover>th {
-    background-color: #c8cbcf;
-}
-
-div[class*='post--'] .postbody table.table-success, div[class*='post--'] .postbody table.table-success>th, div[class*='post--'] .postbody table.table-success>td {
-    background-color: #c3e6cb;
-}
-
-div[class*='post--'] .postbody table.table-success th, div[class*='post--'] .postbody table.table-success td, div[class*='post--'] .postbody table.table-success thead th, div[class*='post--'] .postbody table.table-success tbody+tbody {
-    border-color: #8fd19e;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-success:hover {
-    background-color: #b1dfbb;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-success:hover>td, div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-success:hover>th {
-    background-color: #b1dfbb;
-}
-
-div[class*='post--'] .postbody table.table-info, div[class*='post--'] .postbody table.table-info>th, div[class*='post--'] .postbody table.table-info>td {
-    background-color: #bee5eb;
-}
-
-div[class*='post--'] .postbody table.table-info th, div[class*='post--'] .postbody table.table-info td, div[class*='post--'] .postbody table.table-info thead th, div[class*='post--'] .postbody table.table-info tbody+tbody {
-    border-color: #86cfda;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-info:hover {
-    background-color: #abdde5;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-info:hover>td, div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-info:hover>th {
-    background-color: #abdde5;
-}
-
-div[class*='post--'] .postbody table.table-warning, div[class*='post--'] .postbody table.table-warning>th, div[class*='post--'] .postbody table.table-warning>td {
-    background-color: #ffeeba;
-}
-
-div[class*='post--'] .postbody table.table-warning th, div[class*='post--'] .postbody table.table-warning td, div[class*='post--'] .postbody table.table-warning thead th, div[class*='post--'] .postbody table.table-warning tbody+tbody {
-    border-color: #ffdf7e;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-warning:hover {
-    background-color: #ffe8a1;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-warning:hover>td, div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-warning:hover>th {
-    background-color: #ffe8a1;
-}
-
-div[class*='post--'] .postbody table.table-danger, div[class*='post--'] .postbody table.table-danger>th, div[class*='post--'] .postbody table.table-danger>td {
-    background-color: #f5c6cb;
-}
-
-div[class*='post--'] .postbody table.table-danger th, div[class*='post--'] .postbody table.table-danger td, div[class*='post--'] .postbody table.table-danger thead th, div[class*='post--'] .postbody table.table-danger tbody+tbody {
-    border-color: #ed969e;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-danger:hover {
-    background-color: #f1b0b7;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-danger:hover>td, div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-danger:hover>th {
-    background-color: #f1b0b7;
-}
-
-div[class*='post--'] .postbody table.table-light, div[class*='post--'] .postbody table.table-light>th, div[class*='post--'] .postbody table.table-light>td {
-    background-color: #fdfdfe;
-}
-
-div[class*='post--'] .postbody table.table-light th, div[class*='post--'] .postbody table.table-light td, div[class*='post--'] .postbody table.table-light thead th, div[class*='post--'] .postbody table.table-light tbody+tbody {
-    border-color: #fbfcfc;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-light:hover {
-    background-color: #ececf6;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-light:hover>td, div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-light:hover>th {
-    background-color: #ececf6;
-}
-
-div[class*='post--'] .postbody table.table-dark, div[class*='post--'] .postbody table.table-dark>th, div[class*='post--'] .postbody table.table-dark>td {
-    background-color: #c6c8ca;
-}
-
-div[class*='post--'] .postbody table.table-dark th, div[class*='post--'] .postbody table.table-dark td, div[class*='post--'] .postbody table.table-dark thead th, div[class*='post--'] .postbody table.table-dark tbody+tbody {
-    border-color: #95999c;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-dark:hover {
-    background-color: #b9bbbe;
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-dark:hover>td, div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-dark:hover>th {
-    background-color: #b9bbbe;
-}
-
-div[class*='post--'] .postbody table.table-active, div[class*='post--'] .postbody table.table-active>th, div[class*='post--'] .postbody table.table-active>td {
-    background-color: rgba(0, 0, 0, 0.075);
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-active:hover {
-    background-color: rgba(0, 0, 0, 0.075);
-}
-
-div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-active:hover>td, div[class*='post--'] .postbody table.table-hover div[class*='post--'] .postbody table.table-active:hover>th {
-    background-color: rgba(0, 0, 0, 0.075);
-}
-
-div[class*='post--'] .postbody table.table .thead-dark th {
-    color: #fff;
-    background-color: #343a40;
-    border-color: #454d55;
-}
-
-div[class*='post--'] .postbody table.table .thead-light th {
-    color: #495057;
-    background-color: #e9ecef;
-    border-color: #dee2e6;
-}
-
-div[class*='post--'] .postbody table.table-dark {
-    color: #fff;
-    background-color: #343a40;
-}
-
-div[class*='post--'] .postbody table.table-dark th, div[class*='post--'] .postbody table.table-dark td, div[class*='post--'] .postbody table.table-dark thead th {
-    border-color: #454d55;
-}
-
-div[class*='post--'] .postbody table.table-darkdiv[class*='post--'] .postbody table.table-bordered {
-    border: 0;
-}
-
-div[class*='post--'] .postbody table.table-darkdiv[class*='post--'] .postbody table.table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
-div[class*='post--'] .postbody table.table-darkdiv[class*='post--'] .postbody table.table-hover tbody tr:hover {
-    color: #fff;
-    background-color: rgba(255, 255, 255, 0.075);
-}
-
-@media (max-width: 575.98px) {
-    div[class*='post--'] .postbody table.table-responsive-sm {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-    div[class*='post--'] .postbody table.table-responsive-sm>div[class*='post--'] .postbody table.table-bordered {
-        border: 0;
-    }
-}
-
-@media (max-width: 767.98px) {
-    div[class*='post--'] .postbody table.table-responsive-md {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-    div[class*='post--'] .postbody table.table-responsive-md>div[class*='post--'] .postbody table.table-bordered {
-        border: 0;
-    }
-}
-
-@media (max-width: 991.98px) {
-    div[class*='post--'] .postbody table.table-responsive-lg {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-    div[class*='post--'] .postbody table.table-responsive-lg>div[class*='post--'] .postbody table.table-bordered {
-        border: 0;
-    }
-}
-
-@media (max-width: 1199.98px) {
-    div[class*='post--'] .postbody table.table-responsive-xl {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-    div[class*='post--'] .postbody table.table-responsive-xl>div[class*='post--'] .postbody table.table-bordered {
-        border: 0;
-    }
-}
-
-div[class*='post--'] .postbody table.table-responsive {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-div[class*='post--'] .postbody table.table-responsive>div[class*='post--'] .postbody table.table-bordered {
-    border: 0;
-}
-
-div[class*='post--'] .postbody table.table-responsive {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-div[class*='post--'] .postbody table.table-responsive>div[class*='post--'] .postbody table.table-bordered {
-    border: 0;
-}
-
-.table-wrapper > :not(.table) {
+.table-wrapper> :not(.table) {
     display: none;
 }
 
@@ -1313,6 +1186,33 @@ div[class*='post--'] .postbody table.table-responsive>div[class*='post--'] .post
 
 .table-wrapper * {
     font-size: 1.3rem;
+    color: inherit;
+}
+
+div[class*='post--'] .postbody table,
+div[class*='post--'] .postbody td,
+div[class*='post--'] .postbody th,
+#preview .postbody table,
+#preview .postbody td,
+#preview .postbody th {
+    border-top-width: 1px !important;
+    border-left-width: 0px !important;
+    border-right-width: 0px !important;
+    border-bottom-width: 0px !important;
+    border-color: inherit !important;
+}
+
+.table-hover tr:hover td,
+.table-hover tr:hover th {
+    color: inherit !important;
+}
+
+ul.topiclist, ul.topiclist dl {
+    margin-bottom: 0rem;
+}
+
+ul.topiclist {
+    padding-left: 0rem;
 }
 
 
@@ -1324,21 +1224,32 @@ div[class*='post--'] .postbody table.table-responsive>div[class*='post--'] .post
     transition: 0.3s;
 }
 
-.img-modal:hover {opacity: 0.6;}
+.img-modal:hover {
+    opacity: 0.6;
+}
 
 /* The Modal (background) */
 #img-modal-overlay {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 999; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 999;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
 }
 
 /* Modal Content (Image) */
@@ -1362,7 +1273,8 @@ div[class*='post--'] .postbody table.table-responsive>div[class*='post--'] .post
 }
 
 /* Add Animation - Zoom in the Modal */
-#img-modal-expanded, #img-modal-caption {
+#img-modal-expanded,
+#img-modal-caption {
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
     animation-name: zoom;
@@ -1370,13 +1282,23 @@ div[class*='post--'] .postbody table.table-responsive>div[class*='post--'] .post
 }
 
 @-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)}
-    to {-webkit-transform:scale(1)}
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
 }
 
 @keyframes zoom {
-    from {transform:scale(0)}
-    to {transform:scale(1)}
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
 }
 
 /* The Close Button */
@@ -1398,7 +1320,7 @@ div[class*='post--'] .postbody table.table-responsive>div[class*='post--'] .post
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 700px) {
     #img-modal-expanded {
         width: 100%;
     }
@@ -1407,10 +1329,11 @@ div[class*='post--'] .postbody table.table-responsive>div[class*='post--'] .post
 /*STICKY POST PROFILE-----------------------------------------------------------------------------*/
 
 .postprofile {
-  
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 10%;
+
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 10%;
 }
 
 /*DISCORD JOIN BUTTON-------------------------------------------------------------------------------*/
@@ -1418,7 +1341,7 @@ div[class*='post--'] .postbody table.table-responsive>div[class*='post--'] .post
 a#lnk-discord-join {
     position: fixed;
     bottom: 5%;
-    right: 5%;    
+    right: 5%;
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
     animation-name: zoom;
@@ -1449,13 +1372,23 @@ a#lnk-discord-join:hover #img-discord-join {
 }
 
 @-webkit-keyframes shrink {
-    from {-webkit-transform:scale(1)}
-    to {-webkit-transform:scale(0.9)}
+    from {
+        -webkit-transform: scale(1)
+    }
+
+    to {
+        -webkit-transform: scale(0.9)
+    }
 }
 
 @keyframes shrink {
-    from {transform:scale(1)}
-    to {transform:scale(0.9)}
+    from {
+        transform: scale(1)
+    }
+
+    to {
+        transform: scale(0.9)
+    }
 }
 
 /*PURE CSS DROPDOWNS---------------------------------------------------------------------------------*/
@@ -1484,7 +1417,8 @@ https://purecss.io
     z-index: 3;
 }
 
-.pure-menu-item, .pure-menu-list {
+.pure-menu-item,
+.pure-menu-list {
     position: relative
 }
 
@@ -1500,7 +1434,8 @@ https://purecss.io
     height: 100%;
 }
 
-.pure-menu-heading, .pure-menu-link {
+.pure-menu-heading,
+.pure-menu-link {
     display: block;
     text-decoration: none;
     white-space: nowrap;
@@ -1512,7 +1447,8 @@ https://purecss.io
     margin: 25px 0 0;
 }
 
-.is-sticky .pure-menu-horizontal, .is-sticky #rd_current_year {
+.is-sticky .pure-menu-horizontal,
+.is-sticky #rd_current_year {
     margin: 0;
 }
 
@@ -1520,7 +1456,9 @@ https://purecss.io
     display: inline-block;
 }
 
-.pure-menu-horizontal .pure-menu-heading, .pure-menu-horizontal .pure-menu-item, .pure-menu-horizontal .pure-menu-separator {
+.pure-menu-horizontal .pure-menu-heading,
+.pure-menu-horizontal .pure-menu-item,
+.pure-menu-horizontal .pure-menu-separator {
     display: inline-block;
     vertical-align: middle;
 }
@@ -1555,7 +1493,8 @@ https://purecss.io
     z-index: 3;
 }
 
-.pure-menu-active>.pure-menu-children, .pure-menu-allow-hover:hover>.pure-menu-children {
+.pure-menu-active>.pure-menu-children,
+.pure-menu-allow-hover:hover>.pure-menu-children {
     display: block;
     position: absolute;
 }
@@ -1598,7 +1537,8 @@ https://purecss.io
     padding: .5em 0;
 }
 
-.pure-menu-horizontal .pure-menu-children .pure-menu-separator, .pure-menu-separator {
+.pure-menu-horizontal .pure-menu-children .pure-menu-separator,
+.pure-menu-separator {
     background-color: #ccc;
     height: 1px;
     margin: .3em 0;
@@ -1631,7 +1571,9 @@ https://purecss.io
     box-shadow: 0 0 0.1em #000000;
 }
 
-.pure-menu-disabled, .pure-menu-heading, .pure-menu-link {
+.pure-menu-disabled,
+.pure-menu-heading,
+.pure-menu-link {
     padding: .5em 1em;
 }
 
@@ -1639,7 +1581,7 @@ https://purecss.io
     opacity: .5;
 }
 
-.pure-menu-disabled:hover {    
+.pure-menu-disabled:hover {
     cursor: not-allowed;
 }
 
@@ -1647,7 +1589,8 @@ https://purecss.io
     background-color: transparent;
 }
 
-.pure-menu-active>.pure-menu-link, .pure-menu-link:focus {
+.pure-menu-active>.pure-menu-link,
+.pure-menu-link:focus {
     background-color: #dddddd;
     color: #000000;
     border-radius: 3px;
@@ -1667,12 +1610,12 @@ https://purecss.io
     font-size: 1.2em;
 }
 
-#rd_current_year:hover {    
+#rd_current_year:hover {
     background-color: #ffffff;
     color: #000000;
     border-radius: 3px;
 }
-  
+
 /*--WIDTHS-----------------------------------------------------------------------------------------------*/
 .width-10 {
     width: 10%
@@ -1717,22 +1660,22 @@ https://purecss.io
 
 /*--TIMELINE-----------------------------------------------------------------------------------------------*/
 
-  .tl-wrapper * {
+.tl-wrapper * {
     box-sizing: border-box;
     font-family: 'Century Gothic', Roboto, sans-serif;
     color: #acacac;
-  }
-  
-  
-  /* The actual timeline (the vertical ruler) */
-  .tl-timeline {
+}
+
+
+/* The actual timeline (the vertical ruler) */
+.tl-timeline {
     position: relative;
     max-width: 100%;
     margin: 0 auto;
-  }
-  
-  /* The actual timeline (the vertical ruler) */
-  .tl-timeline::after {
+}
+
+/* The actual timeline (the vertical ruler) */
+.tl-timeline::after {
     content: '';
     position: absolute;
     width: 6px;
@@ -1741,18 +1684,18 @@ https://purecss.io
     bottom: 0;
     left: 50%;
     margin-left: -3px;
-  }
-  
-  /* Container around content */
-  .tl-container {
+}
+
+/* Container around content */
+.tl-container {
     padding: 8px 20px;
     position: relative;
     background-color: inherit;
     width: 50%;
-  }
-  
-  /* The circles on the timeline */
-  .tl-container::after {
+}
+
+/* The circles on the timeline */
+.tl-container::after {
     content: '';
     position: absolute;
     width: 25px;
@@ -1763,32 +1706,34 @@ https://purecss.io
     top: 15px;
     border-radius: 50%;
     z-index: 1;
-  }
-  
-  .tl-container:hover::after {
+}
+
+.tl-container:hover::after {
     width: 30px;
     height: 30px;
     cursor: pointer;
     right: -15px;
     top: 12.5px;
-  }
+    background-color: #ffffff;
+    border: 6px solid #212121;
+}
 
-  .tl-container:hover {
-      cursor: pointer;
-  }
-  
-  /* Place the container to the left */
-  .tl-left {
+.tl-container:hover {
+    cursor: pointer;
+}
+
+/* Place the container to the left */
+.tl-left {
     left: 0;
-  }
-  
-  /* Place the container to the right */
-  .tl-right {
+}
+
+/* Place the container to the right */
+.tl-right {
     left: 50%;
-  }
-  
-  /* Add arrows to the left container (pointing right) */
-  .tl-left::before {
+}
+
+/* Add arrows to the left container (pointing right) */
+.tl-left::before {
     content: " ";
     height: 0;
     position: absolute;
@@ -1799,10 +1744,10 @@ https://purecss.io
     border: medium solid #212121;
     border-width: 10px 0 10px 10px;
     border-color: transparent transparent transparent #212121;
-  }
-  
-  /* Add arrows to the right container (pointing left) */
-  .tl-right::before {
+}
+
+/* Add arrows to the right container (pointing left) */
+.tl-right::before {
     content: " ";
     height: 0;
     position: absolute;
@@ -1813,67 +1758,91 @@ https://purecss.io
     border: medium solid #212121;
     border-width: 10px 10px 10px 0;
     border-color: transparent #212121 transparent transparent;
-  }
-  
-  /* Fix the circle for containers on the right side */
-  .tl-right::after {
-    left: -13px;
-  }
+}
 
-  .tl-right:hover::after {
-      left: -15px;
-  }
-  
-  /* The actual content */
-  .tl-content {
+/* Fix the circle for containers on the right side */
+.tl-right::after {
+    left: -13px;
+}
+
+.tl-right:hover::after {
+    left: -15px;
+}
+
+/* The actual content */
+.tl-content {
     padding: 20px 20px;
     background-color: #212121;
     position: relative;
     border-radius: 6px;
     text-align: left;
-  }
+}
 
-  .tl-content h2 {
-      font-size: 1.3em;
-      color: #ffffff;
-      border-color: #ffffff;
-  }
+.tl-content h2 {
+    font-size: 1.3em;
+    color: #ffffff;
+    border-color: #ffffff;
+}
 
-  .tl-content p {      
+.tl-content p {
     font-size: 0.9em;
-  }
-  
-  /* Media queries - Responsive timeline on screens less than 600px wide */
-  @media screen and (max-width: 600px) {
-  /* Place the timelime to the left */
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+
+    /* Place the timelime to the left */
     .tl-timeline::after {
-      left: 31px;
+        left: 31px;
     }
-  
-  /* Full-width containers */
+
+    /* Full-width containers */
     .tl-container {
-      width: 100%;
-      padding-left: 70px;
-      padding-right: 25px;
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
     }
-  
-  /* Make sure that all arrows are pointing leftwards */
+
+    /* Make sure that all arrows are pointing leftwards */
     .tl-container::before {
-      left: 60px;
-      border: medium solid #212121;
-      border-width: 10px 10px 10px 0;
-      border-color: transparent #212121 transparent transparent;
+        left: 60px;
+        border: medium solid #212121;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #212121 transparent transparent;
     }
-  
-  /* Make sure all circles are at the same spot */
-    .tl-left::after, .right::after {
-      left: 15px;
+
+    /* Make sure all circles are at the same spot */
+    .tl-left::after,
+    .right::after {
+        left: 15px;
     }
-  
-  /* Make all right containers behave like the left ones */
+
+    /* Make all right containers behave like the left ones */
     .tl-right {
-      left: 0%;
+        left: 0%;
     }
-  }
+}
+
+/*-------------------------------------------------------------------------------------------*/
+
+/*--TEMPLATE MOD FIXES---------------------------------------------------------------------------*/
+.topiclist dd.dterm, .topiclist dt {
+    width: 75% !important;
+}
+.topiclist dd.lastpost {
+    width: 25% !important;
+}
+
+.topiclist.forums dd.dterm img {
+    width: 100%;
+    max-width: 512px;
+}
+
+.topiclist dd.dterm h3 {
+    border-bottom-width: 0px !important;
+}
+
+
+
 
 /*-------------------------------------------------------------------------------------------*/
