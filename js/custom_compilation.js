@@ -1,4 +1,5 @@
-$(function () {
+$(function () { 
+
     /**POPULATE PAGE QUICK LINKS**************************************/
     if ($('#rd_pagelinks').length) {
         if ($('[id^="rdql_"]').length) {
@@ -46,15 +47,82 @@ $(function () {
     var $rdql_root = $('html, body');
     $(document).on('click', 'a[href^="#rdql_"], a[href^="#rdqlp_"]', function (event) {
         event.preventDefault();
-        if (!($(this).attr('href') == "null" || $(this).attr('href') == undefined)) {
-            $rdql_root.animate({
-                scrollTop: $($.attr(this, 'href')).offset().top - 100
-            }, 500);
+        var scrollTop = true;
+        if ($(this).attr('href') !== undefined) {
+            var linkloc = $(this).attr('href');
+            var scrollbottom = $(linkloc).attr('data-scrollbottom');
+
+            if (scrollbottom !== undefined) {
+                if (scrollbottom == "true") {
+                    scrollTop = false;
+                    bottompos =  $(linkloc).offset().top - $(window).height() + $(linkloc).outerHeight(true);
+                    $rdql_root.animate({
+                        scrollTop: bottompos
+                    }, 500);
+                }
+            }
+
+            if (scrollTop == true) {                
+                $rdql_root.animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top - 100
+                }, 500);
+            }
         }
     });
 
     /*****************************************************************/
 
+    /**COLOUR DIALOGUE************************************************/
+    var spchBBCode = [
+        "[npc=wgov]",
+        "[npc=cpol]",
+        "[npc=navy]",
+        "[npc=bhun]",
+        "[npc=revo]",
+        "[npc=pirt]",
+        "[npc=misc]",
+        "[plyr=wgov]",
+        "[plyr=cpol]",
+        "[plyr=navy]",
+        "[plyr=bhun]",
+        "[plyr=revo]",
+        "[plyr=pirt]",
+        "[plyr=misc]"
+    ];
+
+    var spchSpan = [
+        '<span class="wgov">',
+        '<span class="cpol">',
+        '<span class="navy">',
+        '<span class="bhun">',
+        '<span class="revo">',
+        '<span class="pirt">',
+        '<span class="misc">',
+        '<span class="plyr wgov">',
+        '<span class="plyr cpol">',
+        '<span class="plyr navy">',
+        '<span class="plyr bhun">',
+        '<span class="plyr revo">',
+        '<span class="plyr pirt">',
+        '<span class="plyr misc">'
+    ];    
+    
+    $('.postbody').each(function () {
+        var posthtml = "";
+        posthtml = $(this).html();
+        for (var i = 0; i < spchBBCode.length; i++) {
+            posthtml = posthtml.replaceAll(spchBBCode[i], spchSpan[i]);
+        };
+        posthtml = posthtml.replaceAll('[/npc]', '</span>');
+        posthtml = posthtml.replaceAll('[/plyr]', '</span>');
+        $(this).html(posthtml);
+    });
+
+    posthtml = null;
+    spchSpan = null;
+    spchBBCode = null;
+
+    /***********************************************************************/
 
     /**MODAL IMAGES***************************************************************/
 
@@ -83,6 +151,32 @@ $(function () {
     }
 
     /*****************************************************************/
+
+    /**TOKEN REPLACEMENTS****************************************************************/
+    var tokenBBCode = [
+        "[[ico-b-g]]",
+        "[[ico-b-b]]"
+    ];
+
+    var tokenBBCodeReplacementHtml = [
+        '<span class="ico-b-g"></span>',
+        '<span class="ico-b-b"></span>'
+    ];    
+    
+    $('.postbody').each(function () {
+        var posthtml = "";
+        posthtml = $(this).html();
+        for (var i = 0; i < tokenBBCode.length; i++) {
+            posthtml = posthtml.replaceAll(tokenBBCode[i], tokenBBCodeReplacementHtml[i]);
+        };
+        $(this).html(posthtml);
+    });
+
+    posthtml = null;
+    tokenBBCodeReplacementHtml = null;
+    tokenBBCode = null;
+
+    /******************************************************/
 
 
     /**ICON TOKEN REPLACEMENTS***************************************************************/
@@ -114,6 +208,9 @@ $(function () {
         'kenbunspec',
         'busospec',
         'haospec',
+        'kenbunasc',
+        'busoasc',
+        'haoasc',
         '1needlelog',
         '3needlelog',
         'mythicalzoan',
@@ -227,7 +324,9 @@ $(function () {
         'undertheradar',
         'identitytheft',
         'socialdistancing',
-        'landcrawler'
+        'landcrawler',
+      	'skinofyourteeth',
+      	'freedomoftravel'
     ];
     var iconImage = [
         'https://i.servimg.com/u/f60/18/75/26/17/jerryr10.png',
@@ -257,6 +356,9 @@ $(function () {
         'https://i.servimg.com/u/f60/18/75/26/17/kenbun10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/busosh10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/haosho10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/kenbun11.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/busosh11.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/haosho11.png',
         'https://i.servimg.com/u/f60/18/75/26/17/1needl10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/3needl10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/mythzo10.png',
@@ -370,21 +472,23 @@ $(function () {
         'https://i.servimg.com/u/f60/18/75/26/17/under_10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/identi10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/social10.png',
-        'https://i.servimg.com/u/f60/18/75/26/17/ship_110.png'
+        'https://i.servimg.com/u/f60/18/75/26/17/ship_110.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/skinof10.png',
+      	'https://i.servimg.com/u/f60/18/75/26/17/freedo11.png'
     ];
 
     var tooltipText = [
-        'Jerry Rigger: +25% Hull for 5 rounds',
-        'Wind Caller: +25% Sails for 5 rounds',
-        'Barrel Crazed: +25% Cannons for 5 rounds',
+        'Jerry Rigger: +25% Hull for 2 rounds',
+        'Wind Caller: +25% Sails for 2 rounds',
+        'Barrel Crazed: +25% Cannons for 2 rounds',
         'Hammerhanded: One equipment repair per thread',
         'Master Chef: Up to 3 allies can start combat with 110% HP',
         'Dulcet Virtuoso: +10% to ATK or RX for 3 allies for 3 rounds',
         'Nautical Almanac: +2 to ship combat escape roll value',
         'Walking, Talking First Aid Kit: Revive and UT Heals',
         'Ship Bringer: One ship repair per thread',
-        'Punchout Guru: +10% EXP bonus to all allies in a quest',
-        'Berry Printer: +20% Berries bonus to all allies in a quest',
+        'Punchout Guru: +0.20 EXP Bonus to all allies in a quest',
+        'Berry Printer: +0.20 Income Bonus to all allies in a quest',
         'Hard-boiled: +15 stats',
         'Child of Destiny: +25 stats',
         'Dreams Never Die: Resist knockout once per thread',
@@ -401,17 +505,20 @@ $(function () {
         'Haki Specialization: Kenbunshoku',
         'Haki Specialization: Busoshoku',
         'Haki Specialization: Haoshoku',
+        'Haki Ascendancy: Kenbunshoku',
+        'Haki Ascendancy: Busoshoku',
+        'Haki Ascendancy: Haoshoku',
         'One-Needle Log Pose: Travel across Paradise',
         'Three-Needle Log Pose: Travel across the New World',
         'Mythical Zoan Fruit',
         'Logia Fruit',
         'Ancient Zoan Fruit',
-        'Steel Bracing: +25% Hull for 5 posts',
-        'Cola Engine: +25% Sails for 5 posts',
-        'Chain Cannons: +25% Cannons for 5 posts',
+        'Steel Bracing: +25% Hull for 2 rounds',
+        'Cola Engine: +25% Sails for 2 rounds',
+        'Chain Cannons: +25% Cannons for 2 rounds',
         'Sea Prism Stone Keel: Sail through Calm Belt',
         'Submarine (Toggle): +25% Sails, -25% Cannons',
-        'Blimp (Toggle): +25% Sails, -25% Hull',
+        'Blimp (Toggle): +25% Cannons, -25% Hull',
         'Treasure Tree Adam Wood: +200 Hull',
         'Tier 1 Equipment: +5 ATK',
         'Tier 2 Equipment: +10 ATK',
@@ -514,7 +621,9 @@ $(function () {
         'Under The Radar: Freeze bounty',
         'Identity Theft: Counter information metagame',
         'Social Distancing: Reduce quest player requirement',
-        'Land Crawler (Toggle): +25% Hull, -25% Sails'
+        'Land Crawler (Toggle): +25% Hull, -25% Sails',
+      	'Skin Of Your Teeth: Downgrade first crit to solid hit',
+      	'Freedom Of Travel: Bypass sea restrictions for a new quest'
     ];
     $('.postbody, .field_uneditable, .postprofile').each(function () {
         var oldhtml = "";
@@ -536,7 +645,7 @@ $(function () {
     /**CODE BOX SELECT ALL******************************************************/
 
     $("dl.codebox:not(.spoiler,.hidecode)  > dd.code, dl.codebox:not(.spoiler,.hidecode)  > dd > code").closest("dl").find('dt')
-        .append('<a class="selectCode" data-tooltip="Select Code"><img src="https://i.vgy.me/ebzm5i.png" /></a>');
+        .append('<a class="selectCode" data-tooltip="Select Code"><img class="selectCodeImg" src="https://i.servimg.com/u/f60/18/75/26/17/select10.png" /></a>');
 
     $(document).on('click', '.selectCode', function () {
         var doc = document,
@@ -557,37 +666,9 @@ $(function () {
 
     /*****************************************************************/
 
-
     /**NEWS COO***************************************************************/
     $("#newsareal1").load("/f2-history-and-lore div.topictitle:lt(10)");
     /*****************************************************************/
-
-    /**TIMELINE LINKS***************************************************************/
-    $(".fake-anchor").click(function () {
-        var link = $(this).attr("data-href");
-        if (link != "" && link != undefined) {
-            window.open(link);
-        }
-    });
-    $(".fake-anchor a").click(function (event) {
-        event.stopPropagation();
-    });
-    /*****************************************************************/
-
-    /**INLINE SPOILERS***************************************************************/
-    $(".inlinespoiler").click(function (event) {
-        event.stopPropagation();
-        if ($(this).hasClass("inlinespoiler-hidden")) {
-            $(this).removeClass("inlinespoiler-hidden");
-        }
-        else {
-            $(this).addClass("inlinespoiler-hidden");
-        }
-    });
-    /*****************************************************************/
-
-
-
 
     /**PROFILE PREVIEW***************************************************************/
     var links = $('a[href^="/u"]').filter(function () {
@@ -667,18 +748,218 @@ $(function () {
             .append('<a unselectable="on" class="sceditor-font-option new-font" href="#" data-font="' + font + '"><font unselectable="on" face="' + font + '">' + font + '</font></a>')
     }
 
+    /**BBCode Parser***************************************************************/
+    /*
+    *  Application: Create New BBCode Tags
+    *  Date: 18/05/2018
+    *  Version: 1.321052018
+    *  Copyright (c) 2018 Daemon <help.forumotion.com>
+    *  This work is free. You can redistribute it and/or modify it
+    */
+    BBParser = {
+        initialize: function() {
+            $(function() {
+                BBParser.setupBBParser();
+            });
+        },
+        add: [
+            /*
+            * Note: Add a comma at the end of each new entry
+            * '{option}' corresponds to the optional tag title, and '{content}' correspond to the text between the tags
+            */
+
+            {
+                tag: 'approve',
+                close: true,
+                replacement: '<div class="notice notice-success"><h5>{option}</h5><div>{content}</div></div>'
+            },
+
+            {
+                tag: 'warn',
+                close: true,
+                replacement: '<div class="notice notice-warn"><h5>{option}</h5><div>{content}</div></div>'
+            },
+
+            {
+                tag: 'info',
+                close: true,
+                replacement: '<div class="notice notice-info"><h5>{option}</h5><div>{content}</div></div>'
+            },
+
+            {
+                tag: 'reject',
+                close: true,
+                replacement: '<div class="notice notice-alert"><h5>{option}</h5><div>{content}</div></div>'
+            },
+
+            {
+                tag: 'ass', // assess
+                close: true,
+                replacement: '<span class="assessment-quote" data-tooltip="{option}">{content}</span>'
+            },
+
+            {
+                tag: 'dass', // assess
+                close: true,
+                replacement: '<span class="assessment-quote detailed-assessment-quote" data-tooltip="Click to view comments." data-bs-toggle="modal" data-bs-target="#assessment-modal">{content}</span>'
+            },
+
+            {
+                tag: 'cmt', // comment
+                close: true,
+                replacement: `<span class="assessment-comment">{content}</span>`
+            },
+
+            {
+                tag: 'ber', // berries
+                close: false,
+                defaultOption: 'g', // option 'b' for black icon
+                replacement: '<span class="ico-b-{option}"></span>'
+            },
+
+            {
+                tag: 'guest',
+                close: true,
+                replacement: '<div class="guest">{content}</div>',
+                replace: function(option, content) {
+                    if (_userdata.session_logged_in < 1) {
+                        return 'You need to be logged in to view this content';
+                        return content;
+                    }
+                }
+            }
+
+            // Note: Do not add a comma at the end of the last entry
+        ],
+        // Do not change anything down
+        validateTag: function(a) {
+            if (!/^\w+$/.test(a)) throw new RangeError("You added an invalid tag: " + a);
+        },
+        replacers: function(a, b, c) {
+            return (a || "").replace(/{option}/g, b || "").replace(/{content}/g, c || "");
+        },
+        optionReg: /.*?=("|'|)(.*?)\1\]/,
+        parsedContent: function(a, b, c) {
+            return a.replace(c ? RegExp("(\\[" + b.tag + "[^\\]]*\\])([\\s\\S]*?)\\[/" + b.tag + "]", "g" + (b.insensitive ? "i" : "")) : RegExp("\\[" + b.tag + "[^\\]]*\\]", "g" + (b.insensitive ? "i" : "")), function(d, e, f) {
+                c || (e = d);
+                e = BBParser.optionReg.test(e) ? e.replace(BBParser.optionReg, "$2") : b.defaultOption;
+                if("undefined" !== typeof b.replace) {
+                    d = c ? b.replace(e, f) : b.replace(e);
+                    "string" === typeof d ? c ? f = d : e = d : d;
+                    "object" === typeof d && (e = d.option || e, f = d.content || f);
+                }
+                return BBParser.replacers(b.replacement, e, f);
+            });
+        },
+        setupBBParser: function() {
+            var postBody = $(".postbody, .blog_message");
+            for (var i = 0, e;(e = postBody[i++]);) {
+                for (var j in BBParser.add) {
+                    var item = BBParser.add[j];
+                    // Validating tag
+                    BBParser.validateTag(item.tag);
+                    e.innerHTML = BBParser.parsedContent(e.innerHTML, item, item.close);
+                }
+            }            
+            /**Set up event handlers*******************************/
+            // Assessment framework
+            $('.detailed-assessment-quote').click(function() {
+                $('#assessment-comment-selected').html(``);
+                $('#assessment-quote-selected').html(``);
+                if ($(this).has('.assessment-comment').length) {
+                    $('#assessment-quote-selected').html($(this).html());
+                    $('#assessment-comment-selected').html($(this).children('.assessment-comment').first().html());
+                }
+                else {
+                    $('#assessment-quote-selected').html($(this).html());
+                    $('#assessment-comment-selected').html(`No detailed comments were provided.`);
+                }
+            });
+
+            // If a post has assessment comments, make the assessment icon visible in the post head.
+            $('.post').each(function() {
+                if ($(this).find('.assessment-quote').length) {
+                    $(this).find('.ico-assessment').removeClass('d-none');
+                }
+            });
+            SetUpTimeLineEventListners();
+
+        }
+    };
+    BBParser.initialize();
+    /**************************************************/
+    /**TOPIC TAGS/PREFIXES***************************************************************/ 
+    var TOPIC_PREFIXES = [];
+    /**** BEGIN EDITABLE ZONE ***/
+    TOPIC_PREFIXES.push(new Array("[Episode]", "#fff"));
+    TOPIC_PREFIXES.push(new Array("[Arc]", "#fff"));
+    TOPIC_PREFIXES.push(new Array("[Saga]", "#fff"));
+    TOPIC_PREFIXES.push(new Array("[World Event]", "#fff"));
+    TOPIC_PREFIXES.push(new Array("[Bio]", "#fff"));
+    TOPIC_PREFIXES.push(new Array("[Equipment]", "#fff"));
+    TOPIC_PREFIXES.push(new Array("[Fighting Style]", "#fff"));
+    TOPIC_PREFIXES.push(new Array("[Tracker]", "#fff"));
+    TOPIC_PREFIXES.push(new Array("[Ship]", "#fff"));
+    TOPIC_PREFIXES.push(new Array("[Crew]", "#fff"));
+    TOPIC_PREFIXES.push(new Array("[Companions]", "#fff"));
+    TOPIC_PREFIXES.push(new Array("[Alliance]", "#fff"));
+
+    var add_style_topic_links = true;
+    /*** END EDITABLE ZONE ***/
+
+    if (/^\/post/.test($(location).attr('pathname') + $(location).attr('search')) && $('.submit-buttons input[value="newtopic"]').length) {
+        var html_options_prefix = "<select name='prefixes'><option value='' style='background:COLOR'>Topic Type...</option>";
+        for (var prefix in TOPIC_PREFIXES) {
+            html_options_prefix += "<option value='" + TOPIC_PREFIXES[prefix][0] + "' style='background:" + TOPIC_PREFIXES[prefix][1] + "'>" + TOPIC_PREFIXES[prefix][0] + "</option>"
+        }
+        html_options_prefix += "</select>";
+        $('input[name="subject"]').before(html_options_prefix);
+        $("form[method='post']").submit(function() {
+            $('input[name="subject"]').val(($('select[name="prefixes"]').val() ? $('select[name="prefixes"]').val() + " " : "") + $('input[name="subject"]').val())
+        })
+    }
+
+    if (add_style_topic_links == true) {
+        $('a').each(function() {
+            for (var prefix in TOPIC_PREFIXES) {
+                var pref = TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "").replace(" ", "-").toLowerCase();
+                var preg = new RegExp("^\/t\\d+(p\\d+)?\\-" + pref);
+                if (preg.test($(this).attr('href'))) {
+                    var pre1 = new RegExp("\\[" + TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "") + "\\]");
+                    $(this).html($(this).html().replace(pre1, "<span class='title_prefix title_prefix-" + pref + "'>" + TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "") + "</span>"));
+                    break;
+                }
+            }
+        });
+    }
     /*****************************************************************/
+    function SetUpTimeLineEventListners() {
+        /**TIMELINE LINKS***************************************************************/
+        $(".fake-anchor").click(function () {
+            var link = $(this).attr("data-href");
+            if (link != "" && link != undefined) {
+                window.open(link);
+            }
+        });
+        $(".fake-anchor a").click(function (event) {
+            event.stopPropagation();
+        });
+        /*****************************************************************/
 
-
+        /**INLINE SPOILERS***************************************************************/
+        $(".inlinespoiler").click(function (event) {
+            if ($(this).hasClass("inlinespoiler-hidden")) {
+                $(this).removeClass("inlinespoiler-hidden");
+            }
+            else {
+                $(this).addClass("inlinespoiler-hidden");
+            }
+            event.stopPropagation();
+        });
+        /*****************************************************************/
+    }
     /*****************************************************************/
-
     /*****************************************************************/
-
-    /*****************************************************************/
-
-    /*****************************************************************/
-
-
 });
 
 /*=======================================================================================================================
@@ -739,4 +1020,3 @@ window.localStorage && (localStorage.getItem("br-target") && function () {
     }();
     localStorage.removeItem("br-target")
 }());
-/*****************************************************************/
