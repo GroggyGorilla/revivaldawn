@@ -1,0 +1,125 @@
+<div class="card bg-dark">
+    <div class="h3 card-header">{{chara.id}}: {{chara.name}} ({{chara.charType}})</div>
+	
+	<div class="progress" style="height:2rem;font-size:1.2rem;margin-left:5%;margin-right:5%">
+            <div class="progress-bar" ng-class="{'bg-success': getHpPercentage(chara.currentHp, chara.currentTotalHp) == 100, 'bg-info': getHpPercentage(chara.currentHp, chara.currentTotalHp) > 100, 'bg-warning': getHpPercentage(chara.currentHp, chara.currentTotalHp) < 25, 'bg-danger': getHpPercentage(chara.currentHp, chara.currentTotalHp) < 10}" ng-style="{'width': (getHpPercentage(chara.currentHp, chara.currentTotalHp) + '%')}">
+                {{chara.currentHp}}/{{chara.currentTotalHp}}
+            </div>
+    </div>
+
+    <div class="card-body">        
+        <p class="card-text">
+            <div class="row">
+                <div class="col-4">
+                    <h4 class="card-title">Base</h4>
+                    <div class="row">
+                        <div class="col-8">
+                            Level: 
+                        </div>
+                        <div class="col-4">
+                            {{chara.level}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            Haki Level: 
+                        </div>
+                        <div class="col-4">
+                            {{chara.hakiLevel}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            Base Hp: 
+                        </div>
+                        <div class="col-4">
+                            {{chara.baseHp}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            Total Stats: 
+                        </div>
+                        <div class="col-4">
+                            {{chara.totalBaseStats}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <h4 class="card-title">Current Stats</h4>
+                    <div class="row">
+                        <div class="col-8">HP:</div>
+                        <div class="col-4">{{chara.currentHp}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">ATK:</div>
+                        <div class="col-4" ng-class="{'text-success': chara.currentAtk > chara.baseAtk, 'text-warning': chara.currentAtk < chara.baseAtk}">
+                            {{chara.currentAtk}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">DEF:</div>
+                        <div class="col-4" ng-class="{'text-success': chara.currentDef > chara.baseDef, 'text-warning': chara.currentDef < chara.baseDef}">
+                            {{chara.currentDef}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">RX:</div>
+                        <div class="col-4" ng-class="{'text-success': chara.currentRx > chara.baseRx, 'text-warning': chara.currentRx < chara.baseRx}">
+                            {{chara.currentRx}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">WP:</div>
+                        <div class="col-4" ng-class="{'text-success': chara.currentWp > chara.baseWp, 'text-warning': chara.currentWp < chara.baseWp}">
+                            {{chara.currentWp}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <h4 class="card-title">Total Stats</h4>
+                    <div class="row">
+                        <div class="col-8">
+                            HP:
+                        </div>
+                        <div class="col-4">
+                            {{chara.currentTotalHp}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            ATK:
+                        </div>
+                        <div class="col-4">
+                            {{chara.baseAtk}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            DEF:
+                        </div>
+                        <div class="col-4">
+                            {{chara.baseDef}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            RX:
+                        </div>
+                        <div class="col-4">
+                            {{chara.baseRx}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            WP:
+                        </div>
+                        <div class="col-4">
+                            {{chara.baseWp}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </p>
+    </div>
+</div>
