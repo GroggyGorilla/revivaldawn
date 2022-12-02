@@ -771,12 +771,14 @@ $(function () {
             {
                 tag: 'approve',
                 close: true,
+                defaultOption: 'Approved!',
                 replacement: '<div class="notice notice-success"><h5>{option}</h5><div>{content}</div></div>'
             },
 
             {
                 tag: 'warn',
                 close: true,
+                defaultOption: 'Please see assessment comments.',
                 replacement: '<div class="notice notice-warn"><h5>{option}</h5><div>{content}</div></div>'
             },
 
@@ -890,19 +892,34 @@ $(function () {
     /**************************************************/
     /**TOPIC TAGS/PREFIXES***************************************************************/ 
     var TOPIC_PREFIXES = [];
+    var invisible = 0;
+    var visible = 1;
     /**** BEGIN EDITABLE ZONE ***/
-    TOPIC_PREFIXES.push(new Array("[Episode]", "#fff"));
-    TOPIC_PREFIXES.push(new Array("[Arc]", "#fff"));
-    TOPIC_PREFIXES.push(new Array("[Saga]", "#fff"));
-    TOPIC_PREFIXES.push(new Array("[World Event]", "#fff"));
-    TOPIC_PREFIXES.push(new Array("[Bio]", "#fff"));
-    TOPIC_PREFIXES.push(new Array("[Equipment]", "#fff"));
-    TOPIC_PREFIXES.push(new Array("[Fighting Style]", "#fff"));
-    TOPIC_PREFIXES.push(new Array("[Tracker]", "#fff"));
-    TOPIC_PREFIXES.push(new Array("[Ship]", "#fff"));
-    TOPIC_PREFIXES.push(new Array("[Crew]", "#fff"));
-    TOPIC_PREFIXES.push(new Array("[Companions]", "#fff"));
-    TOPIC_PREFIXES.push(new Array("[Alliance]", "#fff"));
+    TOPIC_PREFIXES.push(new Array("[Episode]", "#fff", visible));
+    TOPIC_PREFIXES.push(new Array("[Arc]", "#fff", visible));
+    TOPIC_PREFIXES.push(new Array("[Saga]", "#fff", visible));
+    TOPIC_PREFIXES.push(new Array("[World Event]", "#fff", visible));
+    TOPIC_PREFIXES.push(new Array("[Bio]", "#fff", visible));
+    TOPIC_PREFIXES.push(new Array("[Equipment]", "#fff", visible));
+    TOPIC_PREFIXES.push(new Array("[Fighting Style]", "#fff", visible));
+    TOPIC_PREFIXES.push(new Array("[Tracker]", "#fff", visible));
+    TOPIC_PREFIXES.push(new Array("[Ship]", "#fff", visible));
+    TOPIC_PREFIXES.push(new Array("[Crew]", "#fff", visible));
+    TOPIC_PREFIXES.push(new Array("[Companions]", "#fff", visible));
+    TOPIC_PREFIXES.push(new Array("[Alliance]", "#fff", visible));
+    TOPIC_PREFIXES.push(new Array("[Advertisement]", "#fff", visible));
+
+    TOPIC_PREFIXES.push(new Array("[Closed]", "#fff", invisible));
+    TOPIC_PREFIXES.push(new Array("[Locked]", "#fff", invisible));
+    TOPIC_PREFIXES.push(new Array("[Event]", "#fff", invisible));
+    TOPIC_PREFIXES.push(new Array("[Rewards]", "#fff", invisible));
+    TOPIC_PREFIXES.push(new Array("[Activity Check]", "#fff", invisible));
+    TOPIC_PREFIXES.push(new Array("[Sign Ups]", "#fff", invisible));
+    TOPIC_PREFIXES.push(new Array("[Announcement]", "#fff", invisible));
+    TOPIC_PREFIXES.push(new Array("[Update]", "#fff", invisible));
+    TOPIC_PREFIXES.push(new Array("[Gifts]", "#fff", invisible));
+    TOPIC_PREFIXES.push(new Array("[Tips]", "#fff", invisible));
+    TOPIC_PREFIXES.push(new Array("[Turf Details]", "#fff", invisible));
 
     var add_style_topic_links = true;
     /*** END EDITABLE ZONE ***/
@@ -910,24 +927,26 @@ $(function () {
     if (/^\/post/.test($(location).attr('pathname') + $(location).attr('search')) && $('.submit-buttons input[value="newtopic"]').length) {
         var html_options_prefix = "<select name='prefixes'><option value='' style='background:COLOR'>Topic Type...</option>";
         for (var prefix in TOPIC_PREFIXES) {
-            html_options_prefix += "<option value='" + TOPIC_PREFIXES[prefix][0] + "' style='background:" + TOPIC_PREFIXES[prefix][1] + "'>" + TOPIC_PREFIXES[prefix][0] + "</option>"
+            if (TOPIC_PREFIXES[prefix][2] == visible) {
+                html_options_prefix += "<option value='" + TOPIC_PREFIXES[prefix][0] + "' style='background:" + TOPIC_PREFIXES[prefix][1] + "'>" + TOPIC_PREFIXES[prefix][0] + "</option>";
+            }
         }
         html_options_prefix += "</select>";
         $('input[name="subject"]').before(html_options_prefix);
         $("form[method='post']").submit(function() {
             $('input[name="subject"]').val(($('select[name="prefixes"]').val() ? $('select[name="prefixes"]').val() + " " : "") + $('input[name="subject"]').val())
-        })
+        });
     }
 
     if (add_style_topic_links == true) {
         $('a').each(function() {
             for (var prefix in TOPIC_PREFIXES) {
                 var pref = TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "").replace(" ", "-").toLowerCase();
-                var preg = new RegExp("^\/t\\d+(p\\d+)?\\-" + pref);
+                //var preg = new RegExp("^\/t\\d+(p\\d+)?\\-" + pref);
+                var preg = new RegExp(pref);
                 if (preg.test($(this).attr('href'))) {
                     var pre1 = new RegExp("\\[" + TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "") + "\\]");
                     $(this).html($(this).html().replace(pre1, "<span class='title_prefix title_prefix-" + pref + "'>" + TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "") + "</span>"));
-                    break;
                 }
             }
         });

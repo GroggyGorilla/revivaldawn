@@ -1,5 +1,5 @@
-/****GRAY'S CUSTOM CSS********
-******************************
+/****Custom CSS********
+*******by Gray***********************
 ******************************
 ******************************/
 
@@ -1893,10 +1893,9 @@ https://purecss.io
 .notice {
     background: url(https://i.imgur.com/VWRy0Mc.png) repeat-x 0 0;
     color: #FFF;
-    width: 83%;
+    width: 80%;
     font-weight: normal;
     padding: 13px 15px;
-    margin-bottom: 2.5em;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
@@ -2012,6 +2011,28 @@ https://purecss.io
 .title_prefix-world-event {
     background-color: steelblue;
 }
+.title_prefix-turf-details {
+    background-color: royalblue;
+}
+.title_prefix-activity-check {
+    background-color: crimson;
+}
+.title_prefix-closed,
+.title_prefix-locked {
+    background-color: dimgrey;
+}
+.title_prefix-event,
+.title_prefix-sign-ups,
+.title_prefix-rewards,
+.title_prefix-announcement,
+.title_prefix-update,
+.title_prefix-gifts,
+.title_prefix-tips {
+    background-color: seagreen;
+}
+.title_prefix-advertisement {
+    background-color: darksalmon;
+}
 a:hover .title_prefix,
 a:active .title_prefix {
     color: #fff;
@@ -2022,4 +2043,8 @@ h1.page-title, .topic-title {
 }
 select[name="topic_color"] {
     display: none;
+}
+.row .pagination span a:hover {
+    background-color: white;
+    color: #000;
 }
