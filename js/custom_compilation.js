@@ -811,6 +811,11 @@ $(function () {
                 replacement: `<span class="assessment-comment">{content}</span>`
             },
             {
+                tag: 'tracker', // tracker link
+                close: false,
+                replacement: '<a href="{option}" class="tracker-link">Tracker</a>'
+            },
+            {
                 tag: 'turf', // turf details link
                 close: true,
                 replacement: '<a href="{option}"><span class="title_prefix title_prefix-turf-details">{content}</span></a>'

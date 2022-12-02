@@ -1111,13 +1111,6 @@ a[href="/u385"],
 /*TRACKER-------------------------------------------------------------------------------------------*/
 
 table#tracFld {
-    /*display: none;
-position: absolute;
-min-width: 20em;
-z-index: 999;
-top: 0%;
-margin-top: 5em;
-right: 75%;*/
     min-width: 100%;
     max-width: 100%;
     margin: auto;
@@ -1127,7 +1120,7 @@ right: 75%;*/
 position: relative;
 }*/
 
-.postprofile-info table#tracFld a {
+.postprofile-info table#tracFld a, .tracker-link {
     margin: auto;
     display: inline-block;
     background-color: var(--rd-highlight-color);
@@ -1140,9 +1133,9 @@ position: relative;
     max-width: 100%;
 }
 
-.postprofile-info table#tracFld a:hover {
+.postprofile-info table#tracFld a:hover, .tracker-link:hover {
     background-color: #ffffff;
-    color: #000000;
+    color: #000000 !important;
 }
 
 /*Spoiler tag colours----------------------------------------------------------*/
