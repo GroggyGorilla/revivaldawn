@@ -635,7 +635,8 @@ span.mod-recent-info {
 
 [class^="icon-berry-"],
 .ico-b-g,
-.ico-b-b {
+.ico-b-b,
+.ico-b-r {
     display: inline-block;
     background-repeat: no-repeat;
     width: 12px;
@@ -645,12 +646,17 @@ span.mod-recent-info {
 
 .icon-berry-green,
 .ico-b-g {
-    background-image: url(https://bit.ly/388yf0X);
+    background-image: url(https://i.imgur.com/OJbUWbl.png);
 }
 
 .icon-berry-black,
 .ico-b-b {
-    background-image: url(https://bit.ly/3eDSrtT);
+    background-image: url(https://i.imgur.com/M8qn9Gl.png);
+}
+
+.icon-berry-red,
+.ico-b-r {
+    background-image: url(https://i.imgur.com/L93Kmx8.png);
 }
 
 
