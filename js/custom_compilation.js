@@ -767,58 +767,54 @@ $(function () {
             * Note: Add a comma at the end of each new entry
             * '{option}' corresponds to the optional tag title, and '{content}' correspond to the text between the tags
             */
-
-            {
-                tag: 'approve',
-                close: true,
-                defaultOption: 'Approved!',
-                replacement: '<div class="notice notice-success"><h5>{option}</h5><div>{content}</div></div>'
-            },
-
-            {
-                tag: 'warn',
-                close: true,
-                defaultOption: 'Please see assessment comments.',
-                replacement: '<div class="notice notice-warn"><h5>{option}</h5><div>{content}</div></div>'
-            },
-
-            {
-                tag: 'info',
-                close: true,
-                replacement: '<div class="notice notice-info"><h5>{option}</h5><div>{content}</div></div>'
-            },
-
-            {
-                tag: 'reject',
-                close: true,
-                replacement: '<div class="notice notice-alert"><h5>{option}</h5><div>{content}</div></div>'
-            },
-
-            {
-                tag: 'ass', // assess
-                close: true,
-                replacement: '<span class="assessment-quote" data-tooltip="{option}">{content}</span>'
-            },
-
-            {
-                tag: 'dass', // assess
-                close: true,
-                replacement: '<span class="assessment-quote detailed-assessment-quote" data-tooltip="Click to view comments." data-bs-toggle="modal" data-bs-target="#assessment-modal">{content}</span>'
-            },
-
-            {
-                tag: 'cmt', // comment
-                close: true,
-                replacement: `<span class="assessment-comment">{content}</span>`
-            },
-
             {
                 tag: 'ber', // berries
                 close: false,
                 defaultOption: 'g', // option 'b' for black icon
                 replacement: '<span class="ico-b-{option}"></span>'
             },
-
+            {
+                tag: 'approve',
+                close: true,
+                defaultOption: 'Approved!',
+                replacement: '<div class="notice notice-success"><h5>{option}</h5><div>{content}</div></div>'
+            },
+            {
+                tag: 'warn',
+                close: true,
+                defaultOption: 'Please see assessment comments.',
+                replacement: '<div class="notice notice-warn"><h5>{option}</h5><div>{content}</div></div>'
+            },
+            {
+                tag: 'info',
+                close: true,
+                replacement: '<div class="notice notice-info"><h5>{option}</h5><div>{content}</div></div>'
+            },
+            {
+                tag: 'reject',
+                close: true,
+                replacement: '<div class="notice notice-alert"><h5>{option}</h5><div>{content}</div></div>'
+            },
+            {
+                tag: 'ass', // assess
+                close: true,
+                replacement: '<span class="assessment-quote" data-tooltip="{option}">{content}</span>'
+            },
+            {
+                tag: 'dass', // assess
+                close: true,
+                replacement: '<span class="assessment-quote detailed-assessment-quote" data-tooltip="Click to view comments." data-bs-toggle="modal" data-bs-target="#assessment-modal">{content}</span>'
+            },
+            {
+                tag: 'cmt', // comment
+                close: true,
+                replacement: `<span class="assessment-comment">{content}</span>`
+            },
+            {
+                tag: 'turf', // turf details link
+                close: true,
+                replacement: '<a href="{option}"><span class="title_prefix title_prefix-turf-details">{content}</span></a>'
+            },
             {
                 tag: 'guest',
                 close: true,
@@ -854,7 +850,7 @@ $(function () {
             });
         },
         setupBBParser: function() {
-            var postBody = $(".postbody, .blog_message");
+            var postBody = $(".postbody, .blog_message, .postprofile-info, .field_uneditable");
             for (var i = 0, e;(e = postBody[i++]);) {
                 for (var j in BBParser.add) {
                     var item = BBParser.add[j];
@@ -862,7 +858,7 @@ $(function () {
                     BBParser.validateTag(item.tag);
                     e.innerHTML = BBParser.parsedContent(e.innerHTML, item, item.close);
                 }
-            }            
+            }
             /**Set up event handlers*******************************/
             // Assessment framework
             $('.detailed-assessment-quote').click(function() {
