@@ -1,0 +1,56 @@
+
+/*--CHARACTER CARD-------------------------------------*/
+
+.char-card-wrapper> :not(.char-card) {
+    display: none;
+}
+.char-card-wrapper {
+    font-size: 0;
+}
+.char-card-wrapper * {
+    font-size: 1.3rem;
+}
+.char-card {
+    box-shadow: 0 0 0.1em #000;
+    border-radius: 0.5em;
+}
+.char-card-navbar {
+    margin: auto;
+    width: 80%;
+}
+.char-card-navitem {
+    display:inline-block;
+    /*border: 1px 1px 0px 1px solid #fff;*/
+    box-shadow: 0 0 0.1em #000;
+    border-radius: 1em 1em 0 0;
+    padding: 0.3em;
+}
+.char-card-navitem.selected {
+    background-color: #fff;
+    color: #000;
+    /* border-color: #000; */
+}
+.char-card-image-container {
+    display: inline-block;
+    width: 40%;
+    height: 250px;
+    overflow: scroll;
+}
+div[class^='char-card-body-'] {
+    display: none;
+}
+.char-card-body {
+    display: inline-block;
+    width: 60%;
+    height: 250px;
+    overflow: scroll;
+}
+.char-card-title {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-top: 1px solid #fff;
+}
