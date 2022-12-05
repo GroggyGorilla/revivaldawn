@@ -72,58 +72,6 @@ $(function () {
 
     /*****************************************************************/
 
-    /**COLOUR DIALOGUE************************************************/
-    var spchBBCode = [
-        "[npc=wgov]",
-        "[npc=cpol]",
-        "[npc=navy]",
-        "[npc=bhun]",
-        "[npc=revo]",
-        "[npc=pirt]",
-        "[npc=misc]",
-        "[plyr=wgov]",
-        "[plyr=cpol]",
-        "[plyr=navy]",
-        "[plyr=bhun]",
-        "[plyr=revo]",
-        "[plyr=pirt]",
-        "[plyr=misc]"
-    ];
-
-    var spchSpan = [
-        '<span class="wgov">',
-        '<span class="cpol">',
-        '<span class="navy">',
-        '<span class="bhun">',
-        '<span class="revo">',
-        '<span class="pirt">',
-        '<span class="misc">',
-        '<span class="plyr wgov">',
-        '<span class="plyr cpol">',
-        '<span class="plyr navy">',
-        '<span class="plyr bhun">',
-        '<span class="plyr revo">',
-        '<span class="plyr pirt">',
-        '<span class="plyr misc">'
-    ];    
-    
-    $('.postbody').each(function () {
-        var posthtml = "";
-        posthtml = $(this).html();
-        for (var i = 0; i < spchBBCode.length; i++) {
-            posthtml = posthtml.replaceAll(spchBBCode[i], spchSpan[i]);
-        };
-        posthtml = posthtml.replaceAll('[/npc]', '</span>');
-        posthtml = posthtml.replaceAll('[/plyr]', '</span>');
-        $(this).html(posthtml);
-    });
-
-    posthtml = null;
-    spchSpan = null;
-    spchBBCode = null;
-
-    /***********************************************************************/
-
     /**MODAL IMAGES***************************************************************/
 
     // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -819,6 +767,18 @@ $(function () {
                 tag: 'turf', // turf details link
                 close: true,
                 replacement: '<a href="{option}"><span class="title_prefix title_prefix-turf-details">{content}</span></a>'
+            },
+            {
+                tag: 'npc', // npc dialogue colouring
+                close: true,
+                defaultOption: 'misc',
+                replacement: '<span class="{option}">{content}</span>'
+            },
+            {
+                tag: 'plyr', // npc dialogue colouring
+                close: true,
+                defaultOption: 'misc',
+                replacement: '<span class="plyr {option}">{content}</span>'
             },
             {
                 tag: 'guest',
