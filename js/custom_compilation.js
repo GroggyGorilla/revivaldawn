@@ -775,7 +775,7 @@ $(function () {
                 replacement: '<span class="{option}">{content}</span>'
             },
             {
-                tag: 'plyr', // npc dialogue colouring
+                tag: 'plyr', // player dialogue colouring
                 close: true,
                 defaultOption: 'misc',
                 replacement: '<span class="plyr {option}">{content}</span>'
