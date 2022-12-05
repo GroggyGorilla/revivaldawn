@@ -644,6 +644,11 @@ span.mod-recent-info {
     vertical-align: -25%;
 }
 
+[class^="icon-berry-"]:hover,
+[class^="ico-b-"]:hover {
+    cursor: help;
+}
+
 .icon-berry-green,
 .ico-b-g {
     background-image: url(https://i.imgur.com/OJbUWbl.png);

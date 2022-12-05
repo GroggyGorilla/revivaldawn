@@ -770,8 +770,8 @@ $(function () {
             {
                 tag: 'ber', // berries
                 close: false,
-                defaultOption: 'g', // option 'b' for black icon
-                replacement: '<span class="ico-b-{option}"></span>'
+                defaultOption: 'g', // option 'b' for black icon and 'r' for red icon
+                replacement: '<span class="ico-b-{option}" data-tooltip="Berries"></span>'
             },
             {
                 tag: 'approve',
