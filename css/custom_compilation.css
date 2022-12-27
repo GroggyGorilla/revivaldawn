@@ -1969,6 +1969,27 @@ https://purecss.io
     display: none;
     z-index: 99999 !important;
 }
+.assessment-modal-body img {
+    max-width: 100%;
+}
+.assessment-modal-body {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    vertical-align: top;
+    padding: 1em;
+    font-family: century gothic, verdana;
+    font-size: 1em;
+    line-height: 120%;
+    text-align: justify;
+    width: 85%;
+    padding-bottom: 1em;
+    line-height: 140%;
+}
+.assessment-modal-body hr {
+    border-color: var(--rd-main-font-color);
+}
 .ico-assessment {
 	padding-right: 4px;
 }
