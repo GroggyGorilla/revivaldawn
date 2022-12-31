@@ -736,13 +736,13 @@ $(function () {
             {
                 tag: 'warn',
                 close: true,
-                defaultOption: 'Please see assessment comments below.',
+                defaultOption: 'Please see assessment comment(s) below.',
                 replacement: '<div class="notice notice-warn"><h5>{option}</h5><div>{content}</div></div>'
             },
             {
                 tag: 'warned',
                 close: false,
-                defaultOption: 'Please see in-line assessment comments below.',
+                defaultOption: 'Please see in-line assessment comment(s) below.',
                 replacement: '<div class="notice notice-warn"><h5>{option}</h5><div></div></div>'
             },
             {
@@ -763,7 +763,7 @@ $(function () {
             {
                 tag: 'dass', // detailed assessment
                 close: true,
-                defaultOption: 'Click to view comments.',
+                defaultOption: 'Click to view comment(s).',
                 replacement: '<span class="assessment-quote detailed-assessment-quote" data-tooltip="{option}" data-bs-toggle="modal" data-bs-target="#assessment-modal">{content}</span>'
             },
             {
