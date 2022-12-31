@@ -573,7 +573,7 @@ $(function () {
       	'Skin Of Your Teeth: Downgrade first crit to solid hit',
       	'Freedom Of Travel: Bypass sea restrictions for a new quest'
     ];
-    $('.postbody, .field_uneditable, .postprofile').each(function () {
+    $('.postbody, .field_uneditable, .postprofile, .message-text').each(function () {
         var oldhtml = "";
         oldhtml = $(this).html();
         for (var i = 0; i < iconBB.length; i++) {
@@ -828,7 +828,7 @@ $(function () {
             });
         },
         setupBBParser: function() {
-            var postBody = $(".postbody, .blog_message, .postprofile-info, .field_uneditable");
+            var postBody = $(".postbody, .blog_message, .postprofile-info, .field_uneditable, .message-text");
             for (var i = 0, e;(e = postBody[i++]);) {
                 for (var j in BBParser.add) {
                     var item = BBParser.add[j];
