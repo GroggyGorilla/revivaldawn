@@ -730,7 +730,7 @@ $(function () {
             {
                 tag: 'warn',
                 close: true,
-                defaultOption: 'Please see assessment comments.',
+                defaultOption: 'Please see assessment comments below.',
                 replacement: '<div class="notice notice-warn"><h5>{option}</h5><div>{content}</div></div>'
             },
             {
