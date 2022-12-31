@@ -298,6 +298,7 @@ blockquote {
     color: var(--rd-main-font-color);
     border-color: var(--rd-main-font-color);
     background-color: var(--rd-blockquote-bg-color);
+    overflow: visible;
 }
 
 blockquote:before {    
