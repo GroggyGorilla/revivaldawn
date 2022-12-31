@@ -728,10 +728,22 @@ $(function () {
                 replacement: '<div class="notice notice-success"><h5>{option}</h5><div>{content}</div></div>'
             },
             {
+                tag: 'approved',
+                close: false,
+                defaultOption: 'Approved!',
+                replacement: '<div class="notice notice-success"><h5>{option}</h5><div></div></div>'
+            },
+            {
                 tag: 'warn',
                 close: true,
                 defaultOption: 'Please see assessment comments below.',
                 replacement: '<div class="notice notice-warn"><h5>{option}</h5><div>{content}</div></div>'
+            },
+            {
+                tag: 'warned',
+                close: false,
+                defaultOption: 'Please see assessment comments below.',
+                replacement: '<div class="notice notice-warn"><h5>{option}</h5><div></div></div>'
             },
             {
                 tag: 'info',
@@ -744,17 +756,18 @@ $(function () {
                 replacement: '<div class="notice notice-alert"><h5>{option}</h5><div>{content}</div></div>'
             },
             {
-                tag: 'ass', // assess
+                tag: 'ass', // assessment
                 close: true,
                 replacement: '<span class="assessment-quote" data-tooltip="{option}">{content}</span>'
             },
             {
-                tag: 'dass', // assess
+                tag: 'dass', // detailed assessment
                 close: true,
-                replacement: '<span class="assessment-quote detailed-assessment-quote" data-tooltip="Click to view comments." data-bs-toggle="modal" data-bs-target="#assessment-modal">{content}</span>'
+                defaultOption: 'Click to view comments.',
+                replacement: '<span class="assessment-quote detailed-assessment-quote" data-tooltip="{option}" data-bs-toggle="modal" data-bs-target="#assessment-modal">{content}</span>'
             },
             {
-                tag: 'cmt', // comment
+                tag: 'cmt', // detailed assessment comments
                 close: true,
                 replacement: `<span class="assessment-comment">{content}</span>`
             },
@@ -787,8 +800,8 @@ $(function () {
                 replace: function(option, content) {
                     if (_userdata.session_logged_in < 1) {
                         return 'You need to be logged in to view this content';
-                        return content;
                     }
+                    return content;
                 }
             }
 
