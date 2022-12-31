@@ -742,7 +742,7 @@ $(function () {
             {
                 tag: 'warned',
                 close: false,
-                defaultOption: 'Please see assessment comments below.',
+                defaultOption: 'Please see in-line assessment comments below.',
                 replacement: '<div class="notice notice-warn"><h5>{option}</h5><div></div></div>'
             },
             {
