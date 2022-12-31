@@ -685,10 +685,6 @@ span.mod-recent-info {
     max-width: 16px;
 }
 
-blockquote .selectCode img {
-    filter: invert(1);
-}
-
 div.cont_code {
     clear: right;
 }
