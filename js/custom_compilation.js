@@ -100,7 +100,8 @@ $(function () {
 
     /*****************************************************************/
 
-    /**Enable Popper.js/Bootstrap Tooltips******************************************************/
+    /**ENABLE Popper.js/Bootstrap TOOLTIPS******************************************************/
+    $('[data-toggle="tooltip"]').tooltip();
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl);
