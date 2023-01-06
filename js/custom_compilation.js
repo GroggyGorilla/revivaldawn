@@ -764,7 +764,7 @@ $(function () {
                 tag: 'dass', // detailed assessment
                 close: true,
                 defaultOption: 'Click to view comment(s).',
-                replacement: '<span class="assessment-quote detailed-assessment-quote" data-bs-toggle="tooltip" title="{option}" data-bs-toggle="modal" data-bs-target="#assessment-modal">{content}</span>'
+                replacement: '<span data-bs-toggle="tooltip" title="{option}"><span class="assessment-quote detailed-assessment-quote" data-bs-toggle="modal" data-bs-target="#assessment-modal">{content}</span></span>'
             },
             {
                 tag: 'cmt', // detailed assessment comments
@@ -847,19 +847,7 @@ $(function () {
             });
             SetUpTimeLineEventListners();
             SetUpTooltips();
-            // Assessment framework
-            $('.detailed-assessment-quote').click(function() {
-                $('#assessment-comment-selected').html(``);
-                $('#assessment-quote-selected').html(``);
-                if ($(this).has('.assessment-comment').length) {
-                    $('#assessment-quote-selected').html($(this).html());
-                    $('#assessment-comment-selected').html($(this).children('.assessment-comment').first().html());
-                }
-                else {
-                    $('#assessment-quote-selected').html($(this).html());
-                    $('#assessment-comment-selected').html(`No detailed comments were provided.`);
-                }
-            });
+            SetUpAssessmentFramework();
 
         }
     };
@@ -959,7 +947,21 @@ $(function () {
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl, {boundary:document.body}));
     }
 
-    /*********************************************************************/
+    /**ASSESSMENT FRAMEWORK*******************************************************************/
+    function SetUpAssessmentFramework() {        
+        $('.detailed-assessment-quote').click(function() {
+            $('#assessment-comment-selected').html(``);
+            $('#assessment-quote-selected').html(``);
+            if ($(this).has('.assessment-comment').length) {
+                $('#assessment-quote-selected').html($(this).html());
+                $('#assessment-comment-selected').html($(this).children('.assessment-comment').first().html());
+            }
+            else {
+                $('#assessment-quote-selected').html($(this).html());
+                $('#assessment-comment-selected').html(`No detailed comments were provided.`);
+            }
+        });
+    }
     /*****************************************************************/
     /*****************************************************************/
 });
