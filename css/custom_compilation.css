@@ -2082,4 +2082,5 @@ select[name="topic_color"] {
 .tooltip-inner {
     font-size: 1.2rem;
     font-family: 'Century Gothic', Verdana, sans-serif;
+    color: #fff;
 }
