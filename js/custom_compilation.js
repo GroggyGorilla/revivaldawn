@@ -100,12 +100,6 @@ $(function () {
 
     /*****************************************************************/
 
-    /**ENABLE Popper.js/Bootstrap TOOLTIPS******************************************************/
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl, {boundary:document.body}));
-
-    /*********************************************************************/
-
     /**TOKEN REPLACEMENTS****************************************************************/
     var tokenBBCode = [
         "[[ico-b-g]]",
@@ -956,7 +950,13 @@ $(function () {
             event.stopPropagation();
         });
         /*****************************************************************/
-    }
+    }    
+
+    /**ENABLE Popper.js/Bootstrap TOOLTIPS******************************************************/
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl, {boundary:document.body}));
+
+    /*********************************************************************/
     /*****************************************************************/
     /*****************************************************************/
 });
