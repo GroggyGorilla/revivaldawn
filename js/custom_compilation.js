@@ -426,7 +426,7 @@ $(function () {
     ];
 
     var tooltipText = [
-        'Jerry Rigger: +25% Hull for 2 rounds',
+        '<strong>Jerry Rigger:</strong> +25% Hull for 2 rounds',
         'Wind Caller: +25% Sails for 2 rounds',
         'Barrel Crazed: +25% Cannons for 2 rounds',
         'Hammerhanded: One equipment repair per thread',
@@ -445,8 +445,8 @@ $(function () {
         'Untouchable: Logia user',
         'Dragonheart: Mythical zoan eater',
         'Bookworm: Poneglyph literate',
-        'Bane of the Weak: Haoshoku user',
-        'Devil&#8217;s Advocate: +100 stats',
+        '<strong>Bane of the Weak:</strong> Haoshoku user',
+        '<strong>Devil&#8217;s Advocate:</strong> +100 stats',
         'Strolling Death: +200 stats',
         'The Chosen One: Inherited the Will of D',
         'Rise and Shine: Awakening/Mastery Unlocked',
@@ -580,7 +580,7 @@ $(function () {
             var iconBBCode = '[[' + iconBB[i] + ']]';
             var iconBBCode = iconBBCode.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             var iconBBRegExp = new RegExp(iconBBCode, 'g');
-            oldhtml = oldhtml.replace(iconBBRegExp, '<a class="icon-link" data-bs-toggle="tooltip" title="' + tooltipText[i] + '"><img src="' + iconImage[i] + '"  class="icon-image" /></a> ');
+            oldhtml = oldhtml.replace(iconBBRegExp, '<a class="icon-link" data-bs-toggle="tooltip" data-bs-html="true" title="' + tooltipText[i] + '"><img src="' + iconImage[i] + '"  class="icon-image" /></a> ');
         };
         $(this).html(oldhtml);
     });
