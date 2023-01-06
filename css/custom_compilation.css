@@ -2084,3 +2084,12 @@ select[name="topic_color"] {
     font-family: 'Century Gothic', Verdana, sans-serif;
     color: #fff;
 }
+.equipment-broken-text, .equipment-attachment-text {
+    font-size: 1.1rem;
+}
+.equipment-attachment-text {
+    color: #8AD6FF;
+}
+.equipment-broken-text {
+    color: #FFB4B4;
+}
