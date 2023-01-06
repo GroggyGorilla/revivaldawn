@@ -100,6 +100,15 @@ $(function () {
 
     /*****************************************************************/
 
+    /**Enable Popper.js/Bootstrap Tooltips******************************************************/
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+
+
+    /*********************************************************************/
+
     /**TOKEN REPLACEMENTS****************************************************************/
     var tokenBBCode = [
         "[[ico-b-g]]",
