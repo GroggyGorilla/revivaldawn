@@ -580,7 +580,7 @@ $(function () {
             var iconBBCode = '[[' + iconBB[i] + ']]';
             var iconBBCode = iconBBCode.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             var iconBBRegExp = new RegExp(iconBBCode, 'g');
-            oldhtml = oldhtml.replace(iconBBRegExp, '<a class="icon-link" data-tooltip="' + tooltipText[i] + '"><img src="' + iconImage[i] + '"  class="icon-image" /></a> ');
+            oldhtml = oldhtml.replace(iconBBRegExp, '<a class="icon-link" data-bs-toggle="tooltip" title="' + tooltipText[i] + '"><img src="' + iconImage[i] + '"  class="icon-image" /></a> ');
         };
         $(this).html(oldhtml);
     });
@@ -593,7 +593,7 @@ $(function () {
     /**CODE BOX SELECT ALL******************************************************/
 
     $("dl.codebox:not(.spoiler,.hidecode)  > dd.code, dl.codebox:not(.spoiler,.hidecode)  > dd > code").closest("dl").find('dt')
-        .append('<a class="selectCode" data-tooltip="Select Code"><img class="selectCodeImg" src="https://i.servimg.com/u/f60/18/75/26/17/select10.png" /></a>');
+        .append('<a class="selectCode" data-bs-toggle="tooltip" title="Select Code"><img class="selectCodeImg" src="https://i.servimg.com/u/f60/18/75/26/17/select10.png" /></a>');
 
     $(document).on('click', '.selectCode', function () {
         var doc = document,
@@ -719,7 +719,7 @@ $(function () {
                 tag: 'ber', // berries
                 close: false,
                 defaultOption: 'g', // option 'b' for black icon and 'r' for red icon
-                replacement: '<span class="ico-b-{option}" data-tooltip="Berries"></span>'
+                replacement: '<span class="ico-b-{option}" data-bs-toggle="tooltip" title="Berries"></span>'
             },
             {
                 tag: 'approve',
@@ -758,13 +758,13 @@ $(function () {
             {
                 tag: 'ass', // assessment
                 close: true,
-                replacement: '<span class="assessment-quote" data-tooltip="{option}">{content}</span>'
+                replacement: '<span class="assessment-quote" data-bs-toggle="tooltip" title="{option}">{content}</span>'
             },
             {
                 tag: 'dass', // detailed assessment
                 close: true,
                 defaultOption: 'Click to view comment(s).',
-                replacement: '<span class="assessment-quote detailed-assessment-quote" data-tooltip="{option}" data-bs-toggle="modal" data-bs-target="#assessment-modal">{content}</span>'
+                replacement: '<span class="assessment-quote detailed-assessment-quote" data-bs-toggle="tooltip" title="{option}" data-bs-toggle="modal" data-bs-target="#assessment-modal">{content}</span>'
             },
             {
                 tag: 'cmt', // detailed assessment comments
