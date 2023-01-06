@@ -838,6 +838,15 @@ $(function () {
                 }
             }
             /**Set up event handlers*******************************/
+
+            // If a post has assessment comments, make the assessment icon visible in the post head.
+            $('.post').each(function() {
+                if ($(this).find('.assessment-quote').length) {
+                    $(this).find('.ico-assessment').removeClass('d-none');
+                }
+            });
+            SetUpTimeLineEventListners();
+            SetUpTooltips();
             // Assessment framework
             $('.detailed-assessment-quote').click(function() {
                 $('#assessment-comment-selected').html(``);
@@ -851,15 +860,6 @@ $(function () {
                     $('#assessment-comment-selected').html(`No detailed comments were provided.`);
                 }
             });
-
-            // If a post has assessment comments, make the assessment icon visible in the post head.
-            $('.post').each(function() {
-                if ($(this).find('.assessment-quote').length) {
-                    $(this).find('.ico-assessment').removeClass('d-none');
-                }
-            });
-            SetUpTimeLineEventListners();
-            SetUpTooltips();
 
         }
     };
