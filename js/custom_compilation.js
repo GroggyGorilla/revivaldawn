@@ -101,14 +101,8 @@ $(function () {
     /*****************************************************************/
 
     /**ENABLE Popper.js/Bootstrap TOOLTIPS******************************************************/
-    //$('[data-toggle="tooltip"]').tooltip();
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    console.log('toolTipTriggerList:');
-    console.log(tooltipTriggerList);
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
-
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
     /*********************************************************************/
 
