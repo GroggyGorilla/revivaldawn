@@ -2079,3 +2079,7 @@ select[name="topic_color"] {
     color: #fff;
     text-shadow: 0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000;
 }
+.tooltip-inner {
+    font-size: 1.2rem;
+    font-family: 'Century Gothic', Verdana, sans-serif;
+}
