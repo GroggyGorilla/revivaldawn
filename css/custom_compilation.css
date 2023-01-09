@@ -2086,6 +2086,7 @@ select[name="topic_color"] {
 }
 .equipment-broken-text, .equipment-attachment-text {
     font-size: 1.1rem;
+    font-style: italic;
 }
 .equipment-attachment-text {
     color: #8AD6FF;
