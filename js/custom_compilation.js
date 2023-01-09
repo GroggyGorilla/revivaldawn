@@ -479,7 +479,7 @@ $(function () {
         '<strong>Tier 6 Equipment</strong><br />+50 ATK<br /><em>(Devil Fruit Fed)</em>',
         '<strong>Tier 4 Equipment</strong><br />+20 ATK<br /><em>(Sea Prism Stone Tipped)</em>',
         '<strong>Tier 5 Equipment</strong><br />+30 ATK<br /><em>(Sea Prism Stone Tipped)</em>',
-        '<strong>Tier 6 Equipment</strong><br />+50 ATK<br /><em>(Sea Prism Stone Tipped)</em>',
+        '<strong>Tier 6 Equipment</strong><br />+50 ATK<br /><span class=&quot;tooltip-equipment-upgrade&quot;>(Sea Prism Stone Tipped)</span>',
         '<strong>Tier 1 Equipment</strong><br />+5 ATK<br /><em>(Broken)</em>',
         '<strong>Tier 2 Equipment</strong><br />+10 ATK<br /><em>(Broken)</em>',
         '<strong>Tier 3 Equipment</strong><br />+15 ATK<br /><em>(Broken)</em>',
