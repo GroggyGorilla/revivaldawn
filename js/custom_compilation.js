@@ -837,87 +837,87 @@ $(function () {
                     e.innerHTML = BBParser.parsedContent(e.innerHTML, item, item.close);
                 }
             }
-            /**Set up event handlers*******************************/
 
-            // If a post has assessment comments, make the assessment icon visible in the post head.
-            $('.post').each(function() {
-                if ($(this).find('.assessment-quote').length) {
-                    $(this).find('.ico-assessment').removeClass('d-none');
-                }
-            });
+            /**SETUP EVENT HANDLERS AND ALL OTHER FUNCTIONS*******************************/
             SetUpTimeLineEventListners();
+            SetUpInlineSpoilers();
             SetUpTooltips();
             SetUpAssessmentFramework();
             PopulateCharacterAges();
-
+            SetUpTopicTags();
+            /*******************************************************************************/
         }
     };
     BBParser.initialize();
     /**************************************************/
-    /**TOPIC TAGS/PREFIXES***************************************************************/ 
-    var TOPIC_PREFIXES = [];
-    var invisible = 0;
-    var visible = 1;
-    /**** BEGIN EDITABLE ZONE ***/
-    TOPIC_PREFIXES.push(new Array("[Episode]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Arc]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Saga]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[World Event]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Bio]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Equipment]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Fighting Style]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Tracker]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Ship]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Crew]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Companions]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Alliance]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Advertisement]", "#fff", visible));
 
-    TOPIC_PREFIXES.push(new Array("[Closed]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Locked]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Event]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Rewards]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Activity Check]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Sign Ups]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Announcement]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Update]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Gifts]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Tips]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Turf Details]", "#fff", invisible));
-
-    var add_style_topic_links = true;
-    /*** END EDITABLE ZONE ***/
-
-    if (/^\/post/.test($(location).attr('pathname') + $(location).attr('search')) && $('.submit-buttons input[value="newtopic"]').length) {
-        var html_options_prefix = "<select name='prefixes'><option value='' style='background:COLOR'>Topic Type...</option>";
-        for (var prefix in TOPIC_PREFIXES) {
-            if (TOPIC_PREFIXES[prefix][2] == visible) {
-                html_options_prefix += "<option value='" + TOPIC_PREFIXES[prefix][0] + "' style='background:" + TOPIC_PREFIXES[prefix][1] + "'>" + TOPIC_PREFIXES[prefix][0] + "</option>";
-            }
-        }
-        html_options_prefix += "</select>";
-        $('input[name="subject"]').before(html_options_prefix);
-        $("form[method='post']").submit(function() {
-            $('input[name="subject"]').val(($('select[name="prefixes"]').val() ? $('select[name="prefixes"]').val() + " " : "") + $('input[name="subject"]').val())
-        });
-    }
-
-    if (add_style_topic_links == true) {
-        $('a').each(function() {
+    /**TOPIC TAGS/PREFIXES***************************************************************/
+    function SetUpTopicTags() {
+        var TOPIC_PREFIXES = [];
+        var invisible = 0;
+        var visible = 1;
+        /**** BEGIN EDITABLE ZONE ***/
+        TOPIC_PREFIXES.push(new Array("[Episode]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Arc]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Saga]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[World Event]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Bio]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Equipment]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Fighting Style]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Tracker]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Ship]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Crew]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Companions]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Alliance]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Advertisement]", "#fff", visible));
+    
+        TOPIC_PREFIXES.push(new Array("[Closed]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Locked]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Event]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Rewards]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Activity Check]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Sign Ups]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Announcement]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Update]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Gifts]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Tips]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Turf Details]", "#fff", invisible));
+    
+        var add_style_topic_links = true;
+        /*** END EDITABLE ZONE ***/
+    
+        if (/^\/post/.test($(location).attr('pathname') + $(location).attr('search')) && $('.submit-buttons input[value="newtopic"]').length) {
+            var html_options_prefix = "<select name='prefixes'><option value='' style='background:COLOR'>Topic Type...</option>";
             for (var prefix in TOPIC_PREFIXES) {
-                var pref = TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "").replace(" ", "-").toLowerCase();
-                //var preg = new RegExp("^\/t\\d+(p\\d+)?\\-" + pref);
-                var preg = new RegExp(pref);
-                if (preg.test($(this).attr('href'))) {
-                    var pre1 = new RegExp("\\[" + TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "") + "\\]");
-                    $(this).html($(this).html().replace(pre1, "<span class='title_prefix title_prefix-" + pref + "'>" + TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "") + "</span>"));
+                if (TOPIC_PREFIXES[prefix][2] == visible) {
+                    html_options_prefix += "<option value='" + TOPIC_PREFIXES[prefix][0] + "' style='background:" + TOPIC_PREFIXES[prefix][1] + "'>" + TOPIC_PREFIXES[prefix][0] + "</option>";
                 }
             }
-        });
+            html_options_prefix += "</select>";
+            $('input[name="subject"]').before(html_options_prefix);
+            $("form[method='post']").submit(function() {
+                $('input[name="subject"]').val(($('select[name="prefixes"]').val() ? $('select[name="prefixes"]').val() + " " : "") + $('input[name="subject"]').val())
+            });
+        }
+    
+        if (add_style_topic_links == true) {
+            $('a').each(function() {
+                for (var prefix in TOPIC_PREFIXES) {
+                    var pref = TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "").replace(" ", "-").toLowerCase();
+                    //var preg = new RegExp("^\/t\\d+(p\\d+)?\\-" + pref);
+                    var preg = new RegExp(pref);
+                    if (preg.test($(this).attr('href'))) {
+                        var pre1 = new RegExp("\\[" + TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "") + "\\]");
+                        $(this).html($(this).html().replace(pre1, "<span class='title_prefix title_prefix-" + pref + "'>" + TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "") + "</span>"));
+                    }
+                }
+            });
+        }
     }
     /*****************************************************************/
+
+    /**TIMELINE LINKS***************************************************************/
     function SetUpTimeLineEventListners() {
-        /**TIMELINE LINKS***************************************************************/
         $(".fake-anchor").click(function () {
             var link = $(this).attr("data-href");
             if (link != "" && link != undefined) {
@@ -927,9 +927,11 @@ $(function () {
         $(".fake-anchor a").click(function (event) {
             event.stopPropagation();
         });
-        /*****************************************************************/
+    }
+    /*****************************************************************/
 
-        /**INLINE SPOILERS***************************************************************/
+    /**INLINE SPOILERS*******************************************************************************/
+    function SetUpInlineSpoilers() {
         $(".inlinespoiler").click(function (event) {
             if ($(this).hasClass("inlinespoiler-hidden")) {
                 $(this).removeClass("inlinespoiler-hidden");
@@ -939,8 +941,8 @@ $(function () {
             }
             event.stopPropagation();
         });
-        /*****************************************************************/
-    }    
+    }
+    /*****************************************************************/
 
     /**ENABLE Popper.js/Bootstrap TOOLTIPS******************************************************/
     function SetUpTooltips() {
@@ -949,7 +951,13 @@ $(function () {
     }
 
     /**ASSESSMENT FRAMEWORK*******************************************************************/
-    function SetUpAssessmentFramework() {        
+    function SetUpAssessmentFramework() {
+        // If a post has assessment comments, make the assessment icon visible in the post head.
+        $('.post').each(function() {
+            if ($(this).find('.assessment-quote').length) {
+                $(this).find('.ico-assessment').removeClass('d-none');
+            }
+        });
         $('.detailed-assessment-quote').click(function() {
             $('#assessment-comment-selected').html(``);
             $('#assessment-quote-selected').html(``);
