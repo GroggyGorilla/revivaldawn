@@ -848,6 +848,7 @@ $(function () {
             SetUpTimeLineEventListners();
             SetUpTooltips();
             SetUpAssessmentFramework();
+            PopulateCharacterAges();
 
         }
     };
@@ -962,6 +963,23 @@ $(function () {
             }
         });
     }
+    /**POPULATE CHARACTER AGES*****************************************/
+    function getAge(date) {
+        var today = new Date('1829-04-01'); // Change this to current date.
+        var birthDate = new Date(date);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age;
+    }
+    function PopulateCharacterAges() {
+        $('.character-current-age').each(function () {
+            $(this).text(getAge($(this).attr('data-rd-birthdate')));
+        });
+    }
+    /*****************************************************************/
     /*****************************************************************/
     /*****************************************************************/
 });
