@@ -772,6 +772,16 @@ $(function () {
                 replacement: `<span class="assessment-comment">{content}</span>`
             },
             {
+                tag: 'inlinespoiler', // inline spoilers
+                close: true,
+                replacement: `<span class="inlinespoiler inlinespoiler-hidden">{content}</span>`
+            },
+            {
+                tag: 'inlinecode', // inline code
+                close: true,
+                replacement: `<span class="inlinecode">{content}</span>`
+            },
+            {
                 tag: 'tracker', // tracker link
                 close: false,
                 replacement: '<a href="{option}" class="tracker-link">Tracker</a>'
