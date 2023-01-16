@@ -981,6 +981,17 @@ $(function () {
             }
         });
     }
+    /**********************************************************************************************/
+    /**ASSESSMENT ICONS FOR SPOILER TAGS***************************************************/
+    function SetUpAssessmentIconsForSpoilers() {
+        $('.spoiler').each(function() {
+            if ($(this).find('.assessment-quote').length) {
+                
+            }
+        })
+    }
+
+    /*************************************************************************************/
     /**POPULATE CHARACTER AGES*****************************************/
     function getAge(date) {
         var today = new Date('1829-04-01'); // Change this to current date.
