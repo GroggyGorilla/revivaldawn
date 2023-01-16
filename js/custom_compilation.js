@@ -851,7 +851,7 @@ $(function () {
             /**SETUP EVENT HANDLERS AND ALL OTHER FUNCTIONS*******************************/
             SetUpTimeLineEventListners();
             SetUpInlineSpoilers();
-            //SetUpAssessmentIconsForSpoilers();
+            SetUpAssessmentIconsForSpoilers();
             SetUpTooltips();
             SetUpAssessmentFramework();
             PopulateCharacterAges();
@@ -988,9 +988,9 @@ $(function () {
         $('.spoiler').each(function() {
             if ($(this).find('.assessment-quote').length) {
                 console.log('Gotcha');
-                var spoilerDD = '<span class="ico-assessment" data-tooltip="This spoiler has in-line assessment comments."><img class="ico-assessment-img" src="https://i.servimg.com/u/f60/18/75/26/17/clipbo10.png" alt="This spoiler has in-line assessment comments."></span>' + $(this).children('dd:first-child').html();
+                var spoilerDD = '<span class="ico-assessment" data-tooltip="This spoiler has in-line assessment comments."><img class="ico-assessment-img" src="https://i.servimg.com/u/f60/18/75/26/17/clipbo10.png" alt="This spoiler has in-line assessment comments."></span>' + $(this).children('dd').html();
 
-                $(this).children('dd:first-child').html(spoilerDD);
+                $(this).children('dd').html(spoilerDD);
                 
             }
         });
