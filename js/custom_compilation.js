@@ -987,9 +987,9 @@ $(function () {
     function SetUpAssessmentIconsForSpoilers() {
         $('.spoiler').each(function() {
             if ($(this).find('.assessment-quote').length) {
-                var spoilerDD = '<span class="ico-assessment" data-tooltip="This spoiler has in-line assessment comments."><img class="ico-assessment-img" src="https://i.servimg.com/u/f60/18/75/26/17/clipbo10.png" alt="This spoiler has in-line assessment comments."></span>' + $(this).children('dd:first-of-type').html();
+                var spoilerDD = '<span class="ico-assessment" data-tooltip="This spoiler has in-line assessment comments."><img class="ico-assessment-img" src="https://i.servimg.com/u/f60/18/75/26/17/clipbo10.png" alt="This spoiler has in-line assessment comments."></span>' + $(this).children('dd')[0].html();
 
-                $(this).children('dd:first-of-type').html(spoilerDD);
+                $(this).children('dd')[0].html(spoilerDD);
                 
             }
         });
