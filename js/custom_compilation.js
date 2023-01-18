@@ -851,7 +851,7 @@ $(function () {
             /**SETUP EVENT HANDLERS AND ALL OTHER FUNCTIONS*******************************/
             SetUpTimeLineEventListners();
             SetUpInlineSpoilers();
-            SetUpAssessmentIconsForSpoilers();
+            SetUpAssessmentIcons();
             SetUpTooltips();
             SetUpAssessmentFramework();
             PopulateCharacterAges();
@@ -963,12 +963,6 @@ $(function () {
 
     /**ASSESSMENT FRAMEWORK*******************************************************************/
     function SetUpAssessmentFramework() {
-        // If a post has assessment comments, make the assessment icon visible in the post head.
-        $('.post').each(function() {
-            if ($(this).find('.assessment-quote').length) {
-                $(this).find('.ico-assessment').removeClass('d-none');
-            }
-        });
         $('.detailed-assessment-quote').click(function() {
             $('#assessment-comment-selected').html(``);
             $('#assessment-quote-selected').html(``);
@@ -982,20 +976,25 @@ $(function () {
             }
         });
     }
-    /**********************************************************************************************/
-    /**ASSESSMENT ICONS FOR SPOILER TAGS***************************************************/
-    function SetUpAssessmentIconsForSpoilers() {
+    /**ASSESSMENT ICONS***************************************************/
+    function SetUpAssessmentIcons() {
+        // If a post has assessment comments, make the assessment icon visible in the post head.
+        $('.post').each(function() {
+            if ($(this).find('.assessment-quote').length) {
+                $(this).find('.ico-assessment').removeClass('d-none');
+            }
+        });
         $('.spoiler').each(function() {
             if ($(this).find('.assessment-quote').length) {
-                var spoilerDD = '<span class="ico-assessment" data-tooltip="This spoiler has in-line assessment comments. Expand it to find the mark-up."><img class="ico-assessment-img" src="https://i.servimg.com/u/f60/18/75/26/17/clipbo10.png" alt="This spoiler has in-line assessment comments. Expand it to find the mark-up."></span>' + $(this).children('dd').html();
+                var spoilerDD = '<span class="ico-assessment" data-bs-toggle="tooltip" title="This spoiler has in-line assessment comments. Expand it to find the mark-up."><img class="ico-assessment-img" src="https://i.servimg.com/u/f60/18/75/26/17/clipbo10.png" alt="This spoiler has in-line assessment comments. Expand it to find the mark-up."></span>' + $(this).children('dd').html();
 
                 $(this).children('dd').html(spoilerDD);
                 
             }
         });
     }
-
     /*************************************************************************************/
+    /**********************************************************************************************/
     /**POPULATE CHARACTER AGES*****************************************/
     function getAge(date) {
         var today = new Date('1829-04-01'); // Change this to current date.
