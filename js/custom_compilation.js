@@ -671,59 +671,59 @@ $(function () {
     /*****************************************************************/
 
     /**PROFILE PREVIEW***************************************************************/
-    var links = $('a[href^="/u"]').filter(function () {
-            if (this.firstChild && this.firstChild.tagName) {
-                if (this.firstChild.tagName != 'IMG') {
-                    return this;
-                }
-            } else {
-                return this;
-            }
-        }),
+    // var links = $('a[href^="/u"]').filter(function () {
+    //         if (this.firstChild && this.firstChild.tagName) {
+    //             if (this.firstChild.tagName != 'IMG') {
+    //                 return this;
+    //             }
+    //         } else {
+    //             return this;
+    //         }
+    //     }),
 
-        usersinfo = {};
+    //     usersinfo = {};
 
-    links.tooltipster && links.not('.mentiontag, .tooltipstered').filter(function () {
-        if (!$(this).closest('#tabs')[0]) {
-            return this;
-        }
-    }).tooltipster({
-        animation: 'fade',
-        interactive: true,
-        contentAsHTML: true,
-        minWidth: 300,
-        maxWidth: 300,
-        delay: 500,
-        arrowColor: "#EEE",
-        autoClose: true,
-        content: 'Loading...',
-        functionBefore: function (origin, continueTooltip) {
-            continueTooltip();
+    // links.tooltipster && links.not('.mentiontag, .tooltipstered').filter(function () {
+    //     if (!$(this).closest('#tabs')[0]) {
+    //         return this;
+    //     }
+    // }).tooltipster({
+    //     animation: 'fade',
+    //     interactive: true,
+    //     contentAsHTML: true,
+    //     minWidth: 300,
+    //     maxWidth: 300,
+    //     delay: 500,
+    //     arrowColor: "#EEE",
+    //     autoClose: true,
+    //     content: 'Loading...',
+    //     functionBefore: function (origin, continueTooltip) {
+    //         continueTooltip();
 
-            var userid = $(this).attr('href').replace(/.*?\/u(\d+).*/, '$1');
-            if (origin.data('ajax') !== 'cached') {
-                if (usersinfo[userid] != undefined) {
-                    origin.tooltipster('content', usersinfo[userid]).data('ajax', 'cached');
-                } else {
-                    $.ajax({
-                        type: 'GET',
-                        url: "/ajax/index.php",
-                        dataType: "html",
+    //         var userid = $(this).attr('href').replace(/.*?\/u(\d+).*/, '$1');
+    //         if (origin.data('ajax') !== 'cached') {
+    //             if (usersinfo[userid] != undefined) {
+    //                 origin.tooltipster('content', usersinfo[userid]).data('ajax', 'cached');
+    //             } else {
+    //                 $.ajax({
+    //                     type: 'GET',
+    //                     url: "/ajax/index.php",
+    //                     dataType: "html",
 
-                        data: {
-                            f: "m",
-                            user_id: userid
-                        },
+    //                     data: {
+    //                         f: "m",
+    //                         user_id: userid
+    //                     },
 
-                        success: function (html) {
-                            usersinfo[userid] = html;
-                            origin.tooltipster('content', html).data('ajax', 'cached');
-                        }
-                    });
-                }
-            }
-        }
-    });
+    //                     success: function (html) {
+    //                         usersinfo[userid] = html;
+    //                         origin.tooltipster('content', html).data('ajax', 'cached');
+    //                     }
+    //                 });
+    //             }
+    //         }
+    //     }
+    // });
     /*****************************************************************/
 
 
