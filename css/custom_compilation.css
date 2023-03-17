@@ -298,6 +298,7 @@ blockquote {
     color: var(--rd-main-font-color);
     border-color: var(--rd-main-font-color);
     background-color: var(--rd-blockquote-bg-color);
+    overflow: visible;
 }
 
 blockquote:before {    
@@ -644,6 +645,11 @@ span.mod-recent-info {
     vertical-align: -25%;
 }
 
+[class^="icon-berry-"]:hover,
+[class^="ico-b-"]:hover {
+    cursor: help;
+}
+
 .icon-berry-green,
 .ico-b-g {
     background-image: url(https://i.imgur.com/OJbUWbl.png);
@@ -677,10 +683,6 @@ span.mod-recent-info {
 
 .selectCode img {
     max-width: 16px;
-}
-
-blockquote .selectCode img {
-    filter: invert(1);
 }
 
 div.cont_code {
@@ -1964,6 +1966,27 @@ https://purecss.io
     display: none;
     z-index: 99999 !important;
 }
+.assessment-modal-body img {
+    max-width: 100%;
+}
+.assessment-modal-body {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    vertical-align: top;
+    padding: 1em;
+    font-family: century gothic, verdana;
+    font-size: 1em;
+    line-height: 120%;
+    text-align: justify;
+    width: 85%;
+    padding-bottom: 1em;
+    line-height: 140%;
+}
+.assessment-modal-body hr {
+    border-color: var(--rd-main-font-color);
+}
 .ico-assessment {
 	padding-right: 4px;
 }
@@ -2055,4 +2078,19 @@ select[name="topic_color"] {
 .notice a:hover {
     color: #fff;
     text-shadow: 0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000;
+}
+.tooltip-inner {
+    font-size: 1.2rem;
+    font-family: 'Century Gothic', Verdana, sans-serif;
+    color: #fff;
+}
+.equipment-broken-text, .equipment-attachment-text {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+.equipment-attachment-text {
+    color: #8AD6FF;
+}
+.equipment-broken-text {
+    color: #FFB4B4;
 }

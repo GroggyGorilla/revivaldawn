@@ -72,58 +72,6 @@ $(function () {
 
     /*****************************************************************/
 
-    /**COLOUR DIALOGUE************************************************/
-    var spchBBCode = [
-        "[npc=wgov]",
-        "[npc=cpol]",
-        "[npc=navy]",
-        "[npc=bhun]",
-        "[npc=revo]",
-        "[npc=pirt]",
-        "[npc=misc]",
-        "[plyr=wgov]",
-        "[plyr=cpol]",
-        "[plyr=navy]",
-        "[plyr=bhun]",
-        "[plyr=revo]",
-        "[plyr=pirt]",
-        "[plyr=misc]"
-    ];
-
-    var spchSpan = [
-        '<span class="wgov">',
-        '<span class="cpol">',
-        '<span class="navy">',
-        '<span class="bhun">',
-        '<span class="revo">',
-        '<span class="pirt">',
-        '<span class="misc">',
-        '<span class="plyr wgov">',
-        '<span class="plyr cpol">',
-        '<span class="plyr navy">',
-        '<span class="plyr bhun">',
-        '<span class="plyr revo">',
-        '<span class="plyr pirt">',
-        '<span class="plyr misc">'
-    ];    
-    
-    $('.postbody').each(function () {
-        var posthtml = "";
-        posthtml = $(this).html();
-        for (var i = 0; i < spchBBCode.length; i++) {
-            posthtml = posthtml.replaceAll(spchBBCode[i], spchSpan[i]);
-        };
-        posthtml = posthtml.replaceAll('[/npc]', '</span>');
-        posthtml = posthtml.replaceAll('[/plyr]', '</span>');
-        $(this).html(posthtml);
-    });
-
-    posthtml = null;
-    spchSpan = null;
-    spchBBCode = null;
-
-    /***********************************************************************/
-
     /**MODAL IMAGES***************************************************************/
 
     // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -478,161 +426,161 @@ $(function () {
     ];
 
     var tooltipText = [
-        'Jerry Rigger: +25% Hull for 2 rounds',
-        'Wind Caller: +25% Sails for 2 rounds',
-        'Barrel Crazed: +25% Cannons for 2 rounds',
-        'Hammerhanded: One equipment repair per thread',
-        'Master Chef: Up to 3 allies can start combat with 110% HP',
-        'Dulcet Virtuoso: +10% to ATK or RX for 3 allies for 3 rounds',
-        'Nautical Almanac: +2 to ship combat escape roll value',
-        'Walking, Talking First Aid Kit: Revive and UT Heals',
-        'Ship Bringer: One ship repair per thread',
-        'Punchout Guru: +0.20 EXP Bonus to all allies in a quest',
-        'Berry Printer: +0.20 Income Bonus to all allies in a quest',
-        'Hard-boiled: +15 stats',
-        'Child of Destiny: +25 stats',
-        'Dreams Never Die: Resist knockout once per thread',
-        'Freak of Nature: Stat buffs at low health',
-        'Jurassic Bark: Ancient zoan eater',
-        'Untouchable: Logia user',
-        'Dragonheart: Mythical zoan eater',
-        'Bookworm: Poneglyph literate',
-        'Bane of the Weak: Haoshoku user',
-        'Devil&#8217;s Advocate: +100 stats',
-        'Strolling Death: +200 stats',
-        'The Chosen One: Inherited the Will of D',
-        'Rise and Shine: Awakening/Mastery Unlocked',
-        'Haki Specialization: Kenbunshoku',
-        'Haki Specialization: Busoshoku',
-        'Haki Specialization: Haoshoku',
-        'Haki Ascendancy: Kenbunshoku',
-        'Haki Ascendancy: Busoshoku',
-        'Haki Ascendancy: Haoshoku',
-        'One-Needle Log Pose: Travel across Paradise',
-        'Three-Needle Log Pose: Travel across the New World',
-        'Mythical Zoan Fruit',
-        'Logia Fruit',
-        'Ancient Zoan Fruit',
-        'Steel Bracing: +25% Hull for 2 rounds',
-        'Cola Engine: +25% Sails for 2 rounds',
-        'Chain Cannons: +25% Cannons for 2 rounds',
-        'Sea Prism Stone Keel: Sail through Calm Belt',
-        'Submarine (Toggle): +25% Sails, -25% Cannons',
-        'Blimp (Toggle): +25% Cannons, -25% Hull',
-        'Treasure Tree Adam Wood: +200 Hull',
-        'Tier 1 Equipment: +5 ATK',
-        'Tier 2 Equipment: +10 ATK',
-        'Tier 3 Equipment: +15 ATK',
-        'Tier 4 Equipment: +20 ATK',
-        'Tier 5 Equipment: +30 ATK',
-        'Tier 6 Equipment: +50 ATK',
-        'Tier 4 Equipment: +20 ATK (Devil Fruit Fed)',
-        'Tier 5 Equipment: +30 ATK (Devil Fruit Fed)',
-        'Tier 6 Equipment: +50 ATK (Devil Fruit Fed)',
-        'Tier 4 Equipment: +20 ATK (Sea Prism Stone Tipped)',
-        'Tier 5 Equipment: +30 ATK (Sea Prism Stone Tipped)',
-        'Tier 6 Equipment: +50 ATK (Sea Prism Stone Tipped)',
-        'Tier 1 Equipment: +5 ATK (Broken)',
-        'Tier 2 Equipment: +10 ATK (Broken)',
-        'Tier 3 Equipment: +15 ATK (Broken)',
-        'Tier 4 Equipment: +20 ATK (Broken)',
-        'Tier 5 Equipment: +30 ATK (Broken)',
-        'Tier 4 Equipment: +20 ATK (Devil Fruit Fed) (Broken)',
-        'Tier 5 Equipment: +30 ATK (Devil Fruit Fed) (Broken)',
-        'Tier 4 Equipment: +20 ATK (Sea Prism Stone Tipped) (Broken)',
-        'Tier 5 Equipment: +30 ATK (Sea Prism Stone Tipped) (Broken)',
-        'Tier 1 Equipment: +5 DEF',
-        'Tier 2 Equipment: +10 DEF',
-        'Tier 3 Equipment: +15 DEF',
-        'Tier 4 Equipment: +20 DEF',
-        'Tier 5 Equipment: +30 DEF',
-        'Tier 6 Equipment: +50 DEF',
-        'Tier 4 Equipment: +20 DEF (Devil Fruit Fed)',
-        'Tier 5 Equipment: +30 DEF (Devil Fruit Fed)',
-        'Tier 6 Equipment: +50 DEF (Devil Fruit Fed)',
-        'Tier 4 Equipment: +20 DEF (Sea Prism Stone Tipped)',
-        'Tier 5 Equipment: +30 DEF (Sea Prism Stone Tipped)',
-        'Tier 6 Equipment: +50 DEF (Sea Prism Stone Tipped)',
-        'Tier 1 Equipment: +5 DEF (Broken)',
-        'Tier 2 Equipment: +10 DEF (Broken)',
-        'Tier 3 Equipment: +15 DEF (Broken)',
-        'Tier 4 Equipment: +20 DEF (Broken)',
-        'Tier 5 Equipment: +30 DEF (Broken)',
-        'Tier 4 Equipment: +20 DEF (Devil Fruit Fed) (Broken)',
-        'Tier 5 Equipment: +30 DEF (Devil Fruit Fed) (Broken)',
-        'Tier 4 Equipment: +20 DEF (Sea Prism Stone Tipped) (Broken)',
-        'Tier 5 Equipment: +30 DEF (Sea Prism Stone Tipped) (Broken)',
-        'Tier 1 Equipment: +5 RX',
-        'Tier 2 Equipment: +10 RX',
-        'Tier 3 Equipment: +15 RX',
-        'Tier 4 Equipment: +20 RX',
-        'Tier 5 Equipment: +30 RX',
-        'Tier 6 Equipment: +50 RX',
-        'Tier 4 Equipment: +20 RX (Devil Fruit Fed)',
-        'Tier 5 Equipment: +30 RX (Devil Fruit Fed)',
-        'Tier 6 Equipment: +50 RX (Devil Fruit Fed)',
-        'Tier 4 Equipment: +20 RX (Sea Prism Stone Tipped)',
-        'Tier 5 Equipment: +30 RX (Sea Prism Stone Tipped)',
-        'Tier 6 Equipment: +50 RX (Sea Prism Stone Tipped)',
-        'Tier 1 Equipment: +5 RX (Broken)',
-        'Tier 2 Equipment: +10 RX (Broken)',
-        'Tier 3 Equipment: +15 RX (Broken)',
-        'Tier 4 Equipment: +20 RX (Broken)',
-        'Tier 5 Equipment: +30 RX (Broken)',
-        'Tier 4 Equipment: +20 RX (Devil Fruit Fed) (Broken)',
-        'Tier 5 Equipment: +30 RX (Devil Fruit Fed) (Broken)',
-        'Tier 4 Equipment: +20 RX (Sea Prism Stone Tipped) (Broken)',
-        'Tier 5 Equipment: +30 RX (Sea Prism Stone Tipped) (Broken)',
-        'Tier 1 Equipment: +5 WP',
-        'Tier 2 Equipment: +10 WP',
-        'Tier 3 Equipment: +15 WP',
-        'Tier 4 Equipment: +20 WP',
-        'Tier 5 Equipment: +30 WP',
-        'Tier 6 Equipment: +50 WP',
-        'Tier 4 Equipment: +20 WP (Devil Fruit Fed)',
-        'Tier 5 Equipment: +30 WP (Devil Fruit Fed)',
-        'Tier 6 Equipment: +50 WP (Devil Fruit Fed)',
-        'Tier 4 Equipment: +20 WP (Sea Prism Stone Tipped)',
-        'Tier 5 Equipment: +30 WP (Sea Prism Stone Tipped)',
-        'Tier 6 Equipment: +50 WP (Sea Prism Stone Tipped)',
-        'Tier 1 Equipment: +5 WP (Broken)',
-        'Tier 2 Equipment: +10 WP (Broken)',
-        'Tier 3 Equipment: +15 WP (Broken)',
-        'Tier 4 Equipment: +20 WP (Broken)',
-        'Tier 5 Equipment: +30 WP (Broken)',
-        'Tier 4 Equipment: +20 WP (Devil Fruit Fed) (Broken)',
-        'Tier 5 Equipment: +30 WP (Devil Fruit Fed) (Broken)',
-        'Tier 4 Equipment: +20 WP (Sea Prism Stone Tipped) (Broken)',
-        'Tier 5 Equipment: +30 WP (Sea Prism Stone Tipped) (Broken)',
-        'Tier 6 Equipment: +50 ATK (Broken)',
-        'Tier 6 Equipment: +50 ATK (Sea Prism Stone Tipped) (Broken)',
-        'Tier 6 Equipment: +50 ATK (Devil Fruit Fed) (Broken)',
-        'Tier 6 Equipment: +50 DEF (Broken)',
-        'Tier 6 Equipment: +50 DEF (Sea Prism Stone Tipped) (Broken)',
-        'Tier 6 Equipment: +50 DEF (Devil Fruit Fed) (Broken)',
-        'Tier 6 Equipment: +50 RX (Broken)',
-        'Tier 6 Equipment: +50 RX (Sea Prism Stone Tipped) (Broken)',
-        'Tier 6 Equipment: +50 RX (Devil Fruit Fed) (Broken)',
-        'Tier 6 Equipment: +50 WP (Broken)',
-        'Tier 6 Equipment: +50 WP (Sea Prism Stone Tipped) (Broken)',
-        'Tier 6 Equipment: +50 WP (Devil Fruit Fed) (Broken)',
-        'Screw You, RNGesus: Do a combat re-roll',
-        'Tactical Retreat: Escape without a roll',
-        'Under The Radar: Freeze bounty',
-        'Identity Theft: Counter information metagame',
-        'Social Distancing: Reduce quest player requirement',
-        'Land Crawler (Toggle): +25% Hull, -25% Sails',
-      	'Skin Of Your Teeth: Downgrade first crit to solid hit',
-      	'Freedom Of Travel: Bypass sea restrictions for a new quest'
+        '<strong>Jerry Rigger</strong><br />+25% Hull for 2 rounds',
+        '<strong>Wind Caller</strong><br />+25% Sails for 2 rounds',
+        '<strong>Barrel Crazed</strong><br />+25% Cannons for 2 rounds',
+        '<strong>Hammerhanded</strong><br />One equipment repair per thread',
+        '<strong>Master Chef</strong><br />Up to 3 allies can start combat with 110% HP',
+        '<strong>Dulcet Virtuoso</strong><br />+10% to ATK or RX for 3 allies for 3 rounds',
+        '<strong>Nautical Almanac</strong><br />+2 to ship combat escape roll value',
+        '<strong>Walking, Talking First Aid Kit</strong><br />Revive and UT Heals',
+        '<strong>Ship Bringer</strong><br />One ship repair per thread',
+        '<strong>Punchout Guru</strong><br />+0.20 EXP Bonus to all allies in a quest',
+        '<strong>Berry Printer</strong><br />+0.20 Income Bonus to all allies in a quest',
+        '<strong>Hard-boiled</strong><br />+15 stats',
+        '<strong>Child of Destiny</strong><br />+25 stats',
+        '<strong>Dreams Never Die</strong><br />Resist knockout once per thread',
+        '<strong>Freak of Nature</strong><br />Stat buffs at low health',
+        '<strong>Jurassic Bark</strong><br />Ancient zoan eater',
+        '<strong>Untouchable</strong><br />Logia user',
+        '<strong>Dragonheart</strong><br />Mythical zoan eater',
+        '<strong>Bookworm</strong><br />Poneglyph literate',
+        '<strong>Bane of the Weak</strong><br />Haoshoku user',
+        '<strong>Devil&#8217;s Advocate</strong><br />+100 stats',
+        '<strong>Strolling Death</strong><br />+200 stats',
+        '<strong>The Chosen One</strong><br />Inherited the Will of D',
+        '<strong>Rise and Shine</strong><br />Awakening/Mastery Unlocked',
+        '<strong>Haki Specialization</strong><br />Kenbunshoku',
+        '<strong>Haki Specialization</strong><br />Busoshoku',
+        '<strong>Haki Specialization</strong><br />Haoshoku',
+        '<strong>Haki Ascendancy</strong><br />Kenbunshoku',
+        '<strong>Haki Ascendancy</strong><br />Busoshoku',
+        '<strong>Haki Ascendancy</strong><br />Haoshoku',
+        '<strong>One-Needle Log Pose</strong><br />Travel across Paradise',
+        '<strong>Three-Needle Log Pose</strong><br />Travel across the New World',
+        '<strong>Mythical Zoan Fruit</strong><br />An unused devil fruit',
+        '<strong>Logia Fruit</strong><br />An unused devil fruit',
+        '<strong>Ancient Zoan Fruit</strong><br />An unused devil fruit',
+        '<strong>Steel Bracing</strong><br />+25% Hull for 2 rounds',
+        '<strong>Cola Engine</strong><br />+25% Sails for 2 rounds',
+        '<strong>Chain Cannons</strong><br />+25% Cannons for 2 rounds',
+        '<strong>Sea Prism Stone Keel</strong><br />Sail through Calm Belt',
+        '<strong>Submarine (Toggle)</strong><br />+25% Sails, -25% Cannons',
+        '<strong>Blimp (Toggle)</strong><br />+25% Cannons, -25% Hull',
+        '<strong>Treasure Tree Adam Wood</strong><br />+200 Hull',
+        '<strong>Tier 1 Equipment</strong><br />+5 ATK',
+        '<strong>Tier 2 Equipment</strong><br />+10 ATK',
+        '<strong>Tier 3 Equipment</strong><br />+15 ATK',
+        '<strong>Tier 4 Equipment</strong><br />+20 ATK',
+        '<strong>Tier 5 Equipment</strong><br />+30 ATK',
+        '<strong>Tier 6 Equipment</strong><br />+50 ATK',
+        '<strong>Tier 4 Equipment</strong><br />+20 ATK<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 ATK<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 ATK<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 ATK<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 ATK<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 ATK<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span>',
+        '<strong>Tier 1 Equipment</strong><br />+5 ATK<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 2 Equipment</strong><br />+10 ATK<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 3 Equipment</strong><br />+15 ATK<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 ATK<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 ATK<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 ATK<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 ATK<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 ATK<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 ATK<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 1 Equipment</strong><br />+5 DEF',
+        '<strong>Tier 2 Equipment</strong><br />+10 DEF',
+        '<strong>Tier 3 Equipment</strong><br />+15 DEF',
+        '<strong>Tier 4 Equipment</strong><br />+20 DEF',
+        '<strong>Tier 5 Equipment</strong><br />+30 DEF',
+        '<strong>Tier 6 Equipment</strong><br />+50 DEF',
+        '<strong>Tier 4 Equipment</strong><br />+20 DEF<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 DEF<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 DEF<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 DEF<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 DEF<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 DEF<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span>',
+        '<strong>Tier 1 Equipment</strong><br />+5 DEF<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 2 Equipment</strong><br />+10 DEF<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 3 Equipment</strong><br />+15 DEF<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 DEF<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 DEF<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 DEF<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 DEF<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 DEF<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 DEF<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 1 Equipment</strong><br />+5 RX',
+        '<strong>Tier 2 Equipment</strong><br />+10 RX',
+        '<strong>Tier 3 Equipment</strong><br />+15 RX',
+        '<strong>Tier 4 Equipment</strong><br />+20 RX',
+        '<strong>Tier 5 Equipment</strong><br />+30 RX',
+        '<strong>Tier 6 Equipment</strong><br />+50 RX',
+        '<strong>Tier 4 Equipment</strong><br />+20 RX<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 RX<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 RX<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 RX<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 RX<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 RX<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span>',
+        '<strong>Tier 1 Equipment</strong><br />+5 RX<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 2 Equipment</strong><br />+10 RX<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 3 Equipment</strong><br />+15 RX<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 RX<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 RX<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 RX<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 RX<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 RX<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 RX<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 1 Equipment</strong><br />+5 WP',
+        '<strong>Tier 2 Equipment</strong><br />+10 WP',
+        '<strong>Tier 3 Equipment</strong><br />+15 WP',
+        '<strong>Tier 4 Equipment</strong><br />+20 WP',
+        '<strong>Tier 5 Equipment</strong><br />+30 WP',
+        '<strong>Tier 6 Equipment</strong><br />+50 WP',
+        '<strong>Tier 4 Equipment</strong><br />+20 WP<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 WP<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 WP<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 WP<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 WP<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 WP<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span>',
+        '<strong>Tier 1 Equipment</strong><br />+5 WP<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 2 Equipment</strong><br />+10 WP<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 3 Equipment</strong><br />+15 WP<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 WP<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 WP<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 WP<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 WP<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 4 Equipment</strong><br />+20 WP<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 5 Equipment</strong><br />+30 WP<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 ATK<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 ATK<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 ATK<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 DEF<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 DEF<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 DEF<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 RX<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 RX<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 RX<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 WP<br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 WP<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Tier 6 Equipment</strong><br />+50 WP<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
+        '<strong>Screw You, RNGesus</strong><br />Do a combat re-roll',
+        '<strong>Tactical Retreat</strong><br />Escape without a roll',
+        '<strong>Under The Radar</strong><br />Freeze bounty',
+        '<strong>Identity Theft</strong><br />Counter information metagame',
+        '<strong>Social Distancing</strong><br />Reduce quest player requirement',
+        '<strong>Land Crawler (Toggle)</strong><br />+25% Hull, -25% Sails',
+      	'<strong>Skin Of Your Teeth</strong><br />Downgrade first crit to solid hit',
+      	'<strong>Freedom Of Travel</strong><br />Bypass sea restrictions for a new quest'
     ];
-    $('.postbody, .field_uneditable, .postprofile').each(function () {
+    $('.postbody, .field_uneditable, .postprofile, .message-text').each(function () {
         var oldhtml = "";
         oldhtml = $(this).html();
         for (var i = 0; i < iconBB.length; i++) {
             var iconBBCode = '[[' + iconBB[i] + ']]';
             var iconBBCode = iconBBCode.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             var iconBBRegExp = new RegExp(iconBBCode, 'g');
-            oldhtml = oldhtml.replace(iconBBRegExp, '<a class="icon-link" data-tooltip="' + tooltipText[i] + '"><img src="' + iconImage[i] + '"  class="icon-image" /></a> ');
+            oldhtml = oldhtml.replace(iconBBRegExp, '<a class="icon-link" data-bs-toggle="tooltip" data-bs-html="true" title="' + tooltipText[i] + '"><img src="' + iconImage[i] + '"  class="icon-image" /></a> ');
         };
         $(this).html(oldhtml);
     });
@@ -645,7 +593,7 @@ $(function () {
     /**CODE BOX SELECT ALL******************************************************/
 
     $("dl.codebox:not(.spoiler,.hidecode)  > dd.code, dl.codebox:not(.spoiler,.hidecode)  > dd > code").closest("dl").find('dt')
-        .append('<a class="selectCode" data-tooltip="Select Code"><img class="selectCodeImg" src="https://i.servimg.com/u/f60/18/75/26/17/select10.png" /></a>');
+        .append('<a class="selectCode" data-bs-toggle="tooltip" title="Select Code"><img class="selectCodeImg" src="https://i.servimg.com/u/f60/18/75/26/17/select10.png" /></a>');
 
     $(document).on('click', '.selectCode', function () {
         var doc = document,
@@ -770,8 +718,8 @@ $(function () {
             {
                 tag: 'ber', // berries
                 close: false,
-                defaultOption: 'g', // option 'b' for black icon
-                replacement: '<span class="ico-b-{option}"></span>'
+                defaultOption: 'g', // option 'b' for black icon and 'r' for red icon
+                replacement: '<span class="ico-b-{option}" data-bs-toggle="tooltip" title="Berries"></span>'
             },
             {
                 tag: 'approve',
@@ -780,10 +728,22 @@ $(function () {
                 replacement: '<div class="notice notice-success"><h5>{option}</h5><div>{content}</div></div>'
             },
             {
+                tag: 'approved',
+                close: false,
+                defaultOption: 'Approved!',
+                replacement: '<div class="notice notice-success"><h5>{option}</h5><div></div></div>'
+            },
+            {
                 tag: 'warn',
                 close: true,
-                defaultOption: 'Please see assessment comments.',
+                defaultOption: 'Please see assessment comment(s) below.',
                 replacement: '<div class="notice notice-warn"><h5>{option}</h5><div>{content}</div></div>'
+            },
+            {
+                tag: 'warned',
+                close: false,
+                defaultOption: 'Please see in-line assessment comment(s) below.',
+                replacement: '<div class="notice notice-warn"><h5>{option}</h5><div></div></div>'
             },
             {
                 tag: 'info',
@@ -796,19 +756,30 @@ $(function () {
                 replacement: '<div class="notice notice-alert"><h5>{option}</h5><div>{content}</div></div>'
             },
             {
-                tag: 'ass', // assess
+                tag: 'ass', // assessment
                 close: true,
-                replacement: '<span class="assessment-quote" data-tooltip="{option}">{content}</span>'
+                replacement: '<span class="assessment-quote" data-bs-toggle="tooltip" title="{option}">{content}</span>'
             },
             {
-                tag: 'dass', // assess
+                tag: 'dass', // detailed assessment
                 close: true,
-                replacement: '<span class="assessment-quote detailed-assessment-quote" data-tooltip="Click to view comments." data-bs-toggle="modal" data-bs-target="#assessment-modal">{content}</span>'
+                defaultOption: 'Click to view comment(s).',
+                replacement: '<span data-bs-toggle="tooltip" title="{option}"><span class="assessment-quote detailed-assessment-quote" data-bs-toggle="modal" data-bs-target="#assessment-modal">{content}</span></span>'
             },
             {
-                tag: 'cmt', // comment
+                tag: 'cmt', // detailed assessment comments
                 close: true,
                 replacement: `<span class="assessment-comment">{content}</span>`
+            },
+            {
+                tag: 'inlinespoiler', // inline spoilers
+                close: true,
+                replacement: `<span class="inlinespoiler inlinespoiler-hidden">{content}</span>`
+            },
+            {
+                tag: 'inlinecode', // inline code
+                close: true,
+                replacement: `<span class="inlinecode">{content}</span>`
             },
             {
                 tag: 'tracker', // tracker link
@@ -821,14 +792,26 @@ $(function () {
                 replacement: '<a href="{option}"><span class="title_prefix title_prefix-turf-details">{content}</span></a>'
             },
             {
+                tag: 'npc', // npc dialogue colouring
+                close: true,
+                defaultOption: 'misc',
+                replacement: '<span class="{option}">{content}</span>'
+            },
+            {
+                tag: 'plyr', // player dialogue colouring
+                close: true,
+                defaultOption: 'misc',
+                replacement: '<span class="plyr {option}">{content}</span>'
+            },
+            {
                 tag: 'guest',
                 close: true,
                 replacement: '<div class="guest">{content}</div>',
                 replace: function(option, content) {
                     if (_userdata.session_logged_in < 1) {
                         return 'You need to be logged in to view this content';
-                        return content;
                     }
+                    return content;
                 }
             }
 
@@ -855,7 +838,7 @@ $(function () {
             });
         },
         setupBBParser: function() {
-            var postBody = $(".postbody, .blog_message, .postprofile-info, .field_uneditable");
+            var postBody = $(".postbody, .blog_message, .postprofile-info, .field_uneditable, .message-text");
             for (var i = 0, e;(e = postBody[i++]);) {
                 for (var j in BBParser.add) {
                     var item = BBParser.add[j];
@@ -864,97 +847,88 @@ $(function () {
                     e.innerHTML = BBParser.parsedContent(e.innerHTML, item, item.close);
                 }
             }
-            /**Set up event handlers*******************************/
-            // Assessment framework
-            $('.detailed-assessment-quote').click(function() {
-                $('#assessment-comment-selected').html(``);
-                $('#assessment-quote-selected').html(``);
-                if ($(this).has('.assessment-comment').length) {
-                    $('#assessment-quote-selected').html($(this).html());
-                    $('#assessment-comment-selected').html($(this).children('.assessment-comment').first().html());
-                }
-                else {
-                    $('#assessment-quote-selected').html($(this).html());
-                    $('#assessment-comment-selected').html(`No detailed comments were provided.`);
-                }
-            });
 
-            // If a post has assessment comments, make the assessment icon visible in the post head.
-            $('.post').each(function() {
-                if ($(this).find('.assessment-quote').length) {
-                    $(this).find('.ico-assessment').removeClass('d-none');
-                }
-            });
+            /**SETUP EVENT HANDLERS AND ALL OTHER FUNCTIONS*******************************/
             SetUpTimeLineEventListners();
-
+            SetUpInlineSpoilers();
+            SetUpAssessmentIcons();
+            SetUpTooltips();
+            SetUpAssessmentFramework();
+            PopulateCharacterAges();
+            SetUpTopicTags();
+            /*******************************************************************************/
         }
     };
     BBParser.initialize();
     /**************************************************/
-    /**TOPIC TAGS/PREFIXES***************************************************************/ 
-    var TOPIC_PREFIXES = [];
-    var invisible = 0;
-    var visible = 1;
-    /**** BEGIN EDITABLE ZONE ***/
-    TOPIC_PREFIXES.push(new Array("[Episode]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Arc]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Saga]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[World Event]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Bio]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Equipment]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Fighting Style]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Tracker]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Ship]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Crew]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Companions]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Alliance]", "#fff", visible));
-    TOPIC_PREFIXES.push(new Array("[Advertisement]", "#fff", visible));
 
-    TOPIC_PREFIXES.push(new Array("[Closed]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Locked]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Event]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Rewards]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Activity Check]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Sign Ups]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Announcement]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Update]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Gifts]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Tips]", "#fff", invisible));
-    TOPIC_PREFIXES.push(new Array("[Turf Details]", "#fff", invisible));
-
-    var add_style_topic_links = true;
-    /*** END EDITABLE ZONE ***/
-
-    if (/^\/post/.test($(location).attr('pathname') + $(location).attr('search')) && $('.submit-buttons input[value="newtopic"]').length) {
-        var html_options_prefix = "<select name='prefixes'><option value='' style='background:COLOR'>Topic Type...</option>";
-        for (var prefix in TOPIC_PREFIXES) {
-            if (TOPIC_PREFIXES[prefix][2] == visible) {
-                html_options_prefix += "<option value='" + TOPIC_PREFIXES[prefix][0] + "' style='background:" + TOPIC_PREFIXES[prefix][1] + "'>" + TOPIC_PREFIXES[prefix][0] + "</option>";
-            }
-        }
-        html_options_prefix += "</select>";
-        $('input[name="subject"]').before(html_options_prefix);
-        $("form[method='post']").submit(function() {
-            $('input[name="subject"]').val(($('select[name="prefixes"]').val() ? $('select[name="prefixes"]').val() + " " : "") + $('input[name="subject"]').val())
-        });
-    }
-
-    if (add_style_topic_links == true) {
-        $('a').each(function() {
+    /**TOPIC TAGS/PREFIXES***************************************************************/
+    function SetUpTopicTags() {
+        var TOPIC_PREFIXES = [];
+        var invisible = 0;
+        var visible = 1;
+        /**** BEGIN EDITABLE ZONE ***/
+        TOPIC_PREFIXES.push(new Array("[Episode]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Arc]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Saga]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[World Event]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Bio]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Equipment]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Fighting Style]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Tracker]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Ship]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Crew]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Companions]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Alliance]", "#fff", visible));
+        TOPIC_PREFIXES.push(new Array("[Advertisement]", "#fff", visible));
+    
+        TOPIC_PREFIXES.push(new Array("[Closed]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Locked]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Event]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Rewards]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Activity Check]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Sign Ups]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Announcement]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Update]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Gifts]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Tips]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Turf Details]", "#fff", invisible));
+    
+        var add_style_topic_links = true;
+        /*** END EDITABLE ZONE ***/
+    
+        if (/^\/post/.test($(location).attr('pathname') + $(location).attr('search')) && $('.submit-buttons input[value="newtopic"]').length) {
+            var html_options_prefix = "<select name='prefixes'><option value='' style='background:COLOR'>Topic Type...</option>";
             for (var prefix in TOPIC_PREFIXES) {
-                var pref = TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "").replace(" ", "-").toLowerCase();
-                //var preg = new RegExp("^\/t\\d+(p\\d+)?\\-" + pref);
-                var preg = new RegExp(pref);
-                if (preg.test($(this).attr('href'))) {
-                    var pre1 = new RegExp("\\[" + TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "") + "\\]");
-                    $(this).html($(this).html().replace(pre1, "<span class='title_prefix title_prefix-" + pref + "'>" + TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "") + "</span>"));
+                if (TOPIC_PREFIXES[prefix][2] == visible) {
+                    html_options_prefix += "<option value='" + TOPIC_PREFIXES[prefix][0] + "' style='background:" + TOPIC_PREFIXES[prefix][1] + "'>" + TOPIC_PREFIXES[prefix][0] + "</option>";
                 }
             }
-        });
+            html_options_prefix += "</select>";
+            $('input[name="subject"]').before(html_options_prefix);
+            $("form[method='post']").submit(function() {
+                $('input[name="subject"]').val(($('select[name="prefixes"]').val() ? $('select[name="prefixes"]').val() + " " : "") + $('input[name="subject"]').val())
+            });
+        }
+    
+        if (add_style_topic_links == true) {
+            $('a').each(function() {
+                for (var prefix in TOPIC_PREFIXES) {
+                    var pref = TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "").replace(" ", "-").toLowerCase();
+                    //var preg = new RegExp("^\/t\\d+(p\\d+)?\\-" + pref);
+                    var preg = new RegExp(pref);
+                    if (preg.test($(this).attr('href'))) {
+                        var pre1 = new RegExp("\\[" + TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "") + "\\]");
+                        $(this).html($(this).html().replace(pre1, "<span class='title_prefix title_prefix-" + pref + "'>" + TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "") + "</span>"));
+                    }
+                }
+            });
+        }
     }
     /*****************************************************************/
+
+    /**TIMELINE LINKS***************************************************************/
     function SetUpTimeLineEventListners() {
-        /**TIMELINE LINKS***************************************************************/
         $(".fake-anchor").click(function () {
             var link = $(this).attr("data-href");
             if (link != "" && link != undefined) {
@@ -964,9 +938,11 @@ $(function () {
         $(".fake-anchor a").click(function (event) {
             event.stopPropagation();
         });
-        /*****************************************************************/
+    }
+    /*****************************************************************/
 
-        /**INLINE SPOILERS***************************************************************/
+    /**INLINE SPOILERS*******************************************************************************/
+    function SetUpInlineSpoilers() {
         $(".inlinespoiler").click(function (event) {
             if ($(this).hasClass("inlinespoiler-hidden")) {
                 $(this).removeClass("inlinespoiler-hidden");
@@ -976,8 +952,66 @@ $(function () {
             }
             event.stopPropagation();
         });
-        /*****************************************************************/
     }
+    /*****************************************************************/
+
+    /**ENABLE Popper.js/Bootstrap TOOLTIPS******************************************************/
+    function SetUpTooltips() {
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl, {boundary:document.body}));
+    }
+
+    /**ASSESSMENT FRAMEWORK*******************************************************************/
+    function SetUpAssessmentFramework() {
+        $('.detailed-assessment-quote').click(function() {
+            $('#assessment-comment-selected').html(``);
+            $('#assessment-quote-selected').html(``);
+            if ($(this).has('.assessment-comment').length) {
+                $('#assessment-quote-selected').html($(this).html());
+                $('#assessment-comment-selected').html($(this).children('.assessment-comment').first().html());
+            }
+            else {
+                $('#assessment-quote-selected').html($(this).html());
+                $('#assessment-comment-selected').html(`No detailed comments were provided.`);
+            }
+        });
+    }
+    /**ASSESSMENT ICONS***************************************************/
+    function SetUpAssessmentIcons() {
+        // If a post has assessment comments, make the assessment icon visible in the post head.
+        $('.post').each(function() {
+            if ($(this).find('.assessment-quote').length) {
+                $(this).find('.ico-assessment').removeClass('d-none');
+            }
+        });
+        $('.spoiler').each(function() {
+            if ($(this).find('.assessment-quote').length) {
+                var spoilerDD = '<span class="ico-assessment" data-bs-toggle="tooltip" title="This spoiler has in-line assessment comments. Expand it to find the mark-up."><img class="ico-assessment-img" src="https://i.servimg.com/u/f60/18/75/26/17/clipbo10.png" alt="This spoiler has in-line assessment comments. Expand it to find the mark-up."></span>' + $(this).children('dd').html();
+
+                $(this).children('dd').html(spoilerDD);
+                
+            }
+        });
+    }
+    /*************************************************************************************/
+    /**********************************************************************************************/
+    /**POPULATE CHARACTER AGES*****************************************/
+    function getAge(date) {
+        var today = new Date('1829-04-01'); // Change this to current date.
+        var birthDate = new Date(date);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age;
+    }
+    function PopulateCharacterAges() {
+        $('.character-current-age').each(function () {
+            $(this).text(getAge($(this).attr('data-rd-birthdate')));
+        });
+    }
+    /*****************************************************************/
     /*****************************************************************/
     /*****************************************************************/
 });
