@@ -2094,3 +2094,8 @@ select[name="topic_color"] {
 .equipment-broken-text {
     color: #FFB4B4;
 }
+#frmAgreement .inner {
+    margin: 3em auto 3em auto;
+    width: 80%;
+    text-align: justify;
+}
