@@ -2099,3 +2099,9 @@ select[name="topic_color"] {
     width: 80%;
     text-align: justify;
 }
+fieldset dl:hover dt label {
+    color: #fff;
+}
+input[type="text"]:hover, .inputbox:hover {
+    border-bottom: 1px solid #fff;
+}
