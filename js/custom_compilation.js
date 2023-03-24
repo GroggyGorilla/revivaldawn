@@ -430,7 +430,7 @@ $(function () {
         '<strong>Wind Caller</strong><br />+25% Sails for 2 rounds',
         '<strong>Barrel Crazed</strong><br />+25% Cannons for 2 rounds',
         '<strong>Hammerhanded</strong><br />One equipment repair per thread',
-        '<strong>Master Chef</strong><br />Up to 3 allies can start combat with 110% HP',
+        '<strong>Master Chef</strong><br />All allies can start combat with 110% HP',
         '<strong>Dulcet Virtuoso</strong><br />+10% to ATK or RX for 3 allies for 3 rounds',
         '<strong>Nautical Almanac</strong><br />+2 to ship combat escape roll value',
         '<strong>Walking, Talking First Aid Kit</strong><br />Revive and UT Heals',
