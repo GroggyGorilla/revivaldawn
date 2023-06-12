@@ -4,6 +4,9 @@
 ******************************/
 
 /*FONTS------------------------------------------------------------------------------------------------*/
+/* NOTO SANS */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap');
+
 /* latin-ext */
 @font-face {
     font-family: 'Kaushan Script';
@@ -2113,7 +2116,7 @@ input[type="text"]:hover, .inputbox:hover {
     transition: background-color 50ms ease-out,color 50ms ease-out;
     font-family: "gg_sans","Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     border-radius: 3px;
-    padding: 0 2px;
+    padding: 2px 4px;
     font-weight: 500;
 }
 .discord-channel-tag a {    

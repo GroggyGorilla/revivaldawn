@@ -807,9 +807,38 @@ $(function () {
                 replacement: '<span class="plyr {option}">{content}</span>'
             },
             {
-                tag: 'approvalrequests', // Discord channel link
-                close: false,
-                replacement: '<span class="discord-channel-tag"><a class="discord-channel-link" href="https://discord.com/channels/260564262446039064/390616825102336024" target="_blank"># ✅・approval-requests</a></span>'
+                tag: 'discord',
+                close: true,
+                replacement: '<span class="discord-channel-tag">{content}</span>',
+                replace: function(option, content) {
+                    content = '';
+                    let channelLink = 'https://discord.com/channels/260564262446039064/260564262446039064';
+                    let channelName = '💀・revdawn';
+                    switch (option) {
+                        case 'approval-requests':
+                            channelLink = 'https://discord.com/channels/260564262446039064/390616825102336024';
+                            channelName = '✅・approval-requests';
+                            break;
+                        case 'help-desk':
+                            channelLink = 'https://discord.com/channels/260564262446039064/297160666991689728';
+                            channelName = '🆘・help-desk';
+                            break;
+                        case 'plotting':
+                            channelLink = 'https://discord.com/channels/260564262446039064/603784693812428800';
+                            channelName = '🪢・plotting';
+                            break;
+                        case 'combat-encounters':
+                            channelLink = 'https://discord.com/channels/260564262446039064/1082001795670364301';
+                            channelName = '👊・combat-encounters';
+                            break;
+                        case 'combat-management':
+                            channelLink = 'https://discord.com/channels/260564262446039064/1082028927188488202';
+                            channelName = '🔩・combat-management';
+                            break;
+                    }
+                    content = `<a class="discord-channel-link" href="${channelLink}" target="_blank"># ${channelName}</a>`;
+                    return content;
+                }
             },
             {
                 tag: 'guest',
