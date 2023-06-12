@@ -808,7 +808,7 @@ $(function () {
             },
             {
                 tag: 'discord',
-                close: false,
+                close: true,
                 replacement: '<span class="discord-channel-tag">{content}</span>',
                 replace: function(option, content) {
                     content = '';
