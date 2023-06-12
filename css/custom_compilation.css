@@ -2120,13 +2120,17 @@ input[type="text"]:hover, .inputbox:hover {
     font-weight: 500;
 }
 .discord-channel-tag a {    
-    font-family: "gg_sans","Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "gg_sans","Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;    
+    color: rgb(201, 205, 251);
 }
 .discord-channel-tag:hover {    
     color: rgb(255, 255, 255);
     background-color: rgb(88, 101, 242);
 }
+.discord-channel-tag:hover a {
+    color: rgb(255, 255, 255);
+}
 .discord-channel-tag a:hover {
-    color: rgb(201, 205, 251);
+    color: rgb(255, 255, 255);
     text-shadow: unset;
 }
