@@ -2111,4 +2111,18 @@ input[type="text"]:hover, .inputbox:hover {
     cursor: pointer;
     -webkit-transition: background-color 50ms ease-out,color 50ms ease-out;
     transition: background-color 50ms ease-out,color 50ms ease-out;
+    font-family: "gg_sans","Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    border-radius: 3px;
+    padding: 0 2px;
+    font-weight: 500;
+    unicode-bidi: -moz-plaintext;
+    unicode-bidi: plaintext;
+}
+.discord-channel-tag:hover {    
+    color: rgb(255, 255, 255);
+    background-color: rgb(88, 101, 242);
+}
+.discord-channel-tag a:hover {
+    color: rgb(201, 205, 251);
+    text-shadow: unset;
 }
