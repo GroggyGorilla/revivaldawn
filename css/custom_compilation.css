@@ -2105,3 +2105,10 @@ fieldset dl:hover dt label {
 input[type="text"]:hover, .inputbox:hover {
     border-bottom: 1px solid #fff;
 }
+.discord-channel-tag {
+    background-color: rgba(88, 101, 242, 0.298);
+    color: rgb(201, 205, 251);
+    cursor: pointer;
+    -webkit-transition: background-color 50ms ease-out,color 50ms ease-out;
+    transition: background-color 50ms ease-out,color 50ms ease-out;
+}
