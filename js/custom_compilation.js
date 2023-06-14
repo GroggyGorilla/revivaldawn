@@ -810,7 +810,10 @@ $(function () {
                 tag: 'ximg', // player dialogue colouring
                 close: true,
                 defaultOption: '',
-                replacement: '<img class="img-modal" alt="{option}" src="{content}" />'
+                replacement: '<img class="img-modal" alt="{option}" src="{content}" />',
+                replace: function(option, content) {
+                    return $(content).attr('href');
+                }
             },
             {
                 tag: 'discord',
