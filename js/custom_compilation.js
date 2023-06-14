@@ -80,7 +80,7 @@ $(function () {
             $("#img-modal-overlay").css('display', 'block');
             $("#img-modal-expanded").prop('src', $(this).prop('src'));
             $("#img-modal-expanded").attr('alt', $(this).attr('alt'));
-            $("#img-modal-caption").text($(this).attr('alt'));
+            $("#img-modal-caption").text($(this).attr('alt') ?? '');
         });
         // When the user clicks on <span> (x), close the modal
         $('#img-modal-close').click(function () {
@@ -805,6 +805,12 @@ $(function () {
                 close: true,
                 defaultOption: 'misc',
                 replacement: '<span class="plyr {option}">{content}</span>'
+            },
+            {
+                tag: 'ximg', // player dialogue colouring
+                close: true,
+                defaultOption: '',
+                replacement: '<img class="img-modal" alt="{option}" src="{content}" />'
             },
             {
                 tag: 'discord',
