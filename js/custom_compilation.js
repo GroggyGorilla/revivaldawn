@@ -817,10 +817,9 @@ $(function () {
                 close: true,
                 replacement: '<span class="discord-channel-tag">{content}</span>',
                 replace: function(option, content) {
-                    content = '';
                     let channelLink = 'https://discord.com/channels/260564262446039064/260564262446039064';
                     let channelName = '💀・revdawn';
-                    switch (option) {
+                    switch (content) {
                         case 'approval-requests':
                             channelLink = 'https://discord.com/channels/260564262446039064/390616825102336024';
                             channelName = '✅・approval-requests';
