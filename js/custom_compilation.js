@@ -75,27 +75,29 @@ $(function () {
     /**MODAL IMAGES***************************************************************/
 
     // Get the image and insert it inside the modal - use its "alt" text as a caption
-    if ($('.img-modal').length > 0) {
-        $(document).on('click', '.img-modal', function () {
-            $("#img-modal-overlay").css('display', 'block');
-            $("#img-modal-expanded").prop('src', $(this).prop('src'));
-            $("#img-modal-expanded").attr('alt', $(this).attr('alt'));
-            $("#img-modal-caption").text($(this).attr('alt') ?? '');
-        });
-        // When the user clicks on <span> (x), close the modal
-        $('#img-modal-close').click(function () {
-            $("#img-modal-overlay").css('display', 'none');
-        });
-        $('#img-modal-overlay').click(function () {
-            if (this.id == 'img-modal-overlay') {
+    function SetUpModalImages() {
+        if ($('.img-modal').length > 0) {
+            $(document).on('click', '.img-modal', function () {
+                $("#img-modal-overlay").css('display', 'block');
+                $("#img-modal-expanded").prop('src', $(this).prop('src'));
+                $("#img-modal-expanded").attr('alt', $(this).attr('alt'));
+                $("#img-modal-caption").text($(this).attr('alt') ?? '');
+            });
+            // When the user clicks on <span> (x), close the modal
+            $('#img-modal-close').click(function () {
                 $("#img-modal-overlay").css('display', 'none');
-            }
-        });
-        $(document).keyup(function (e) {
-            if (e.key === "Escape") {
-                $("#img-modal-overlay").css('display', 'none');
-            }
-        });
+            });
+            $('#img-modal-overlay').click(function () {
+                if (this.id == 'img-modal-overlay') {
+                    $("#img-modal-overlay").css('display', 'none');
+                }
+            });
+            $(document).keyup(function (e) {
+                if (e.key === "Escape") {
+                    $("#img-modal-overlay").css('display', 'none');
+                }
+            });
+        }
     }
 
     /*****************************************************************/
@@ -894,6 +896,7 @@ $(function () {
             }
 
             /**SETUP EVENT HANDLERS AND ALL OTHER FUNCTIONS*******************************/
+            SetUpModalImages();
             SetUpTimeLineEventListners();
             SetUpInlineSpoilers();
             SetUpAssessmentIcons();
