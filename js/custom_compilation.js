@@ -814,7 +814,7 @@ $(function () {
                 replace: function(option, content) {
                     let element = document.createElement('a');
                     element.innerHTML = content;
-                    return element.firstChild.getAttribute('href');
+                    return element.firstElementChild.getAttribute('href');
                 }
             },
             {
