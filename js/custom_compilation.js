@@ -812,9 +812,7 @@ $(function () {
                 defaultOption: '',
                 replacement: '<img class="img-modal" alt="{option}" src="{content}" />',
                 replace: function(option, content) {
-                    console.log(content);
-                    console.log($(content).first().attr('href'));
-                    return $(content).first().attr('href');
+                    return $(content).first().attr('href') ?? content.replace('<a href="', '');
                 }
             },
             {
