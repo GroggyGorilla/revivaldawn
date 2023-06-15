@@ -812,7 +812,7 @@ $(function () {
                 defaultOption: '',
                 replacement: '<img class="img-modal" alt="{option}" src="{content}" />',
                 replace: function(option, content) {
-                    let imageAnchorTagHtml = $.parseHTML(content);
+                    let imageAnchorTagHtml = jQuery.parseHTML(content);
                     console.log(imageAnchorTagHtml);
                     return $(imageAnchorTagHtml).first().attr('href');
                 }
