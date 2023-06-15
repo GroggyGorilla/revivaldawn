@@ -812,10 +812,9 @@ $(function () {
                 defaultOption: '',
                 replacement: '<img class="img-modal" alt="{option}" src="{content}" />',
                 replace: function(option, content) {
-                    let element = document.createElement('a');
-                    element.innerHTML = content;
                     console.log(content);
-                    return element.firstElementChild.getAttribute('href');
+                    console.log($(content).first().attr('href'));
+                    return $(content).first().attr('href');
                 }
             },
             {
