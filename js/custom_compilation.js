@@ -569,7 +569,7 @@ $(function () {
         '<strong>Tier 6 Equipment</strong><br />+50 WP<br /><span class=&quot;equipment-attachment-text&quot;>(Sea Prism Stone Tipped)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
         '<strong>Tier 6 Equipment</strong><br />+50 WP<br /><span class=&quot;equipment-attachment-text&quot;>(Devil Fruit Fed)</span><br /><span class=&quot;equipment-broken-text&quot;>(Broken)</span>',
         '<strong>Screw You, RNGesus</strong><br />Do a combat re-roll',
-        '<strong>Tactical Retreat</strong><br />Escape without a roll',
+        '<strong>Tactical Retreat</strong><br />Increase success chance of next escape attempt significantly',
         '<strong>Under The Radar</strong><br />Freeze bounty',
         '<strong>Identity Theft</strong><br />Counter information metagame',
         '<strong>Social Distancing</strong><br />Reduce quest player requirement',
