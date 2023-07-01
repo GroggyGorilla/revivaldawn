@@ -2122,6 +2122,7 @@ input[type="text"]:hover, .inputbox:hover {
 .discord-channel-tag a {    
     font-family: "gg_sans","Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;    
     color: rgb(201, 205, 251);
+    white-space: nowrap;
 }
 .discord-channel-tag:hover {    
     color: rgb(255, 255, 255);
