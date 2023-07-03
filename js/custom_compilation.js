@@ -471,7 +471,7 @@ $(function () {
         '<strong>Sea Prism Stone Keel</strong><br />Sail through Calm Belt',
         '<strong>Submarine (Toggle)</strong><br />+25% Sails, -25% Cannons',
         '<strong>Blimp (Toggle)</strong><br />+25% Cannons, -25% Hull',
-        '<strong>Treasure Tree Adam Wood</strong><br />+200 Hull',
+        '<strong>Treasure Tree Adam Wood</strong><br />+100 HP',
         '<strong>Tier 1 Equipment</strong><br />+5 ATK',
         '<strong>Tier 2 Equipment</strong><br />+10 ATK',
         '<strong>Tier 3 Equipment</strong><br />+15 ATK',
@@ -938,15 +938,12 @@ $(function () {
         TOPIC_PREFIXES.push(new Array("[Saga]", "#fff", visible));
         TOPIC_PREFIXES.push(new Array("[World Event]", "#fff", visible));
         TOPIC_PREFIXES.push(new Array("[Bio]", "#fff", visible));
-        TOPIC_PREFIXES.push(new Array("[Equipment]", "#fff", visible));
-        TOPIC_PREFIXES.push(new Array("[Fighting Style]", "#fff", visible));
         TOPIC_PREFIXES.push(new Array("[Tracker]", "#fff", visible));
-        TOPIC_PREFIXES.push(new Array("[Ship]", "#fff", visible));
         TOPIC_PREFIXES.push(new Array("[Crew]", "#fff", visible));
-        TOPIC_PREFIXES.push(new Array("[Companions]", "#fff", visible));
         TOPIC_PREFIXES.push(new Array("[Alliance]", "#fff", visible));
         TOPIC_PREFIXES.push(new Array("[Advertisement]", "#fff", visible));
     
+        // Hidden
         TOPIC_PREFIXES.push(new Array("[Closed]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Locked]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Event]", "#fff", invisible));
@@ -958,6 +955,12 @@ $(function () {
         TOPIC_PREFIXES.push(new Array("[Gifts]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Tips]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Turf Details]", "#fff", invisible));
+        
+        // Deprecated
+        TOPIC_PREFIXES.push(new Array("[Equipment]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Fighting Style]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Ship]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Companions]", "#fff", invisible));
     
         var add_style_topic_links = true;
         /*** END EDITABLE ZONE ***/
