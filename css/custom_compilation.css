@@ -2031,6 +2031,7 @@ https://purecss.io
     color: #fff;
     box-shadow: 0 0 0.1em #000;
     background-color: teal;
+    white-space: nowrap;
 }
 .title_prefix-episode,
 .title_prefix-arc,
