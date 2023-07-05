@@ -640,7 +640,8 @@ span.mod-recent-info {
 [class^="icon-berry-"],
 .ico-b-g,
 .ico-b-b,
-.ico-b-r {
+.ico-b-r,
+.ico-b-u {
     display: inline-block;
     background-repeat: no-repeat;
     width: 12px;
@@ -666,6 +667,11 @@ span.mod-recent-info {
 .icon-berry-red,
 .ico-b-r {
     background-image: url(https://i.imgur.com/L93Kmx8.png);
+}
+
+.icon-berry-blue,
+.ico-b-u {
+    background-image: url(https://i.imgur.com/0UV94q5.png);
 }
 
 
