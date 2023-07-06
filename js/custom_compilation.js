@@ -721,10 +721,16 @@ $(function () {
             * '{option}' corresponds to the optional tag title, and '{content}' correspond to the text between the tags
             */
             {
-                tag: 'ber', // berries
+                tag: 'ber', // belly
                 close: false,
                 defaultOption: 'g', // option 'b' for black icon and 'r' for red icon
-                replacement: '<span class="ico-b-{option}" data-bs-toggle="tooltip" title="Berries"></span>'
+                replacement: '<span class="ico-b-{option}" data-bs-toggle="tooltip" title="Belly"></span>'
+            },
+            {
+                tag: 'bel', // belly
+                close: false,
+                defaultOption: 'g', // option 'b' for black icon and 'r' for red icon
+                replacement: '<span class="ico-b-{option}" data-bs-toggle="tooltip" title="Belly"></span>'
             },
             {
                 tag: 'approve',
