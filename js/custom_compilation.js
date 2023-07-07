@@ -440,7 +440,7 @@ $(function () {
         '<strong>Walking, Talking First Aid Kit</strong><br />Revive and UT Heals',
         '<strong>Ship Bringer</strong><br />One ship repair per thread',
         '<strong>Punchout Guru</strong><br />+0.20 EXP Bonus to all allies in a quest',
-        '<strong>Berry Printer</strong><br />+0.20 Income Bonus to all allies in a quest',
+        '<strong>Belly Printer</strong><br />+0.20 Income Bonus to all allies in a quest',
         '<strong>Hard-boiled</strong><br />+15 stats',
         '<strong>Child of Destiny</strong><br />+25 stats',
         '<strong>Dreams Never Die</strong><br />Resist knockout once per thread',
