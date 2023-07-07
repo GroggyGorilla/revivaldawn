@@ -1074,6 +1074,7 @@ $(function () {
     /**********************************************************************************************/
     /**POPULATE CHARACTER AGES*****************************************/
     function getAge(date) {
+        //CURRENTDATE
         var today = new Date('1829-04-01'); // Change this to current date.
         var birthDate = new Date(date);
         var age = today.getFullYear() - birthDate.getFullYear();
