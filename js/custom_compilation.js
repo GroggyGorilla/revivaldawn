@@ -1052,7 +1052,7 @@ $(function () {
                 $('#assessment-comment-selected').html(`No detailed comments were provided.`);
             }
         });
-        SetUpAssessmentFrameworkEditorButtons();
+        //SetUpAssessmentFrameworkEditorButtons();
     }
     // NOT WORKING YET.
     function SetUpAssessmentFrameworkEditorButtons() {
