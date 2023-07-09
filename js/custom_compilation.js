@@ -1065,10 +1065,15 @@ $(function () {
                     94, // Butch
                     95, // Loha
                 ];
+            console.log(`1068`);
             if ([assessorAccounts].includes(_userdata.user_id)) {
+                console.log(`1070`);
+
                 const urlParams = new URLSearchParams(window.location.search);
                 if (urlParams.has('mode')) {
+                    console.log(`1074`);
                     if (urlParams.get('mode') == 'editpost') {
+                        console.log(`1076`);
                         let sceditorButtonText = $('<div></div>').text('Detailed Assessment Comment');
                         let sceditorButton = $('<a></a>').class('sceditor-button sceditor-button-dass').attr('title', 'Detailed Assessment Comment').append(sceditorButtonText);
                         let sceditorGroup = $('<div></div>').class('sceditor-group').append(sceditorButton);
