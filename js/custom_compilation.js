@@ -1103,7 +1103,7 @@ $(function () {
                             }
 
                             txtArea.focus();
-                            txtArea[0].selectionEnd = cursorposition;
+                            txtArea[0].selectionEnd = start + 5;
                         }
                     });
                 }
