@@ -1102,6 +1102,7 @@ $(function () {
                                 updateEditorVal(`${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`);
                                 cursorPosition = start + 5;
                             }
+                            updateEditorVal(`${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`);
 
                             txtArea.focus();
                             txtArea[0].selectionEnd = cursorPosition;
