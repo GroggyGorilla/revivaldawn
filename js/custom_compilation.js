@@ -1066,7 +1066,7 @@ $(function () {
                     95, // Loha
                 ];
             console.log(`1068`);
-            if ([assessorAccounts].includes(_userdata.user_id)) {
+            if (assessorAccounts.includes(_userdata.user_id)) {
                 console.log(`1070`);
 
                 const urlParams = new URLSearchParams(window.location.search);
