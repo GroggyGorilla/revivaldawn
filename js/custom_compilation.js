@@ -1065,18 +1065,18 @@ $(function () {
                     94, // Butch
                     95, // Loha
                 ];
-            console.log(`1068`);
             if (assessorAccounts.includes(_userdata.user_id)) {
-                console.log(`1070`);
 
                 const urlParams = new URLSearchParams(window.location.search);
                 if (urlParams.has('mode')) {
-                    console.log(`1074`);
                     if (urlParams.get('mode') == 'editpost') {
-                        console.log(`1076`);
-                        let sceditorButtonText = $('<div></div>').text('Detailed Assessment Comment');
-                        let sceditorAssButton = $('<a></a>').addClass('sceditor-button sceditor-button-dass').attr('title', 'Detailed Assessment Comment').append(sceditorButtonText);
-                        let sceditorDassButton = $('<a></a>').addClass('sceditor-button sceditor-button-dass').attr('title', 'Detailed Assessment Comment').append(sceditorButtonText);
+
+                        let sceditorButtonAssText = $('<div></div>').text('Detailed Assessment Comment');
+                        let sceditorAssButton = $('<a></a>').addClass('sceditor-button sceditor-button-ass').attr('title', 'Assessment Comment').append(sceditorButtonAssText);
+
+                        let sceditorButtonDassText = $('<div></div>').text('Detailed Assessment Comment');
+                        let sceditorDassButton = $('<a></a>').addClass('sceditor-button sceditor-button-dass').attr('title', 'Detailed Assessment Comment').append(sceditorButtonDassText);
+
                         let sceditorGroup = $('<div></div>').addClass('sceditor-group').append(sceditorAssButton).append(sceditorDassButton);
 
                         $('.sceditor-toolbar').append(sceditorGroup);
