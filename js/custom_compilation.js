@@ -1075,8 +1075,8 @@ $(function () {
                     if (urlParams.get('mode') == 'editpost') {
                         console.log(`1076`);
                         let sceditorButtonText = $('<div></div>').text('Detailed Assessment Comment');
-                        let sceditorButton = $('<a></a>').class('sceditor-button sceditor-button-dass').attr('title', 'Detailed Assessment Comment').append(sceditorButtonText);
-                        let sceditorGroup = $('<div></div>').class('sceditor-group').append(sceditorButton);
+                        let sceditorButton = $('<a></a>').addClass('sceditor-button sceditor-button-dass').attr('title', 'Detailed Assessment Comment').append(sceditorButtonText);
+                        let sceditorGroup = $('<div></div>').addClass('sceditor-group').append(sceditorButton);
 
                         $('.sceditor-toolbar').append(sceditorGroup);
                     }
