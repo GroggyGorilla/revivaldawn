@@ -292,7 +292,17 @@ a[href="/faq"] {
     border-color: #ffffff;
 }
 
-hr, h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
     border-color: var(--rd-main-font-color);
     opacity: 1;
 }
@@ -304,8 +314,8 @@ blockquote {
     overflow: visible;
 }
 
-blockquote:before {    
-    color: rgba(0,0,0,0.4);
+blockquote:before {
+    color: rgba(0, 0, 0, 0.4);
 }
 
 blockquote a,
@@ -1139,7 +1149,8 @@ table#tracFld {
 position: relative;
 }*/
 
-.postprofile-info table#tracFld a, .tracker-link {
+.postprofile-info table#tracFld a,
+.tracker-link {
     margin: auto;
     display: inline-block;
     background-color: var(--rd-highlight-color);
@@ -1152,7 +1163,8 @@ position: relative;
     max-width: 100%;
 }
 
-.postprofile-info table#tracFld a:hover, .tracker-link:hover {
+.postprofile-info table#tracFld a:hover,
+.tracker-link:hover {
     background-color: #ffffff;
     color: #000000 !important;
 }
@@ -1168,17 +1180,20 @@ position: relative;
     color: var(--rd-color-cpol) !important;
 }
 
-.spoiler-navy dl dt, .spoiler-blue dl dt,
+.spoiler-navy dl dt,
+.spoiler-blue dl dt,
 .navy {
     color: var(--rd-color-navy) !important;
 }
 
-.spoiler-revo dl dt, .spoiler-green dl dt,
+.spoiler-revo dl dt,
+.spoiler-green dl dt,
 .revo {
     color: var(--rd-color-revo) !important;
 }
 
-.spoiler-pirt dl dt, .spoiler-red dl dt,
+.spoiler-pirt dl dt,
+.spoiler-red dl dt,
 .pirt {
     color: var(--rd-color-pirt) !important;
 }
@@ -1202,7 +1217,7 @@ position: relative;
 /*BOOTSTRAP Corrections-------------------------------------------------*/
 /*Colour variables-----------------------------*/
 :root {
-    --bs-dark-rgb: 33,33,33 !important;
+    --bs-dark-rgb: 33, 33, 33 !important;
     --bs-dark: #212121 !important;
     --rd-blockquote-bg-color: #333333;
     --rd-highlight-color: #2C353B;
@@ -1255,7 +1270,9 @@ div[class*='post--'] .postbody th,
     color: inherit !important;
 }
 
-ul.topiclist, ul.topiclist dl, dl.codebox {
+ul.topiclist,
+ul.topiclist dl,
+dl.codebox {
     margin-bottom: 0rem;
 }
 
@@ -1826,7 +1843,9 @@ https://purecss.io
     text-align: left;
 }
 
-.tl-content h2, .content h2, .panel h2 {
+.tl-content h2,
+.content h2,
+.panel h2 {
     font-size: 1.3em;
     color: #ffffff;
     border-color: #ffffff;
@@ -1874,9 +1893,11 @@ https://purecss.io
 /*-------------------------------------------------------------------------------------------*/
 
 /*--TEMPLATE MOD FIXES---------------------------------------------------------------------------*/
-.topiclist dd.dterm, .topiclist dt {
+.topiclist dd.dterm,
+.topiclist dt {
     width: 70% !important;
 }
+
 .topiclist dd.lastpost {
     width: 30% !important;
 }
@@ -1911,24 +1932,28 @@ https://purecss.io
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
-    -moz-box-shadow: 1px 1px 2px rgba(0,0,0,.4);
-    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,.4);
-    box-shadow: 1px 1px 2px rgba(0,0,0,.4);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
     position: relative;
     left: 34px;
 }
- .notice p {
+
+.notice p {
     margin-bottom: 1.5em;
 }
- .notice p:last-child {
+
+.notice p:last-child {
     margin-bottom: 0;
 }
- .notice h5 {
+
+.notice h5 {
     font-size: 14px;
     font-weight: bold;
     margin-bottom: .65em;
 }
- .notice:before {
+
+.notice:before {
     content: "";
     background: url(https://i.imgur.com/PcLYd52.png) no-repeat 100% 0;
     width: 33px;
@@ -1937,47 +1962,58 @@ https://purecss.io
     left: -34px;
     top: 9px;
 }
- .notice-success {
+
+.notice-success {
     background-color: #EEF4D4;
     color: #596C26;
     border: 1px solid #8FAD3D;
 }
- .notice-success:before {
+
+.notice-success:before {
     background-position: 100% 0;
 }
- .notice-warn {
+
+.notice-warn {
     background-color: #FFEA97;
     color: #796100;
     border: 1px solid #E1B500;
 }
- .notice-warn:before {
+
+.notice-warn:before {
     background-position: 100% -800px;
 }
- .notice-alert {
+
+.notice-alert {
     background-color: #EFCEC9;
     color: #933628;
     border: 1px solid #AE3F2F;
 }
- .notice-alert:before {
+
+.notice-alert:before {
     background-position: 100% -400px;
 }
- .notice-info {
+
+.notice-info {
     background-color: #C6D8F0;
     color: #285797;
     border: 1px solid #4381CD;
 }
- .notice-info:before {
+
+.notice-info:before {
     background-position: 100% -1200px;
 }
+
 /*--------------------------------------------------*/
 /*--ASSESSMENT FRAMEWORK-------------------*/
 #assessment-modal {
     display: none;
     z-index: 99999 !important;
 }
+
 .assessment-modal-body img {
     max-width: 100%;
 }
+
 .assessment-modal-body {
     margin-left: auto;
     margin-right: auto;
@@ -1993,42 +2029,52 @@ https://purecss.io
     padding-bottom: 1em;
     line-height: 140%;
 }
+
 .assessment-modal-body hr {
     border-color: var(--rd-main-font-color);
 }
+
 .ico-assessment {
-	padding-right: 4px;
+    padding-right: 4px;
 }
-.ico-assessment {	
+
+.ico-assessment {
     text-shadow: none !important;
     z-index: 999;
     cursor: help;
 }
+
 .assessment-quote {
     text-decoration-line: underline !important;
     text-decoration-style: dotted !important;
     text-decoration-color: #fff;
     background-color: #555;
 }
+
 .assessment-quote.detailed-assessment-quote {
     text-decoration-color: var(--rd-color-cpol);
     background-color: #550;
 }
+
 .assessment-quote:hover {
     text-decoration-style: solid !important;
     cursor: help;
     background-color: #444;
 }
+
 .assessment-quote.detailed-assessment-quote:hover {
     background-color: #440;
     cursor: pointer;
 }
+
 .assessment-comment {
     display: none;
 }
+
 .btn-close {
     background: transparent url(https://gistcdn.githack.com/GroggyGorilla/0b6178ca989286dd4eb2f2acef9d8dcc/raw/6efde80a88e676e65560aa8d58a5ace615efc7c6/white-close-btn.svg) center/1em auto no-repeat;
 }
+
 /*--MISC-----------------------------------------------*/
 .title_prefix {
     padding: 0.3em 0.5em;
@@ -2039,22 +2085,27 @@ https://purecss.io
     background-color: teal;
     white-space: nowrap;
 }
+
 .title_prefix-episode,
 .title_prefix-arc,
 .title_prefix-saga,
 .title_prefix-world-event {
     background-color: steelblue;
 }
+
 .title_prefix-turf-details {
     background-color: royalblue;
 }
+
 .title_prefix-activity-check {
     background-color: crimson;
 }
+
 .title_prefix-closed,
 .title_prefix-locked {
     background-color: dimgrey;
 }
+
 .title_prefix-event,
 .title_prefix-sign-ups,
 .title_prefix-rewards,
@@ -2064,87 +2115,119 @@ https://purecss.io
 .title_prefix-tips {
     background-color: seagreen;
 }
+
 .title_prefix-advertisement {
     background-color: darksalmon;
 }
+
 a:hover .title_prefix,
 a:active .title_prefix {
     color: #fff;
     text-shadow: none;
 }
-h1.page-title, .topic-title {
-	line-height: 2em !important;
+
+h1.page-title,
+.topic-title {
+    line-height: 2em !important;
 }
+
 select[name="topic_color"] {
     display: none;
 }
+
 .row .pagination span a:hover {
     background-color: white;
     color: #000;
 }
-.notice a, .notice a:visited {
+
+.notice a,
+.notice a:visited {
     color: #000;
 }
+
 .notice a:hover {
     color: #fff;
     text-shadow: 0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000;
 }
+
 .tooltip-inner {
     font-size: 1.2rem;
     font-family: 'Century Gothic', Verdana, sans-serif;
     color: #fff;
 }
-.equipment-broken-text, .equipment-attachment-text {
+
+.equipment-broken-text,
+.equipment-attachment-text {
     font-size: 1.1rem;
     font-style: italic;
 }
+
 .equipment-attachment-text {
     color: #8AD6FF;
 }
+
 .equipment-broken-text {
     color: #FFB4B4;
 }
+
 #frmAgreement .inner {
     margin: 3em auto 3em auto;
     width: 80%;
     text-align: justify;
 }
+
 fieldset dl:hover dt label {
     color: #fff;
 }
-input[type="text"]:hover, .inputbox:hover {
+
+input[type="text"]:hover,
+.inputbox:hover {
     border-bottom: 1px solid #fff;
 }
+
 .discord-channel-tag {
     background-color: rgba(88, 101, 242, 0.298);
     color: rgb(201, 205, 251);
     cursor: pointer;
-    -webkit-transition: background-color 50ms ease-out,color 50ms ease-out;
-    transition: background-color 50ms ease-out,color 50ms ease-out;
-    font-family: "gg_sans","Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-transition: background-color 50ms ease-out, color 50ms ease-out;
+    transition: background-color 50ms ease-out, color 50ms ease-out;
+    font-family: "gg_sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     border-radius: 3px;
     padding: 2px 4px;
     font-weight: 500;
 }
-.discord-channel-tag a {    
-    font-family: "gg_sans","Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;    
+
+.discord-channel-tag a {
+    font-family: "gg_sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: rgb(201, 205, 251);
     white-space: nowrap;
 }
-.discord-channel-tag:hover {    
+
+.discord-channel-tag:hover {
     color: rgb(255, 255, 255);
     background-color: rgb(88, 101, 242);
 }
+
 .discord-channel-tag:hover a {
     color: rgb(255, 255, 255);
 }
+
 .discord-channel-tag a:hover {
     color: rgb(255, 255, 255);
     text-shadow: unset;
 }
+
 .discord-channel-icon {
     width: 1.5rem;
     height: 1.5rem;
     vertical-align: middle;
     margin-bottom: .2rem;
+}
+
+.sceditor-button.sceditor-button-ass div {
+    background-image: url(https://i.imgur.com/q9GvEl0.png);
+}
+
+.sceditor-button.sceditor-button-dass div {
+    background-image: url(https://i.imgur.com/m1QtRNg.png);
 }
