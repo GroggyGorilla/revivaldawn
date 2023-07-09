@@ -1052,7 +1052,7 @@ $(function () {
                 $('#assessment-comment-selected').html(`No detailed comments were provided.`);
             }
         });
-        //SetUpAssessmentFrameworkEditorButtons();
+        SetUpAssessmentFrameworkEditorButtons();
     }
     function SetUpAssessmentFrameworkEditorButtons() {
         try {
@@ -1095,7 +1095,7 @@ $(function () {
                             var prefixStr = txtArea.text().substring(0, start);
                             var suffixStr = txtArea.text().substring(end, txtArea.text().length);
                             var selectedStr = txtArea.text().substring(start, end);
-                            txtArea.text(`${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`);
+                            updateEditorVal(`${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`);
 
                             txtArea.focus();
                             txtArea.prop('selectionEnd', start + 5);
