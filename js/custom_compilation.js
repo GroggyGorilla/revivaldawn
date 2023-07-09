@@ -1083,7 +1083,8 @@ $(function () {
                     }
 
 
-                    $('.sceditor-button-ass').click(function () {
+                    $('.sceditor-button-ass').click(function (e) {
+                        e.preventDefault();
                         let txtArea = $('#text_editor_textarea');
                         let txtAreaGhost = $('#textarea_content .sceditor-container textarea')[0];
                         let start = txtAreaGhost.selectionStart;
@@ -1097,7 +1098,7 @@ $(function () {
                             var selectedStr = txtArea.text().substring(start, end);
                             updateEditorVal(`${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`);
 
-                            txtAreaGhost.focus();
+                            txtArea.focus();
                             txtAreaGhost.selectionEnd = start + 5;
                         }
                     });
