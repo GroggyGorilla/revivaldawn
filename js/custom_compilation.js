@@ -1083,38 +1083,27 @@ $(function () {
                     }
 
 
-                    $('.sceditor-button-ass').click(function (e) {
+                    $('.sceditor-button-ass, .sceditor-button-dass').click(function (e) {
                         e.preventDefault();
                         let txtArea = $('#text_editor_textarea');
                         let txtAreaGhost = $('#textarea_content .sceditor-container textarea')[0];
                         let start = txtAreaGhost.selectionStart;
                         let end = txtAreaGhost.selectionEnd;
-                        console.log(txtArea);
-                        console.log(start);
-                        console.log(end);
                         if (start >= 0 && end > start) {
-                            var prefixStr = txtArea.text().substring(0, start);
-                            var suffixStr = txtArea.text().substring(end, txtArea.text().length);
-                            var selectedStr = txtArea.text().substring(start, end);
-                            updateEditorVal(`${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`);
-
-                            txtAreaGhost.focus();
-                            txtAreaGhost.selectionEnd = start + 5;
-                        }
-                    });
-
-                    $('.sceditor-button-dass').click(function () {
-                        let txtArea = $('#text_editor_textarea');
-                        let start = txtArea.prop('selectionStart');
-                        let end = txtArea.prop('selectionEnd');
-                        if (start >= 0 && end > start) {
-                            var prefixStr = txtArea.text().substring(0, start);
-                            var suffixStr = txtArea.text().substring(end, elem.text().length);
-                            var selectedStr = txtArea.text().substring(start, end);
-                            txtArea.text(`${prefixStr}[dass]${selectedStr}[cmt][/cmt][/dass]${suffixStr}`);
+                            const prefixStr = txtArea.text().substring(0, start);
+                            const suffixStr = txtArea.text().substring(end, txtArea.text().length);
+                            const selectedStr = txtArea.text().substring(start, end);
+                            let cursorPosition = 0;
+                            if ($(this).attr('id') == '.sceditor-button-ass') {
+                                updateEditorVal(`${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`);
+                                cursorPosition = start + 5;
+                            } else if ($(this).attr('id') == '.sceditor-button-dass') {
+                                updateEditorVal(`${prefixStr}[dass]${selectedStr}[cmt][/cmt][/dass]${suffixStr}`);
+                                cursorPosition = end + 11;
+                            }
 
                             txtArea.focus();
-                            txtArea.prop('selectionEnd', end + 11);
+                            txtArea[0].selectionEnd = cursorposition;
                         }
                     });
                 }
