@@ -1054,6 +1054,7 @@ $(function () {
         });
         SetUpAssessmentFrameworkEditorButtons();
     }
+    // NOT WORKING YET.
     function SetUpAssessmentFrameworkEditorButtons() {
         try {
             const assessorAccounts =
@@ -1094,18 +1095,20 @@ $(function () {
                             const suffixStr = txtArea.text().substring(end, txtArea.text().length);
                             const selectedStr = txtArea.text().substring(start, end);
                             let cursorPosition = 0;
+                            let newText = `${prefixStr}[dass]${selectedStr}[cmt][/cmt][/dass]${suffixStr}`;
 
                             if ($(this).hasClass('sceditor-button-dass')) {
-                                updateEditorVal(`${prefixStr}[dass]${selectedStr}[cmt][/cmt][/dass]${suffixStr}`);
+                                newText = `${prefixStr}[dass]${selectedStr}[cmt][/cmt][/dass]${suffixStr}`;
                                 cursorPosition = end + 11;
                             } else {
-                                updateEditorVal(`${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`);
+                                newText = `${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`;
                                 cursorPosition = start + 5;
                             }
-                            updateEditorVal(`${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`);
+                            txtArea.text(newText);
+                            updateEditorVal(newText);
 
-                            txtArea.focus();
-                            txtArea[0].selectionEnd = cursorPosition;
+                            txtAreaGhost.focus();
+                            txtAreaGhost.selectionEnd = cursorPosition;
                         }
                     });
                 }
