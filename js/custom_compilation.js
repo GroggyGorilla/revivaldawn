@@ -1,4 +1,4 @@
-$(function () { 
+$(function () {
 
     /**POPULATE PAGE QUICK LINKS**************************************/
     if ($('#rd_pagelinks').length) {
@@ -55,14 +55,14 @@ $(function () {
             if (scrollbottom !== undefined) {
                 if (scrollbottom == "true") {
                     scrollTop = false;
-                    bottompos =  $(linkloc).offset().top - $(window).height() + $(linkloc).outerHeight(true);
+                    bottompos = $(linkloc).offset().top - $(window).height() + $(linkloc).outerHeight(true);
                     $rdql_root.animate({
                         scrollTop: bottompos
                     }, 500);
                 }
             }
 
-            if (scrollTop == true) {                
+            if (scrollTop == true) {
                 $rdql_root.animate({
                     scrollTop: $($.attr(this, 'href')).offset().top - 100
                 }, 500);
@@ -111,8 +111,8 @@ $(function () {
     var tokenBBCodeReplacementHtml = [
         '<span class="ico-b-g"></span>',
         '<span class="ico-b-b"></span>'
-    ];    
-    
+    ];
+
     $('.postbody').each(function () {
         var posthtml = "";
         posthtml = $(this).html();
@@ -276,9 +276,9 @@ $(function () {
         'identitytheft',
         'socialdistancing',
         'landcrawler',
-      	'skinofyourteeth',
-      	'freedomoftravel',
-'themaxwelltreatment'
+        'skinofyourteeth',
+        'freedomoftravel',
+        'themaxwelltreatment'
     ];
     var iconImage = [
         'https://i.servimg.com/u/f60/18/75/26/17/jerryr10.png',
@@ -426,9 +426,9 @@ $(function () {
         'https://i.servimg.com/u/f60/18/75/26/17/identi10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/social10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/ship_110.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/skinof10.png',
-      	'https://i.servimg.com/u/f60/18/75/26/17/freedo11.png', 
-'https://i60.servimg.com/u/f60/18/75/26/17/themax10.png'
+        'https://i.servimg.com/u/f60/18/75/26/17/skinof10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/freedo11.png',
+        'https://i60.servimg.com/u/f60/18/75/26/17/themax10.png'
     ];
 
     var tooltipText = [
@@ -577,9 +577,9 @@ $(function () {
         '<strong>Identity Theft</strong><br />Counter information metagame',
         '<strong>Social Distancing</strong><br />Reduce quest player requirement',
         '<strong>Land Crawler (Toggle)</strong><br />+25% Hull, -25% Sails',
-      	'<strong>Skin Of Your Teeth</strong><br />Downgrade first crit to solid hit',
-      	'<strong>Freedom Of Travel</strong><br />Bypass sea restrictions for a new quest',
-      	'<strong>The Maxwell Treatment</strong><br />Borderline flirty grading comments from Gray'
+        '<strong>Skin Of Your Teeth</strong><br />Downgrade first crit to solid hit',
+        '<strong>Freedom Of Travel</strong><br />Bypass sea restrictions for a new quest',
+        '<strong>The Maxwell Treatment</strong><br />Borderline flirty grading comments from Gray'
     ];
     $('.postbody, .field_uneditable, .postprofile, .message-text').each(function () {
         var oldhtml = "";
@@ -713,8 +713,8 @@ $(function () {
     *  This work is free. You can redistribute it and/or modify it
     */
     BBParser = {
-        initialize: function() {
-            $(function() {
+        initialize: function () {
+            $(function () {
                 BBParser.setupBBParser();
             });
         },
@@ -822,7 +822,7 @@ $(function () {
                 close: true,
                 defaultOption: '',
                 replacement: '<img class="img-modal" alt="{option}" src="{content}" />',
-                replace: function(option, content) {
+                replace: function (option, content) {
                     return $(content).first().attr('href');
                 }
             },
@@ -830,7 +830,7 @@ $(function () {
                 tag: 'discord',
                 close: true,
                 replacement: '<span class="discord-channel-tag">{content}</span>',
-                replace: function(option, content) {
+                replace: function (option, content) {
                     let channelLink = 'https://discord.com/channels/260564262446039064/260564262446039064';
                     let channelName = '💀・revdawn';
                     switch (content) {
@@ -880,7 +880,7 @@ $(function () {
                 tag: 'guest',
                 close: true,
                 replacement: '<div class="guest">{content}</div>',
-                replace: function(option, content) {
+                replace: function (option, content) {
                     if (_userdata.session_logged_in < 1) {
                         return 'You need to be logged in to view this content';
                     }
@@ -891,18 +891,18 @@ $(function () {
             // Note: Do not add a comma at the end of the last entry
         ],
         // Do not change anything down
-        validateTag: function(a) {
+        validateTag: function (a) {
             if (!/^\w+$/.test(a)) throw new RangeError("You added an invalid tag: " + a);
         },
-        replacers: function(a, b, c) {
+        replacers: function (a, b, c) {
             return (a || "").replace(/{option}/g, b || "").replace(/{content}/g, c || "");
         },
         optionReg: /.*?=("|'|)(.*?)\1\]/,
-        parsedContent: function(a, b, c) {
-            return a.replace(c ? RegExp("(\\[" + b.tag + "[^\\]]*\\])([\\s\\S]*?)\\[/" + b.tag + "]", "g" + (b.insensitive ? "i" : "")) : RegExp("\\[" + b.tag + "[^\\]]*\\]", "g" + (b.insensitive ? "i" : "")), function(d, e, f) {
+        parsedContent: function (a, b, c) {
+            return a.replace(c ? RegExp("(\\[" + b.tag + "[^\\]]*\\])([\\s\\S]*?)\\[/" + b.tag + "]", "g" + (b.insensitive ? "i" : "")) : RegExp("\\[" + b.tag + "[^\\]]*\\]", "g" + (b.insensitive ? "i" : "")), function (d, e, f) {
                 c || (e = d);
                 e = BBParser.optionReg.test(e) ? e.replace(BBParser.optionReg, "$2") : b.defaultOption;
-                if("undefined" !== typeof b.replace) {
+                if ("undefined" !== typeof b.replace) {
                     d = c ? b.replace(e, f) : b.replace(e);
                     "string" === typeof d ? c ? f = d : e = d : d;
                     "object" === typeof d && (e = d.option || e, f = d.content || f);
@@ -910,9 +910,9 @@ $(function () {
                 return BBParser.replacers(b.replacement, e, f);
             });
         },
-        setupBBParser: function() {
+        setupBBParser: function () {
             var postBody = $(".postbody, .blog_message, .postprofile-info, .field_uneditable, .message-text");
-            for (var i = 0, e;(e = postBody[i++]);) {
+            for (var i = 0, e; (e = postBody[i++]);) {
                 for (var j in BBParser.add) {
                     var item = BBParser.add[j];
                     // Validating tag
@@ -951,7 +951,7 @@ $(function () {
         TOPIC_PREFIXES.push(new Array("[Crew]", "#fff", visible));
         TOPIC_PREFIXES.push(new Array("[Alliance]", "#fff", visible));
         TOPIC_PREFIXES.push(new Array("[Advertisement]", "#fff", visible));
-    
+
         // Hidden
         TOPIC_PREFIXES.push(new Array("[Closed]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Locked]", "#fff", invisible));
@@ -964,16 +964,16 @@ $(function () {
         TOPIC_PREFIXES.push(new Array("[Gifts]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Tips]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Turf Details]", "#fff", invisible));
-        
+
         // Deprecated
         TOPIC_PREFIXES.push(new Array("[Equipment]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Fighting Style]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Ship]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Companions]", "#fff", invisible));
-    
+
         var add_style_topic_links = true;
         /*** END EDITABLE ZONE ***/
-    
+
         if (/^\/post/.test($(location).attr('pathname') + $(location).attr('search')) && $('.submit-buttons input[value="newtopic"]').length) {
             var html_options_prefix = "<select name='prefixes'><option value='' style='background:COLOR'>Topic Type...</option>";
             for (var prefix in TOPIC_PREFIXES) {
@@ -983,13 +983,13 @@ $(function () {
             }
             html_options_prefix += "</select>";
             $('input[name="subject"]').before(html_options_prefix);
-            $("form[method='post']").submit(function() {
+            $("form[method='post']").submit(function () {
                 $('input[name="subject"]').val(($('select[name="prefixes"]').val() ? $('select[name="prefixes"]').val() + " " : "") + $('input[name="subject"]').val())
             });
         }
-    
+
         if (add_style_topic_links == true) {
-            $('a').each(function() {
+            $('a').each(function () {
                 for (var prefix in TOPIC_PREFIXES) {
                     var pref = TOPIC_PREFIXES[prefix][0].replace("[", "").replace("]", "").replace(" ", "-").toLowerCase();
                     //var preg = new RegExp("^\/t\\d+(p\\d+)?\\-" + pref);
@@ -1035,12 +1035,12 @@ $(function () {
     /**ENABLE Popper.js/Bootstrap TOOLTIPS******************************************************/
     function SetUpTooltips() {
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl, {boundary:document.body}));
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl, { boundary: document.body }));
     }
 
     /**ASSESSMENT FRAMEWORK*******************************************************************/
     function SetUpAssessmentFramework() {
-        $('.detailed-assessment-quote').click(function() {
+        $('.detailed-assessment-quote').click(function () {
             $('#assessment-comment-selected').html(``);
             $('#assessment-quote-selected').html(``);
             if ($(this).has('.assessment-comment').length) {
@@ -1052,21 +1052,54 @@ $(function () {
                 $('#assessment-comment-selected').html(`No detailed comments were provided.`);
             }
         });
+        SetUpAssessmentFrameworkEditorButtons();
     }
+    function SetUpAssessmentFrameworkEditorButtons() {
+        try {
+            const assessorAccounts =
+                [
+                    1, // Dadmin
+                    2, // Gray
+                    4, // Acacia
+                    21, // Francis
+                    94, // Butch
+                    95, // Loha
+                ];
+            if ([assessorAccounts].includes(_userdata.user_id)) {
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.has('mode')) {
+                    if (urlParams.get('mode') == 'editpost') {
+                        let sceditorButtonText = $('<div></div>').text('Detailed Assessment Comment');
+                        let sceditorButton = $('<a></a>').class('sceditor-button sceditor-button-dass').attr('title', 'Detailed Assessment Comment').append(sceditorButtonText);
+                        let sceditorGroup = $('<div></div>').class('sceditor-group').append(sceditorButton);
+
+                        $('.sceditor-toolbar').append(sceditorGroup);
+                    }
+                }
+
+            }
+        } catch (err) {
+            console.log(`Caught an error while setting up assessment framework editor buttons.`);
+            console.log(err);
+        }
+
+    }
+
+
     /**ASSESSMENT ICONS***************************************************/
     function SetUpAssessmentIcons() {
         // If a post has assessment comments, make the assessment icon visible in the post head.
-        $('.post').each(function() {
+        $('.post').each(function () {
             if ($(this).find('.assessment-quote').length) {
                 $(this).find('.ico-assessment').removeClass('d-none');
             }
         });
-        $('.spoiler').each(function() {
+        $('.spoiler').each(function () {
             if ($(this).find('.assessment-quote').length) {
                 var spoilerDD = '<span class="ico-assessment" data-bs-toggle="tooltip" title="This spoiler has in-line assessment comments. Expand it to find the mark-up."><img class="ico-assessment-img" src="https://i.servimg.com/u/f60/18/75/26/17/clipbo10.png" alt="This spoiler has in-line assessment comments. Expand it to find the mark-up."></span>' + $(this).children('dd').html();
 
                 $(this).children('dd').html(spoilerDD);
-                
+
             }
         });
     }
@@ -1122,7 +1155,7 @@ window.localStorage && $(function () {
                     a += $(document.post.f).val()
             }
             a = parseInt((my_getcookie("fa_" + location.hostname.replace(/\./g, "_") + "_data") || "0").replace(/.*s:6:"userid";(i:([0-9]+)|s:[0-9]+:"([0-9]+)");.*/, "$2$3")) + a; -
-            1 != (c = $.inArray(a, b)) && b.splice(c, 1);
+                1 != (c = $.inArray(a, b)) && b.splice(c, 1);
             if (20 < b.length) {
                 for (c = b.length - 1; 0 <= c; c--) /^\s*$/.test(localStorage.getItem(b[c]) || "") && (localStorage.removeItem(b[c]),
                     b.splice(c, 1));
