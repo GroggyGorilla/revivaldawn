@@ -1052,7 +1052,7 @@ $(function () {
                 $('#assessment-comment-selected').html(`No detailed comments were provided.`);
             }
         });
-        SetUpAssessmentFrameworkEditorButtons();
+        //SetUpAssessmentFrameworkEditorButtons();
     }
     function SetUpAssessmentFrameworkEditorButtons() {
         try {
@@ -1084,7 +1084,7 @@ $(function () {
 
 
                     $('.sceditor-button-ass').click(function () {
-                        let txtArea = $('textarea');
+                        let txtArea = $('#text_editor_textarea');
                         let txtAreaGhost = $('#textarea_content .sceditor-container textarea')[0];
                         let start = txtAreaGhost.selectionStart;
                         let end = txtAreaGhost.selectionEnd;
