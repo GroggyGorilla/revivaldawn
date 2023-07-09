@@ -1084,7 +1084,7 @@ $(function () {
 
 
                     $('.sceditor-button-ass').click(function () {
-                        let txtArea = $('#text_editor_textarea');
+                        let txtArea = $('textarea');
                         let txtAreaGhost = $('#textarea_content .sceditor-container textarea')[0];
                         let start = txtAreaGhost.selectionStart;
                         let end = txtAreaGhost.selectionEnd;
