@@ -1098,7 +1098,7 @@ $(function () {
                             updateEditorVal(`${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`);
 
                             txtAreaGhost.focus();
-                            txtAreaGhost.prop('selectionEnd', start + 5);
+                            txtAreaGhost.selectionEnd = start + 5;
                         }
                     });
 
