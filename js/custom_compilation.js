@@ -1081,37 +1081,39 @@ $(function () {
 
                         $('.sceditor-toolbar').append(sceditorGroup);
                     }
+
+
+                    $('.sceditor-button-ass').click(function () {
+                        console.log(1087);
+                        let txtArea = $('#text_editor_textarea');
+                        let start = txtArea.prop('selectionStart');
+                        let end = txtArea.prop('selectionEnd');
+                        if (start >= 0 && end > start) {
+                            var prefixStr = txtArea.text().substring(0, start);
+                            var suffixStr = txtArea.text().substring(end, elem.text().length);
+                            var selectedStr = txtArea.text().substring(start, end);
+                            txtArea.text(`${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`);
+
+                            txtArea.focus();
+                            txtArea.prop('selectionEnd', start + 5);
+                        }
+                    });
+
+                    $('.sceditor-button-dass').click(function () {
+                        let txtArea = $('#text_editor_textarea');
+                        let start = txtArea.prop('selectionStart');
+                        let end = txtArea.prop('selectionEnd');
+                        if (start >= 0 && end > start) {
+                            var prefixStr = txtArea.text().substring(0, start);
+                            var suffixStr = txtArea.text().substring(end, elem.text().length);
+                            var selectedStr = txtArea.text().substring(start, end);
+                            txtArea.text(`${prefixStr}[dass]${selectedStr}[cmt][/cmt][/dass]${suffixStr}`);
+
+                            txtArea.focus();
+                            txtArea.prop('selectionEnd', end + 11);
+                        }
+                    });
                 }
-
-                $('.sceditor-button-ass').click(function () {
-                    let txtArea = $('#text_editor_textarea');
-                    let start = txtArea.prop('selectionStart');
-                    let end = txtArea.prop('selectionEnd');
-                    if (start >= 0 && end > start) {
-                        var prefixStr = txtArea.text().substring(0, start);
-                        var suffixStr = txtArea.text().substring(end, elem.text().length);
-                        var selectedStr = txtArea.text().substring(start, end);
-                        txtArea.text(`${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`);
-
-                        txtArea.focus();
-                        txtArea.prop('selectionEnd', start + 5);
-                    }
-                });
-
-                $('.sceditor-button-dass').click(function () {
-                    let txtArea = $('#text_editor_textarea');
-                    let start = txtArea.prop('selectionStart');
-                    let end = txtArea.prop('selectionEnd');
-                    if (start >= 0 && end > start) {
-                        var prefixStr = txtArea.text().substring(0, start);
-                        var suffixStr = txtArea.text().substring(end, elem.text().length);
-                        var selectedStr = txtArea.text().substring(start, end);
-                        txtArea.text(`${prefixStr}[dass]${selectedStr}[cmt][/cmt][/dass]${suffixStr}`);
-
-                        txtArea.focus();
-                        txtArea.prop('selectionEnd', end + 11);
-                    }
-                });
 
             }
         } catch (err) {
