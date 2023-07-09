@@ -930,7 +930,6 @@ $(function () {
             SetUpAssessmentFramework();
             PopulateCharacterAges();
             SetUpTopicTags();
-            SubstituteEditor();
             /*******************************************************************************/
         }
     };
@@ -1043,11 +1042,7 @@ $(function () {
 
     /**CKEDITOR***************************************************************************************/
     /*
-    *  Application: CKEditor
-    *  Date: 30/04/2018
-    *  Version: 1.030042018
-    *  Copyright (c) CKSource and Adapted to forumotion by Daemon <help.forumotion.com>
-    *  This work is free. You can redistribute it and/or modify it
+    *  NOT USING THIS RIGHT NOW.
     */
     function SubstituteEditor() {
         if (!$.sceditor) return;
