@@ -930,6 +930,7 @@ $(function () {
             SetUpAssessmentFramework();
             PopulateCharacterAges();
             SetUpTopicTags();
+            SubstituteEditor();
             /*******************************************************************************/
         }
     };
@@ -1037,6 +1038,40 @@ $(function () {
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl, { boundary: document.body }));
     }
+
+    /*****************************************************************************************/
+
+    /**CKEDITOR***************************************************************************************/
+    /*
+    *  Application: CKEditor
+    *  Date: 30/04/2018
+    *  Version: 1.030042018
+    *  Copyright (c) CKSource and Adapted to forumotion by Daemon <help.forumotion.com>
+    *  This work is free. You can redistribute it and/or modify it
+    */
+    function SubstituteEditor() {
+        if (!$.sceditor) return;
+        $.ajax({
+            type: 'GET',
+            url: 'https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js',
+            dataType: 'script',
+            success: function () {
+                CKEDITOR.replace('text_editor_textarea');
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status == 500) {
+                    console.log('Internal error: ' + jqXHR.responseText);
+                } else {
+                    console.log('Unexpected error.');
+                }
+            }
+        });
+        $(function () {
+            $('#text_editor_textarea').sceditor('instance').destroy();
+        });
+    }
+
+    /*****************************************************************************************/
 
     /**ASSESSMENT FRAMEWORK*******************************************************************/
     function SetUpAssessmentFramework() {
