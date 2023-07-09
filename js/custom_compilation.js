@@ -1093,7 +1093,7 @@ $(function () {
                         console.log(end);
                         if (start >= 0 && end > start) {
                             var prefixStr = txtArea.text().substring(0, start);
-                            var suffixStr = txtArea.text().substring(end, elem.text().length);
+                            var suffixStr = txtArea.text().substring(end, txtArea.text().length);
                             var selectedStr = txtArea.text().substring(start, end);
                             txtArea.text(`${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`);
 
