@@ -1084,10 +1084,12 @@ $(function () {
 
 
                     $('.sceditor-button-ass').click(function () {
-                        console.log(1087);
                         let txtArea = $('#text_editor_textarea');
                         let start = txtArea.prop('selectionStart');
                         let end = txtArea.prop('selectionEnd');
+                        console.log(txtArea);
+                        console.log(start);
+                        console.log(end);
                         if (start >= 0 && end > start) {
                             var prefixStr = txtArea.text().substring(0, start);
                             var suffixStr = txtArea.text().substring(end, elem.text().length);
