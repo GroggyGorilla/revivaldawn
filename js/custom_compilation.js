@@ -1116,6 +1116,7 @@ $(function () {
                         $('.sceditor-button-ass, .sceditor-button-dass').click(function (e) {
                             e.preventDefault();
                             let txtArea = $('#text_editor_textarea');
+                            updateEditorVal(txtArea.text());
                             let txtAreaGhost = $('#textarea_content .sceditor-container textarea')[0];
                             let start = txtAreaGhost.selectionStart;
                             let end = txtAreaGhost.selectionEnd;
