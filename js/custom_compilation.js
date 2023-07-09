@@ -1081,36 +1081,36 @@ $(function () {
                         let sceditorGroup = $('<div></div>').addClass('sceditor-group').append(sceditorAssButton).append(sceditorDassButton);
 
                         $('.sceditor-toolbar').append(sceditorGroup);
-                    }
 
 
-                    $('.sceditor-button-ass, .sceditor-button-dass').click(function (e) {
-                        e.preventDefault();
-                        let txtArea = $('#text_editor_textarea');
-                        let txtAreaGhost = $('#textarea_content .sceditor-container textarea')[0];
-                        let start = txtAreaGhost.selectionStart;
-                        let end = txtAreaGhost.selectionEnd;
-                        if (start >= 0 && end > start) {
-                            const prefixStr = txtArea.text().substring(0, start);
-                            const suffixStr = txtArea.text().substring(end, txtArea.text().length);
-                            const selectedStr = txtArea.text().substring(start, end);
-                            let cursorPosition = 0;
-                            let newText = `${prefixStr}[dass]${selectedStr}[cmt][/cmt][/dass]${suffixStr}`;
+                        $('.sceditor-button-ass, .sceditor-button-dass').click(function (e) {
+                            e.preventDefault();
+                            let txtArea = $('#text_editor_textarea');
+                            let txtAreaGhost = $('#textarea_content .sceditor-container textarea')[0];
+                            let start = txtAreaGhost.selectionStart;
+                            let end = txtAreaGhost.selectionEnd;
+                            if (start >= 0 && end > start) {
+                                const prefixStr = txtArea.text().substring(0, start);
+                                const suffixStr = txtArea.text().substring(end, txtArea.text().length);
+                                const selectedStr = txtArea.text().substring(start, end);
+                                let cursorPosition = 0;
+                                let newText = `${prefixStr}[dass]${selectedStr}[cmt][/cmt][/dass]${suffixStr}`;
 
-                            if ($(this).hasClass('sceditor-button-dass')) {
-                                newText = `${prefixStr}[dass]${selectedStr}[cmt][/cmt][/dass]${suffixStr}`;
-                                cursorPosition = end + 11;
-                            } else {
-                                newText = `${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`;
-                                cursorPosition = start + 5;
+                                if ($(this).hasClass('sceditor-button-dass')) {
+                                    newText = `${prefixStr}[dass]${selectedStr}[cmt][/cmt][/dass]${suffixStr}`;
+                                    cursorPosition = end + 11;
+                                } else {
+                                    newText = `${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`;
+                                    cursorPosition = start + 5;
+                                }
+                                txtArea.text(newText);
+                                updateEditorVal(newText);
+
+                                txtAreaGhost.focus();
+                                txtAreaGhost.selectionEnd = cursorPosition;
                             }
-                            txtArea.text(newText);
-                            updateEditorVal(newText);
-
-                            txtAreaGhost.focus();
-                            txtAreaGhost.selectionEnd = cursorPosition;
-                        }
-                    });
+                        });
+                    }
                 }
 
             }
