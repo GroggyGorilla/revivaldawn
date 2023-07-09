@@ -1094,16 +1094,17 @@ $(function () {
                             const suffixStr = txtArea.text().substring(end, txtArea.text().length);
                             const selectedStr = txtArea.text().substring(start, end);
                             let cursorPosition = 0;
-                            if ($(this).attr('id') == '.sceditor-button-ass') {
-                                updateEditorVal(`${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`);
-                                cursorPosition = start + 5;
-                            } else if ($(this).attr('id') == '.sceditor-button-dass') {
+
+                            if ($(this).hasClass('sceditor-button-dass')) {
                                 updateEditorVal(`${prefixStr}[dass]${selectedStr}[cmt][/cmt][/dass]${suffixStr}`);
                                 cursorPosition = end + 11;
+                            } else {
+                                updateEditorVal(`${prefixStr}[ass=]${selectedStr}[/ass]${suffixStr}`);
+                                cursorPosition = start + 5;
                             }
 
                             txtArea.focus();
-                            txtArea[0].selectionEnd = start + 5;
+                            txtArea[0].selectionEnd = cursorPosition;
                         }
                     });
                 }
