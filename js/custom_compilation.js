@@ -803,7 +803,7 @@ $(function () {
             {
                 tag: 'turf', // turf details link
                 close: true,
-                replacement: '<a href="{option}"><span class="title_prefix title_prefix-turf-details">{content}</span></a>'
+                replacement: '<span data-bs-toggle="tooltip" title="Turf Details"><a href="{option}"><span class="title_prefix title_prefix-turf-details">{content}</span></a></span>'
             },
             {
                 tag: 'npc', // npc dialogue colouring
