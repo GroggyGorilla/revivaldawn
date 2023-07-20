@@ -803,7 +803,7 @@ $(function () {
             {
                 tag: 'tag', // tag (just a fancy link to anything)
                 close: true,
-                replacement: '<span data-bs-toggle="tooltip" title="{content}"><a href="{option}" class="title_prefix title_prefix-tag">{content}</a></span>'
+                replacement: '<span data-bs-toggle="tooltip" title="{content}"><a href="{option}"><span class="title_prefix title_prefix-tag">{content}</span></a></span>'
             },
             {
                 tag: 'turf', // turf details link
