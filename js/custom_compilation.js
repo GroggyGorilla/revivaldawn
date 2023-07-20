@@ -801,9 +801,9 @@ $(function () {
                 replacement: '<a href="{option}" class="tracker-link">Tracker</a>'
             },
             {
-                tag: 'dtracker', // detailed tracker link
+                tag: 'tag', // tag (just a fancy link to anything)
                 close: true,
-                replacement: '<span data-bs-toggle="tooltip" title="{content}"><a href="{option}" class="tracker-link">{content}</a></span>'
+                replacement: '<span data-bs-toggle="tooltip" title="{content}"><a href="{option}" class="title_prefix title_prefix-tag">{content}</a></span>'
             },
             {
                 tag: 'turf', // turf details link

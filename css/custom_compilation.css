@@ -2119,6 +2119,10 @@ https://purecss.io
     background-color: palevioletred;
 }
 
+.title_prefix-tag {
+    background-color: slategrey;
+}
+
 .title_prefix-rolls,
 .title_prefix-board,
 .title_prefix-claims {
