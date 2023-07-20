@@ -2097,6 +2097,11 @@ https://purecss.io
     background-color: royalblue;
 }
 
+.title_prefix-navy-branch {
+    background-color: var(--rd-color-navy);
+    color: navy;
+}
+
 .title_prefix-activity-check {
     background-color: crimson;
 }

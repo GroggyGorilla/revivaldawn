@@ -964,6 +964,7 @@ $(function () {
         TOPIC_PREFIXES.push(new Array("[Gifts]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Tips]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Turf Details]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Navy Branch]", "#fff", invisible));
 
         // Deprecated
         TOPIC_PREFIXES.push(new Array("[Equipment]", "#fff", invisible));
