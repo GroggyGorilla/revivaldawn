@@ -2115,6 +2115,10 @@ https://purecss.io
     background-color: orange;
 }
 
+.title_prefix-lore {
+    background-color: palevioletred;
+}
+
 .title_prefix-rolls,
 .title_prefix-shop,
 .title_prefix-board,

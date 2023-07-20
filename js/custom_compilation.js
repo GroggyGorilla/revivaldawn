@@ -954,6 +954,7 @@ $(function () {
 
         // Hidden
         TOPIC_PREFIXES.push(new Array("[Info]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Lore]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Closed]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Locked]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Event]", "#fff", invisible));
