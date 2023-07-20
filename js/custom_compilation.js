@@ -801,6 +801,11 @@ $(function () {
                 replacement: '<a href="{option}" class="tracker-link">Tracker</a>'
             },
             {
+                tag: 'ctracker', // tracker link with custom name
+                close: true,
+                replacement: '<a href="{option}" class="tracker-link">{content}</a>'
+            },
+            {
                 tag: 'tag', // tag (just a fancy link to anything)
                 close: true,
                 replacement: '<span data-bs-toggle="tooltip" title="{content}"><a href="{option}"><span class="title_prefix title_prefix-tag">{content}</span></a></span>'
