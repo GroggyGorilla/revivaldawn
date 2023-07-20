@@ -967,6 +967,8 @@ $(function () {
         TOPIC_PREFIXES.push(new Array("[Gifts]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Rolls]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Shop]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Market]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Trade]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Board]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Claims]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Info]", "#fff", invisible));

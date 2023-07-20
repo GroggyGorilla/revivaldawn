@@ -2120,10 +2120,15 @@ https://purecss.io
 }
 
 .title_prefix-rolls,
-.title_prefix-shop,
 .title_prefix-board,
 .title_prefix-claims {
     background-color: sandybrown;
+}
+.title_prefix-shop,
+.title_prefix-market,
+.title_prefix-trade
+ {
+    background-color: limegreen;
 }
 
 .title_prefix-event,
