@@ -2127,7 +2127,6 @@ https://purecss.io
 
 a:hover .title_prefix,
 a:active .title_prefix {
-    color: #fff;
     text-shadow: none;
 }
 
