@@ -961,6 +961,7 @@ $(function () {
         TOPIC_PREFIXES.push(new Array("[Activity Check]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Sign Ups]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Announcement]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[News]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Update]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Gifts]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Rolls]", "#fff", invisible));
