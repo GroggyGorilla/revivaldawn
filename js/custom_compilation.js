@@ -801,6 +801,11 @@ $(function () {
                 replacement: '<a href="{option}" class="tracker-link">Tracker</a>'
             },
             {
+                tag: 'dtracker', // detailed tracker link
+                close: true,
+                replacement: '<span data-bs-toggle="tooltip" title="{content}"><a href="{option}" class="tracker-link">{content}</a></span>'
+            },
+            {
                 tag: 'turf', // turf details link
                 close: true,
                 replacement: '<span data-bs-toggle="tooltip" title="Turf Details"><a href="{option}"><span class="title_prefix title_prefix-turf-details">{content}</span></a></span>'
