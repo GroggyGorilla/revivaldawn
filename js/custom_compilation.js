@@ -953,6 +953,7 @@ $(function () {
         TOPIC_PREFIXES.push(new Array("[Advertisement]", "#fff", visible));
 
         // Hidden
+        TOPIC_PREFIXES.push(new Array("[Info]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Closed]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Locked]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Event]", "#fff", invisible));
@@ -962,9 +963,18 @@ $(function () {
         TOPIC_PREFIXES.push(new Array("[Announcement]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Update]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Gifts]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Rolls]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Shop]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Board]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Claims]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Info]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Tips]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Turf Details]", "#fff", invisible));
         TOPIC_PREFIXES.push(new Array("[Navy Branch]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Rolls]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Shop]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Board]", "#fff", invisible));
+        TOPIC_PREFIXES.push(new Array("[Claims]", "#fff", invisible));
 
         // Deprecated
         TOPIC_PREFIXES.push(new Array("[Equipment]", "#fff", invisible));

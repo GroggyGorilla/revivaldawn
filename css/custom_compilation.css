@@ -2111,6 +2111,17 @@ https://purecss.io
     background-color: dimgrey;
 }
 
+.title_prefix-info {
+    background-color: orange;
+}
+
+.title_prefix-rolls,
+.title_prefix-shop,
+.title_prefix-board,
+.title_prefix-claims {
+    background-color: sandybrown;
+}
+
 .title_prefix-event,
 .title_prefix-sign-ups,
 .title_prefix-rewards,
