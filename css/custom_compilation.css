@@ -1924,8 +1924,6 @@ https://purecss.io
 
 /*--CUSTOM BBCODE CSS--------------------*/
 .notice {
-    background: url(https://i.imgur.com/VWRy0Mc.png) repeat-x 0 0;
-    color: #FFF;
     width: 80%;
     font-weight: normal;
     padding: 13px 15px;
@@ -1994,9 +1992,7 @@ https://purecss.io
 }
 
 .notice-info {
-    background-color: #C6D8F0;
-    color: #285797;
-    border: 1px solid #4381CD;
+    background-color: #285797;
 }
 
 .notice-info:before {
