@@ -2262,8 +2262,7 @@ input[type="text"]:hover,
 }
 
 /* Link icon */
-.postbody .content a:not([class]):not([href*="/u"]):not([href*="/g"]),
-.postbody .content a:not([class=""]):not([href*="/u"]):not([href*="/g"]) {
+.postbody .content a:not([class]):not([class=""]):not([href*="/u"]):not([href*="/g"]) {
     padding-left: 18px;
     background: url(https://i.servimg.com/u/f60/18/75/26/17/link_i10.png) no-repeat left;
 }
