@@ -2253,3 +2253,9 @@ a[href*="http"]:not([href*="revivaldawn"]).link-icon {
     border: 1px solid var(--rd-main-font-color);
     max-height: 200px
 }
+
+/* POST PROFILE */
+
+.postprofile-contact {
+    display: none;
+}
