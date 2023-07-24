@@ -213,11 +213,11 @@ img[title*='Send e-mail']:hover,
     filter: invert(1);
 }
 
-a.mention-tag {
+a.mentiontag {
     background-color: #000;
 }
 
-a.mention-tag:hover, a.mention-tag:active {
+a.mentiontag:hover, a.mentiontag:active {
     background-color: #fff;
     color: #000;
 }
