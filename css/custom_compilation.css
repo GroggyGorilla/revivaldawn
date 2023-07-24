@@ -213,6 +213,15 @@ img[title*='Send e-mail']:hover,
     filter: invert(1);
 }
 
+a.mention-tag {
+    background-color: #000;
+}
+
+a.mention-tag:hover, a.mention-tag:active {
+    background-color: #fff;
+    color: #000;
+}
+
 #site-desc {
     text-shadow: 0 0 0.2em #000000 !important;
     font-family: 'Permanent Marker', sans-serif !important;
