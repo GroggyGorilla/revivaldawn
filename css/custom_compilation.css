@@ -2201,6 +2201,9 @@ input[type="text"]:hover,
     border-radius: 3px;
     padding: 2px 4px;
     font-weight: 500;
+    display: inline-block;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
 }
 
 .discord-channel-tag a {
