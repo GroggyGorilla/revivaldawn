@@ -582,7 +582,7 @@ $(function () {
         '<strong>Skin Of Your Teeth</strong><br />Downgrade first crit to solid hit',
         '<strong>Freedom Of Travel</strong><br />Bypass sea restrictions for a new quest',
         '<strong>The Maxwell Treatment</strong><br />Borderline flirty grading comments from Gray',
-        '<strong>Improvise, Adapt, Overcome</strong<br />Respec fighting style'
+        '<strong>Improvise, Adapt, Overcome</strong><br />Respec fighting style'
     ];
     $('.postbody, .field_uneditable, .postprofile, .message-text').each(function () {
         var oldhtml = "";
