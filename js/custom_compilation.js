@@ -278,7 +278,8 @@ $(function () {
         'landcrawler',
         'skinofyourteeth',
         'freedomoftravel',
-        'themaxwelltreatment'
+        'themaxwelltreatment',
+        'improviseadaptovercome'
     ];
     var iconImage = [
         'https://i.servimg.com/u/f60/18/75/26/17/jerryr10.png',
@@ -428,7 +429,8 @@ $(function () {
         'https://i.servimg.com/u/f60/18/75/26/17/ship_110.png',
         'https://i.servimg.com/u/f60/18/75/26/17/skinof10.png',
         'https://i.servimg.com/u/f60/18/75/26/17/freedo11.png',
-        'https://i60.servimg.com/u/f60/18/75/26/17/themax10.png'
+        'https://i60.servimg.com/u/f60/18/75/26/17/themax10.png',
+        'https://i.servimg.com/u/f60/18/75/26/17/improv10.png'
     ];
 
     var tooltipText = [
@@ -579,7 +581,8 @@ $(function () {
         '<strong>Land Crawler (Toggle)</strong><br />+25% Hull, -25% Sails',
         '<strong>Skin Of Your Teeth</strong><br />Downgrade first crit to solid hit',
         '<strong>Freedom Of Travel</strong><br />Bypass sea restrictions for a new quest',
-        '<strong>The Maxwell Treatment</strong><br />Borderline flirty grading comments from Gray'
+        '<strong>The Maxwell Treatment</strong><br />Borderline flirty grading comments from Gray',
+        '<strong>Improvise, Adapt, Overcome</strong<br />Respec fighting style'
     ];
     $('.postbody, .field_uneditable, .postprofile, .message-text').each(function () {
         var oldhtml = "";
