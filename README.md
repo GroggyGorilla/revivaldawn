@@ -1,2 +1,2 @@
 # Revival Dawn
-Revival Dawn Hosted Content
+Revival Dawn Hosted Content. 
