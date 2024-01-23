@@ -1210,7 +1210,7 @@ position: relative;
 }
 
 .plyr {
-    text-shadow: 0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000 !important;
+    font-weight: bold !important;
 }
 
 /*-----------------------------------------------------------------*/
