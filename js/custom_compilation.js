@@ -1,5 +1,8 @@
 $(function () {
 
+
+    $("#img-loading-screen-background").css('display', 'block');
+
     /**POPULATE PAGE QUICK LINKS**************************************/
     if ($('#rd_pagelinks').length) {
         if ($('[id^="rdql_"]').length) {
@@ -943,6 +946,7 @@ $(function () {
             SetUpAssessmentFramework();
             PopulateCharacterAges();
             SetUpTopicTags();
+            $("#img-loading-screen-background").css('display', 'none');
             /*******************************************************************************/
         }
     };
