@@ -302,6 +302,24 @@ a[href="/faq"] {
     border-color: #ffffff;
 }
 
+li.header dl.icon dt,
+li.header dl.icon dd.dterm {
+    margin-top: 0.5rem;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+}
+
+ul.topiclist li.header dl dd {
+    margin-bottom: 0;
+}
+
+ul.topiclist dd.dterm h2,
+ul.topiclist dt h2,
+.table-title,
+.table-title h2 {
+    padding-left: 3rem;
+}
+
 hr,
 h1,
 h2,
