@@ -305,7 +305,7 @@ a[href="/faq"] {
 li.header dl.icon dt,
 li.header dl.icon dd.dterm {
     margin-top: 0.5rem;
-    letter-spacing: 0.25rem;
+    letter-spacing: 0.5rem;
     text-transform: uppercase;
 }
 
@@ -318,6 +318,7 @@ ul.topiclist dt h2,
 .table-title,
 .table-title h2 {
     padding-left: 3rem;
+    font-size: 1.7rem;
 }
 
 hr,
