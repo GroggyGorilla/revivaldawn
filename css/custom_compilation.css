@@ -317,8 +317,7 @@ ul.topiclist dd.dterm h2,
 ul.topiclist dt h2,
 .table-title,
 .table-title h2 {
-    padding-left: 3rem;
-    font-size: 1.7rem;
+    font-family: 'Roboto', 'Century Gothic', sans-serif;
 }
 
 hr,
