@@ -1189,7 +1189,12 @@ position: relative;
     color: #000000 !important;
 }
 
-/*Spoiler tag colours----------------------------------------------------------*/
+/*Spoiler tag and dialogue colours and styles----------------------------------------------------------*/
+.plyr {
+    font-weight: bold;
+    text-shadow: 0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000 !important;
+}
+
 .spoiler-wgov dl dt,
 .wgov {
     color: var(--rd-color-wgov) !important;
@@ -1228,9 +1233,29 @@ position: relative;
     color: var(--rd-color-misc) !important;
 }
 
-.plyr {
-    font-weight: bold;
-    text-shadow: 0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000 !important;
+.spoiler-scbk dl dt,
+.scbk {
+    color: var(--rd-color-scbk) !important;
+}
+
+.spoiler-vadm dl dt,
+.vadm {
+    color: var(--rd-color-vadm) !important;
+}
+
+.spoiler-adml dl dt,
+.adml {
+    color: var(--rd-color-adml) !important;
+}
+
+.spoiler-gnrl dl dt,
+.gnrl {
+    color: var(--rd-color-gnrl) !important;
+}
+
+.spoiler-cmdr dl dt,
+.cmdr {
+    color: var(--rd-color-cmdr) !important;
 }
 
 /*-----------------------------------------------------------------*/
@@ -1250,6 +1275,11 @@ position: relative;
     --rd-color-pirt: #FFB4B4;
     --rd-color-bhun: #FFC08C;
     --rd-color-misc: #FFADDE;
+    --rd-color-scbk: #B847CF;
+    --rd-color-vadm: #7F86FA;
+    --rd-color-adml: #8FCBFF;
+    --rd-color-gnrl: #089C37;
+    --rd-color-cmdr: #40C754;
 }
 
 .fade {
