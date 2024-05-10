@@ -1280,12 +1280,12 @@ position: relative;
     --rd-color-pirt: #FFB4B4;
     --rd-color-bhun: #FFC08C;
     --rd-color-misc: #FFADDE;
-    --rd-color-scbk: #B847CF;
-    --rd-color-radm: #0088FF;
+    --rd-color-scbk: #F887FF;
+    --rd-color-radm: #3da3fd;
     --rd-color-vadm: #7F86FA;
     --rd-color-adml: #8FCBFF;
-    --rd-color-gnrl: #089C37;
-    --rd-color-cmdr: #40C754;
+    --rd-color-gnrl: #36e86e;
+    --rd-color-cmdr: #5aed70;
 }
 
 .fade {
