@@ -1238,6 +1238,11 @@ position: relative;
     color: var(--rd-color-scbk) !important;
 }
 
+.spoiler-radm dl dt,
+.radm {
+    color: var(--rd-color-radm) !important;
+}
+
 .spoiler-vadm dl dt,
 .vadm {
     color: var(--rd-color-vadm) !important;
@@ -1276,6 +1281,7 @@ position: relative;
     --rd-color-bhun: #FFC08C;
     --rd-color-misc: #FFADDE;
     --rd-color-scbk: #B847CF;
+    --rd-color-radm: #0088FF;
     --rd-color-vadm: #7F86FA;
     --rd-color-adml: #8FCBFF;
     --rd-color-gnrl: #089C37;
