@@ -487,6 +487,10 @@ img[alt^="rd_emoji"],
     max-width: 32px !important;
 }
 
+.postbody .content {
+    line-height: 1.6em;
+}
+
 /*WIDGETS-----------------------------------------------------------------------------------------------*/
 
 div.staffList>div.tooltip {
@@ -527,7 +531,6 @@ span.mod-recent-info {
     padding: 1em;
     font-family: century gothic, verdana, times new roman;
     font-size: 1em;
-    line-height: 140%;
     text-align: justify;
     width: 85%;
     padding-bottom: 1em;
@@ -600,11 +603,9 @@ span.mod-recent-info {
     padding: 1em;
     font-family: century gothic, verdana;
     font-size: 1em;
-    line-height: 120%;
     text-align: justify;
     width: 85%;
     padding-bottom: 1em;
-    line-height: 160%;
 }
 
 .creation-template hr {
@@ -626,7 +627,6 @@ span.mod-recent-info {
     vertical-align: top;
     font-family: garamond, serif;
     font-size: 1.25em;
-    line-height: 120%;
     text-align: justify;
     width: 90%;
     color: black;
@@ -2067,11 +2067,10 @@ https://purecss.io
     padding: 1em;
     font-family: century gothic, verdana;
     font-size: 1em;
-    line-height: 120%;
     text-align: justify;
     width: 85%;
     padding-bottom: 1em;
-    line-height: 140%;
+    line-height: 1.6em;
 }
 
 .assessment-modal-body hr {
