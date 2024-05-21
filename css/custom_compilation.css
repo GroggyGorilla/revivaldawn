@@ -1984,6 +1984,12 @@ https://purecss.io
     display: none;
 }
 
+.forum h2 {
+    color: #ffffff;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+}
+
 
 /*-------------------------------------------------------------------------------------------*/
 
