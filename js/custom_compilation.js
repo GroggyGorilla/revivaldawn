@@ -116,7 +116,7 @@ $(function () {
         '<span class="ico-b-b"></span>'
     ];
 
-    $('.postbody').each(function () {
+    $('.postbody, .post-content').each(function () {
         var posthtml = "";
         posthtml = $(this).html();
         for (var i = 0; i < tokenBBCode.length; i++) {
