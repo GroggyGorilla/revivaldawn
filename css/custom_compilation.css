@@ -1314,7 +1314,13 @@ div[class*='post--'] .postbody td,
 div[class*='post--'] .postbody th,
 #preview .postbody table,
 #preview .postbody td,
-#preview .postbody th {
+#preview .postbody th,
+div[class*='post--'] .post-content table,
+div[class*='post--'] .post-content td,
+div[class*='post--'] .post-content th,
+#preview .post-content table,
+#preview .post-content td,
+#preview .post-content th{
     border-top-width: 1px !important;
     border-left-width: 0px !important;
     border-right-width: 0px !important;
@@ -2313,6 +2319,7 @@ input[type="text"]:hover,
 
 /* Link icon */
 .postbody a:not([class]):not([class=""]):not([href*="servimg"]),
+.post-content a:not([class]):not([class=""]):not([href*="servimg"]),
 .assessment-modal-body a:not([class]):not([class=""]):not([href*="servimg"]),
 a.link-icon {
     padding: 0 0 0 16px;
@@ -2322,6 +2329,7 @@ a.link-icon {
 }
 
 .postbody a[href*="http"]:not([class]):not([class=""]):not([href*="servimg"]):not([href*="revivaldawn"]),
+.post-content a[href*="http"]:not([class]):not([class=""]):not([href*="servimg"]):not([href*="revivaldawn"]),
 .assessment-modal-body a[href*="http"]:not([class]):not([class=""]):not([href*="servimg"]):not([href*="revivaldawn"]),
 a[href*="http"]:not([href*="revivaldawn"]).link-icon {
     padding: 0 0 0 16px;
