@@ -597,7 +597,8 @@ span.mod-recent-info {
     padding: 0.35em;
 }
 
-.creation-template {
+.creation-template,
+.post-template {
     margin: auto;
     vertical-align: top;
     padding: 1em;
@@ -608,9 +609,14 @@ span.mod-recent-info {
     padding-bottom: 1em;
 }
 
-.creation-template hr {
+.creation-template hr,
+.post-template hr {
     border-color: var(--rd-main-font-color);
 }
+
+.post-template {
+    width: 65%;
+} 
 
 .news-coo-container {
     margin: auto;
