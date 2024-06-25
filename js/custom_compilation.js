@@ -116,7 +116,7 @@ $(function () {
         '<span class="ico-b-b"></span>'
     ];
 
-    $('.postbody').each(function () {
+    $('.postbody, .post-content').each(function () {
         var posthtml = "";
         posthtml = $(this).html();
         for (var i = 0; i < tokenBBCode.length; i++) {
@@ -927,7 +927,7 @@ $(function () {
             });
         },
         setupBBParser: function () {
-            var postBody = $(".postbody, .blog_message, .postprofile-info, .field_uneditable, .message-text");
+            var postBody = $(".postbody, .blog_message, .postprofile-info, .field_uneditable, .message-text,  .post-content");
             for (var i = 0, e; (e = postBody[i++]);) {
                 for (var j in BBParser.add) {
                     var item = BBParser.add[j];
