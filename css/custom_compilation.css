@@ -2330,3 +2330,13 @@ a[href*="http"]:not([href*="revivaldawn"]).link-icon {
 .postprofile-contact {
     display: none;
 }
+
+/*Hide post profile*/
+.post:has(.hide-profile) .postprofile,
+.post:has(.hide-profile) .edited-message {
+    display: none !important;
+}
+
+.post:has(.hide-profile) .postbody {
+    margin-right: 0 !important;
+}
