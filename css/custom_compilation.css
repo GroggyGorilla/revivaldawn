@@ -487,9 +487,12 @@ img[alt^="rd_emoji"],
     max-width: 32px !important;
 }
 
-.postbody .content {
+.postbody .content,
+.postbody i {
     line-height: 1.6em;
 }
+
+
 
 /*WIDGETS-----------------------------------------------------------------------------------------------*/
 
