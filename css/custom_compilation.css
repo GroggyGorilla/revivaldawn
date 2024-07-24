@@ -5,7 +5,7 @@
 
 /*FONTS------------------------------------------------------------------------------------------------*/
 /* NOTO SANS */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* NOTO SERIF */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
@@ -638,7 +638,7 @@ span.mod-recent-info {
 }
 
 .flashback {
-    font-family: 'Noto Serif', 'Noto Sans';
+    font-weight: 200;
     opacity: 70%;
 }
 
