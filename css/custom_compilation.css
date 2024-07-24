@@ -638,7 +638,7 @@ span.mod-recent-info {
 }
 
 .flashback {
-    font-weight: 200;
+    font-weight: 300;
     opacity: 70%;
 }
 
@@ -1223,6 +1223,10 @@ position: relative;
 .plyr {
     font-weight: bold;
     text-shadow: 0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000 !important;
+}
+
+.flashback .plyr {
+    font-weight: 500;
 }
 
 .spoiler-wgov dl dt,
