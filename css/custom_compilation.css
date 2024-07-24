@@ -625,6 +625,11 @@ span.mod-recent-info {
     width: 65%;
 }
 
+.flashback {
+    font-family: 'Noto Sans';
+    color: #8f8f8f;
+}
+
 .news-coo-container {
     margin: auto;
     margin-bottom: 1em;
