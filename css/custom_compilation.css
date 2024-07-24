@@ -627,7 +627,7 @@ span.mod-recent-info {
 
 .flashback {
     font-family: 'Noto Sans';
-    color: #8f8f8f;
+    opacity: 70%;
 }
 
 .news-coo-container {
