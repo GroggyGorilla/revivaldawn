@@ -633,7 +633,7 @@ span.mod-recent-info {
 }
 
 .post-template {
-    width: 65%;    
+    width: 65%;
     font-family: 'Noto Sans', 'Century Gothic', 'Verdana';
 }
 
@@ -1297,6 +1297,21 @@ position: relative;
     color: var(--rd-color-cmdr) !important;
 }
 
+.spoiler-yonk dl dt,
+.yonk {
+    color: var(--rd-color-yonk) !important;
+}
+
+.spoiler-spvt dl dt,
+.spvt {
+    color: var(--rd-color-spvt) !important;
+}
+
+.spoiler-bkbt dl dt,
+.bkbt {
+    color: var(--rd-color-bkbt) !important;
+}
+
 /*-----------------------------------------------------------------*/
 
 /*BOOTSTRAP Corrections-------------------------------------------------*/
@@ -1320,6 +1335,9 @@ position: relative;
     --rd-color-adml: #8FCBFF;
     --rd-color-gnrl: #36e86e;
     --rd-color-cmdr: #5aed70;
+    --rd-color-yonk: #FF825C;
+    --rd-color-spvt: #A85959;
+    --rd-color-bkbt: #BD7FA9;
 }
 
 .fade {
