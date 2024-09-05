@@ -847,39 +847,39 @@ $(function () {
                 close: true,
                 replacement: '<span class="discord-channel-tag">{content}</span>',
                 replace: function (option, content) {
-                    let channelLink = 'https://discord.com/channels/260564262446039064/260564262446039064';
+                    let channelLink = 'discord://discord.com/channels/260564262446039064/260564262446039064';
                     let channelName = '💀・revdawn';
                     switch (content) {
                         case 'rules':
-                            channelLink = 'https://discord.com/channels/260564262446039064/908760658458320916';
+                            channelLink = 'discord://discord.com/channels/260564262446039064/908760658458320916';
                             channelName = '🧾・rules';
                             break;
                         case 'announcements':
-                            channelLink = 'https://discord.com/channels/260564262446039064/390618985277685760';
+                            channelLink = 'discord://discord.com/channels/260564262446039064/390618985277685760';
                             channelName = '📢・announcements';
                             break;
                         case 'site-rule-updates':
-                            channelLink = 'https://discord.com/channels/260564262446039064/604935559189889044';
+                            channelLink = 'discord://discord.com/channels/260564262446039064/604935559189889044';
                             channelName = '📰・site-rule-updates';
                             break;
                         case 'plotting':
-                            channelLink = 'https://discord.com/channels/260564262446039064/603784693812428800';
+                            channelLink = 'discord://discord.com/channels/260564262446039064/603784693812428800';
                             channelName = '🪢・plotting';
                             break;
                         case 'combat-encounters':
-                            channelLink = 'https://discord.com/channels/260564262446039064/1082001795670364301';
+                            channelLink = 'discord://discord.com/channels/260564262446039064/1082001795670364301';
                             channelName = '👊・combat-encounters';
                             break;
                         case 'combat-management':
-                            channelLink = 'https://discord.com/channels/260564262446039064/1082028927188488202';
+                            channelLink = 'discord://discord.com/channels/260564262446039064/1082028927188488202';
                             channelName = '🔩・combat-management';
                             break;
                         case 'approval-requests':
-                            channelLink = 'https://discord.com/channels/260564262446039064/390616825102336024';
+                            channelLink = 'discord://discord.com/channels/260564262446039064/390616825102336024';
                             channelName = '✅・approval-requests';
                             break;
                         case 'help-desk':
-                            channelLink = 'https://discord.com/channels/260564262446039064/297160666991689728';
+                            channelLink = 'discord://discord.com/channels/260564262446039064/297160666991689728';
                             channelName = '🆘・help-desk';
                             break;
                     }
