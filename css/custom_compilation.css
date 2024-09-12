@@ -500,8 +500,8 @@ img[alt^="rd_emoji"],
     line-height: 1.6em;
 }
 
-#page-desc {
-    overflow: visible;
+#page-desc.block {
+    display: none;
 }
 
 
