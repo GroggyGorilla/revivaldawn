@@ -5,6 +5,7 @@ $(function () {
 
     /**POPULATE PAGE QUICK LINKS**************************************/
     if ($('#rd_pagelinks').length) {
+        $('#jump-to-menu').css('display', 'block');
         if ($('[id^="rdql_"]').length) {
             var qlparents = [];
             $('[id^="rdql_"').each(function () {
