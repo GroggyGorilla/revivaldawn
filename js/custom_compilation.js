@@ -848,39 +848,39 @@ $(function () {
                 close: true,
                 replacement: '<span class="discord-channel-tag">{content}</span>',
                 replace: function (option, content) {
-                    let channelLink = 'discord://discord.com/channels/260564262446039064/260564262446039064';
+                    let channelLink = 'https://discord.com/channels/260564262446039064/260564262446039064';
                     let channelName = '💀・revdawn';
                     switch (content) {
                         case 'rules':
-                            channelLink = 'discord://discord.com/channels/260564262446039064/908760658458320916';
+                            channelLink = 'https://discord.com/channels/260564262446039064/908760658458320916';
                             channelName = '🧾・rules';
                             break;
                         case 'announcements':
-                            channelLink = 'discord://discord.com/channels/260564262446039064/390618985277685760';
+                            channelLink = 'https://discord.com/channels/260564262446039064/390618985277685760';
                             channelName = '📢・announcements';
                             break;
                         case 'site-rule-updates':
-                            channelLink = 'discord://discord.com/channels/260564262446039064/604935559189889044';
+                            channelLink = 'https://discord.com/channels/260564262446039064/604935559189889044';
                             channelName = '📰・site-rule-updates';
                             break;
                         case 'plotting':
-                            channelLink = 'discord://discord.com/channels/260564262446039064/603784693812428800';
+                            channelLink = 'https://discord.com/channels/260564262446039064/603784693812428800';
                             channelName = '🪢・plotting';
                             break;
                         case 'combat-encounters':
-                            channelLink = 'discord://discord.com/channels/260564262446039064/1082001795670364301';
+                            channelLink = 'https://discord.com/channels/260564262446039064/1082001795670364301';
                             channelName = '👊・combat-encounters';
                             break;
                         case 'combat-management':
-                            channelLink = 'discord://discord.com/channels/260564262446039064/1082028927188488202';
+                            channelLink = 'https://discord.com/channels/260564262446039064/1082028927188488202';
                             channelName = '🔩・combat-management';
                             break;
                         case 'approval-requests':
-                            channelLink = 'discord://discord.com/channels/260564262446039064/390616825102336024';
+                            channelLink = 'https://discord.com/channels/260564262446039064/390616825102336024';
                             channelName = '✅・approval-requests';
                             break;
                         case 'help-desk':
-                            channelLink = 'discord://discord.com/channels/260564262446039064/297160666991689728';
+                            channelLink = 'https://discord.com/channels/260564262446039064/297160666991689728';
                             channelName = '🆘・help-desk';
                             break;
                     }
@@ -891,7 +891,7 @@ $(function () {
             {
                 tag: 'discordthread',
                 close: true,
-                replacement: '<span class="discord-channel-tag"><a class="discord-channel-link" href="discord://{option}" target="_blank"><svg class="discord-channel-icon" aria-label="Thread" aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.81a1 1 0 0 1 0-1.41l.36-.36a1 1 0 0 1 1.41 0l9.2 9.2a1 1 0 0 1 0 1.4l-.7.7a1 1 0 0 1-1.3.13l-9.54-6.72a1 1 0 0 1-.08-1.58l1-1L12 2.8ZM12 21.2a1 1 0 0 1 0 1.41l-.35.35a1 1 0 0 1-1.41 0l-9.2-9.19a1 1 0 0 1 0-1.41l.7-.7a1 1 0 0 1 1.3-.12l9.54 6.72a1 1 0 0 1 .07 1.58l-1 1 .35.36ZM15.66 16.8a1 1 0 0 1-1.38.28l-8.49-5.66A1 1 0 1 1 6.9 9.76l8.49 5.65a1 1 0 0 1 .27 1.39ZM17.1 14.25a1 1 0 1 0 1.11-1.66L9.73 6.93a1 1 0 0 0-1.11 1.66l8.49 5.66Z" fill="currentColor" class=""></path></svg> {content}</a></span>'
+                replacement: '<span class="discord-channel-tag"><a class="discord-channel-link" href="{option}" target="_blank"><svg class="discord-channel-icon" aria-label="Thread" aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.81a1 1 0 0 1 0-1.41l.36-.36a1 1 0 0 1 1.41 0l9.2 9.2a1 1 0 0 1 0 1.4l-.7.7a1 1 0 0 1-1.3.13l-9.54-6.72a1 1 0 0 1-.08-1.58l1-1L12 2.8ZM12 21.2a1 1 0 0 1 0 1.41l-.35.35a1 1 0 0 1-1.41 0l-9.2-9.19a1 1 0 0 1 0-1.41l.7-.7a1 1 0 0 1 1.3-.12l9.54 6.72a1 1 0 0 1 .07 1.58l-1 1 .35.36ZM15.66 16.8a1 1 0 0 1-1.38.28l-8.49-5.66A1 1 0 1 1 6.9 9.76l8.49 5.65a1 1 0 0 1 .27 1.39ZM17.1 14.25a1 1 0 1 0 1.11-1.66L9.73 6.93a1 1 0 0 0-1.11 1.66l8.49 5.66Z" fill="currentColor" class=""></path></svg> {content}</a></span>'
             },
             {
                 tag: 'guest',
