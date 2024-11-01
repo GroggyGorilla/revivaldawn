@@ -2418,3 +2418,18 @@ a[href*="http"]:not([href*="revivaldawn"]).link-icon {
 .post:has(.hide-profile) .postbody {
     margin-right: 0 !important;
 }
+
+/*--FIXES----------------------------------*/
+#switch_password {
+    border: none;
+}
+
+.module .password-container {
+    border-bottom: 1px solid #BCBCBC;
+}
+
+#switch_username {
+    width: 100%
+}
+
+/*-----------------------------------------*/
