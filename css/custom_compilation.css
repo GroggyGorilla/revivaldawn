@@ -1314,7 +1314,7 @@ position: relative;
 
 /*-----------------------------------------------------------------*/
 
-/*BOOTSTRAP Corrections-------------------------------------------------*/
+/*BOOTSTRAP Fixes-------------------------------------------------*/
 /*Colour variables-----------------------------*/
 :root {
     --bs-dark-rgb: 33, 33, 33 !important;
@@ -2430,6 +2430,10 @@ a[href*="http"]:not([href*="revivaldawn"]).link-icon {
 
 #switch_username {
     width: 100%
+}
+
+.mark, mark {
+    background-color: inherit;
 }
 
 /*-----------------------------------------*/
